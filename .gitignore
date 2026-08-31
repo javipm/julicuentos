@@ -20,3 +20,10 @@ app/src/main/assets/covers/
 app/src/main/assets/stories.json
 audio-download.log
 audio-download.pid
+
+# Device screenshots taken during UI work: they show third-party (Disney)
+# cover art and must never enter the public repository.
+capturas/
+
+# Playwright MCP scratch logs (tooling state, not app content)
+.playwright-mcp/

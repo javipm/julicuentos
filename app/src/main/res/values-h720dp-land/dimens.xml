@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Landscape roomy restore (h >= 720 dp, e.g. the Fire HD 10's 752 dp): exact
+     values/ defaults so the tall-landscape bucket matches portrait rhythm (theme-design
+     "Dual-orientation player layouts"; tasks S4.2). -->
+<resources>
+    <dimen name="player_section_gap">24dp</dimen>
+    <dimen name="player_play_size">72dp</dimen>
+    <dimen name="player_bottom_padding">32dp</dimen>
+</resources>

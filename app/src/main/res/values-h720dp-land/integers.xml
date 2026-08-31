@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Landscape roomy (h >= 720 dp, e.g. the Fire HD 10's 752 dp): player description
+     gets the full 2 lines again (restores the values/ default; theme-design "Dual-orientation
+     player layouts", tasks S4.2). -->
+<resources>
+    <integer name="player_desc_max_lines">2</integer>
+</resources>

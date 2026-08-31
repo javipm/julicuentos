@@ -29,6 +29,17 @@
     <string name="reproduciendo">REPRODUCIENDO</string>
     <string name="reproductor">Reproductor</string>
 
+    <!-- Player screen (tasks S4.5; theme-design spec "Spanish strings registry") -->
+    <string name="cargando_audio">Cargando audio…</string>
+    <string name="cerrar">Cerrar</string>
+    <string name="cerrar_reproductor">Cerrar reproductor</string>
+    <string name="no_hay_cuento">No hay ningún cuento en reproducción.</string>
+    <string name="seek_bar">Barra de progreso</string>
+    <string name="error_audio_faltante">No se encontró el audio de este cuento.</string>
+    <string name="error_generico">No se pudo reproducir el cuento. Inténtalo de nuevo.</string>
+    <string name="ver_cola">Ver cola</string>
+    <string name="reintentar">Reintentar</string>
+
     <!-- Navigation / shared -->
     <string name="volver_al_catalogo">Volver al catálogo</string>
     <string name="cola">Cola</string>
@@ -36,7 +47,6 @@
 
     <!-- Placeholder stubs (Player/Queue/Timer screens; replaced when the real
          screens land in slices 4/5 — same pattern as the removed slice-1 stub). -->
-    <string name="player_stub_subtitle">La pantalla del reproductor llegará en una próxima versión.</string>
     <string name="queue_stub_subtitle">La cola llegará en una próxima versión.</string>
     <string name="timer_stub_subtitle">El temporizador llegará en una próxima versión.</string>
 

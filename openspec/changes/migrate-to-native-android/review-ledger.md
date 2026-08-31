@@ -55,3 +55,17 @@ The owner removed `stories.json` + `covers/` from version control (`git rm --cac
 **Hash remap (references above are stale):** e4fb060→3c29d28 · 04e293f→4fa4e2f · 3b7b73d→dd08db1 · 70f6c0f→2f34d58 · 2e084df unchanged.
 
 **Policy going forward:** assets stay out of git forever; a future open-source publish needs only the code + a content pipeline doc (each user supplies their own audio/covers and generates stories.json).
+
+## Slice 4 — Player UI (pre-commit review, risk lens)
+
+**Review:** fresh-context `review-risk` on staged diff (surviving artifacts + recovered tracked files) · **Date:** 2026-08-31
+**Verdict:** 0 BLOCKER / 0 MAJOR; 1 MINOR + 3 NOTE, all fixed pre-commit. Verified clean: seek contract core (zero player calls during drag, single commit, tap path), all 7 states bound, listener removal, CoverHaloView single onDraw + thresholds, dimens/ids coherence both orientations, qualifier precedence h720dp-land > land, no security findings, assets untouched.
+
+**Recovery note:** before this review, a `git filter-repo` checkout reset tracked-modified files (dimens/strings/PlayerFragment/StoryAdapter/versionCode/SDD artifacts). Untracked artifacts survived. A recovery writer rebuilt the tracked changes against the surviving contracts; parent should have committed or stashed before the history rewrite (process lesson recorded).
+
+| id | Severity | Location | Finding | Disposition |
+|---|---|---|---|---|
+| R4-001 | MINOR | SeekBarController.kt | dragging cleared before commit → stale pre-seek tick could snap thumb backwards (pain point #2 regression risk) | **Fixed**: pendingTargetMs hold until player position within ±1.5 s / crosses target; label pinned to target meanwhile. |
+| R4-002 | NOTE | SeekBarController.kt | metadata tick mid-drag mixed new duration with old max → preview drift | **Fixed**: seekBar.max updated regardless of dragging. |
+| R4-003 | NOTE | TimeFormat.kt | ceil via (v+999)/1000 overflows at Long.MAX_VALUE, violating KDoc | **Fixed**: overflow-safe ceil (v/1000 + carry). |
+| R4-004 | NOTE | PlayerFragment.kt | Error card showed English repository/library messages | **Fixed**: mapped to Spanish copy (error_audio_faltante / error_generico), diagnostic kept in logcat. |

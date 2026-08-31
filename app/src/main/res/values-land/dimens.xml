@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Landscape compact spacing (short landscape, h < 720 dp): tighter section gap,
+     smaller play circle, less bottom padding (theme-design "Dual-orientation player
+     layouts"; tasks S4.2). Chosen over the values/ defaults on the short-landscape bucket. -->
+<resources>
+    <dimen name="player_section_gap">12dp</dimen>
+    <dimen name="player_play_size">64dp</dimen>
+    <dimen name="player_bottom_padding">16dp</dimen>
+</resources>

@@ -300,3 +300,109 @@ in-flow miniplayer, versionCode bumped 2 → 3. **`assembleDebug` green.**
 
 Slice 4 (player UI) can build directly: the catalog grid, miniplayer, action sheet and
 stub nav are wired;the player layouts with seek/transport land next slice.
+
+## Slice 4 (recovered)
+
+Recovery of the player-UI slice after a git history rewrite reset the
+tracked-modified slice-4 files to HEAD while the untracked files survived.
+
+Status: **DONE (host-verifiable scope)** — `assembleDebug` and
+`testDebugUnitTest` green; on-device seek-contract checks (DV5) deferred.
+
+### What was lost to the history-rewrite checkout
+
+- `app/src/main/res/values/dimens.xml` — the `player_*` block (16 dimens
+  referenced by the surviving player layouts) had been reverted to the
+  slice-3 HEAD set.
+- `app/src/main/res/values/integers.xml` — `player_desc_max_lines` (portrait
+  default 2) missing; the portrait layout references it and AAPT2 would fail
+  without it.
+- `app/src/main/res/values/strings.xml` — player strings (`cargando_audio`,
+  `cerrar`, `cerrar_reproductor`, `no_hay_cuento`, `seek_bar`, `ver_cola`,
+  `reintentar`) reverted; layouts reference all of them.
+- `app/src/main/java/com/julicuentos/app/ui/player/PlayerFragment.kt` — reset
+  to the slice-3 placeholder stub (31 lines, fragment_placeholder).
+- `app/src/main/java/com/julicuentos/app/ui/catalog/StoryAdapter.kt` — still
+  carried the private `formatDuration` helper instead of the hoisted
+  `common/TimeFormat` (slice-2 apply-progress deviation 4 was open again).
+- `app/build.gradle.kts` — `versionCode` reverted 4 → 3.
+
+### Survived (untracked, treated as fixed contracts)
+
+- `common/TimeFormat.kt` + `TimeFormatTest.kt`, `ui/player/CoverHaloView.kt`,
+  `ui/player/SeekBarController.kt`, both `fragment_player.xml` layouts,
+  `values-land/` + `values-h720dp-land/` qualifier dirs, and the six
+  drawables (`bg_play_circle`, `bg_seek_thumb`, `bg_seekbar_track`, `ic_add`,
+  `ic_close`, `ic_timer`).
+
+### What was rebuilt
+
+- `values/dimens.xml`: added the 16 `player_*` dimens (base = portrait roomy:
+  sectionGap 24, playSize 72, bottomPadding 32, cover 340dp cap, top bar 56dp,
+  transport icon 52dp, play inner icon 34dp, land gap 28, controls width 520dp,
+  transport gap 8, desc/seek-labels gap 8, pill top gap 24 + padding h 20,
+  timer line gap 24). `min_touch` 52dp already present. Landscape compact
+  (12/64/16) stays in `values-land/`, roomy restore in `values-h720dp-land/`.
+- `values/integers.xml`: `player_desc_max_lines` = 2 (portrait default; the
+  landscape qualifier files already carry 1 / 2).
+- `values/strings.xml`: added `cargando_audio`, `cerrar`, `cerrar_reproductor`,
+  `no_hay_cuento`, `seek_bar`, `ver_cola`, `reintentar`; removed
+  `player_stub_subtitle` (no longer referenced after the PlayerFragment
+  rewrite). Existing strings untouched.
+- `ui/player/PlayerFragment.kt`: full rewrite per specs/playback + surviving
+  layouts/controllers (see Diff highlights below).
+- `ui/catalog/StoryAdapter.kt`: `formatDuration` replaced by
+  `TimeFormat.formatTime(sec * 1000)` (slice-2 deviation 4 closed for real).
+- `app/build.gradle.kts`: `versionCode` 3 → 4 (gate value, not bumped further).
+- tasks.md: S4.1–S4.8 marked [x]; S4.8 annotated `deferred-device`.
+
+### PlayerFragment diff highlights (recovered behavior)
+
+- Binds the repository snapshot (`state`, `currentStory`, progress ticks); adds
+  state + progress listeners in `onStart`, removes in `onStop` + `onDestroyView`
+  (design D5 re-subscribe rule, no leaks).
+- `CoverHaloView` progress ratio on each tick, `setTimerActive(false)` (slice 5
+  wires the real timer state).
+- `SeekBarController` attached once; commit callback = `repo.seekTo`; preview
+  label comes from the controller (`formatTime(ratio * realDuration)`); zero
+  player calls while dragging.
+- Transport: timer → `openTimer()`, −15 s / +15 s via `repo.skipBy`, play/pause
+  toggle with glyph swap (ic_pause_dark / ic_play_dark + contentDescription),
+  ＋ → `repo.enqueue(current.id)` (append + de-dup inside QueueStore),
+  "Ver cola" → `openQueue()`; back ✕ / empty "Volver al catálogo" / error
+  "Cerrar" → `popBackStack()`.
+- States: Loading shows the mint "Cargando audio…" line over content; Error
+  shows message + Reintentar (relaunch `load(current, lastPos, autoplay=true)`)
+  + Cerrar; Idle shows "No hay ningún cuento…" overlay.
+- Duration: catalog seconds as placeholder, replaced by real metadata on the
+  first progress snapshot (S4.7).
+
+### Build evidence
+
+- Gate 1: `./gradlew assembleDebug` → **BUILD SUCCESSFUL in 6s**
+  (incremental; 15 executed / 20 up-to-date).
+- Gate 2: `./gradlew testDebugUnitTest` → **BUILD SUCCESSFUL in 1s**;
+  `TimeFormatTest` 5 tests / 0 failures / 0 errors.
+- APK: `app/build/outputs/apk/debug/app-debug.apk` (~1.25 GB, asset-dominated —
+  unchanged vs slice 3; assets untouched). `versionCode=4` in
+  `app/build.gradle.kts` (not bumped further).
+- Preexisting warnings only: `adapterPosition` deprecation in StoryAdapter
+  (tracked before this slice; out of scope).
+
+### Deviations and risks
+
+1. `ver_cola` and `reintentar` were added to strings.xml beyond the five listed
+   in the brief — both are referenced by the surviving layouts ("Ver cola" pill,
+   error-card Reintentar) and the theme-spec registry, so the build required them.
+2. `player_desc_max_lines` was restored in `values/integers.xml` (portrait = 2);
+   the landscape qualifier integers (1 / 2) survived and were left untouched.
+3. `values/dimens.xml` base carries the full roomy `player_*` set; the surviving
+   `values-land/` (compact 12/64/16) and `values-h720dp-land/` (roomy restore)
+   files were NOT modified — every other player dimen falls through to the base.
+4. PlayerFragment error card shows the repository's message verbatim (library
+   wording for missing-audio, e.g. "Audio file missing for <id>"); the Spanish
+   error copy belongs to the repository surface, which is out of scope for this
+   recovery (spec assigns the copy to the UI slice, but the repository is
+   tracked/committed and untouched).
+5. `player_timer_line` and `halo.setTimerActive` stay inert until slice 5 wires
+   the sleep timer; the layouts declare the line GONE by default.

@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.julicuentos.app.R
 import com.julicuentos.app.catalog.Story
+import com.julicuentos.app.common.TimeFormat
 import com.julicuentos.app.media.ThumbCache
 
 class StoryAdapter(
@@ -70,7 +71,7 @@ class StoryAdapter(
         holder.title.text = story.titulo
         val desc = story.descripcion.ifEmpty { holder.itemView.context.getString(R.string.story_description_fallback) }
         holder.synopsis.text = desc
-        holder.duration.text = formatDuration(story.duracionSegundos)
+        holder.duration.text = TimeFormat.formatTime(story.duracionSegundos.toLong() * 1000L)
         holder.cover.setImageDrawable(null)
         ThumbCache.loadThumb(holder.itemView.context, story) { bm ->
             if (holder.boundStoryId == story.id && bm != null) {
@@ -83,12 +84,6 @@ class StoryAdapter(
     private fun bindPill(holder: StoryHolder, position: Int) {
         val isCurrent = stories[position].id == currentId
         holder.pill.visibility = if (isCurrent) View.VISIBLE else View.GONE
-    }
-
-    private fun formatDuration(totalSeconds: Int): String {
-        val minutes = totalSeconds / 60
-        val seconds = totalSeconds % 60
-        return "$minutes:%02d".format(seconds)
     }
 
     class StoryHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

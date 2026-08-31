@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Landscape compact (short landscape, h < 720 dp): player description elides to
+     1 line (theme-design "Dual-orientation player layouts"; tasks S4.2). -->
+<resources>
+    <integer name="player_desc_max_lines">1</integer>
+</resources>

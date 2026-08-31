@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Player play/pause circle (tasks S4.5): mint #72E0B8 circle, 72 dp portrait /
+     64 dp compact landscape (size via @dimen/player_play_size on the button itself. Flat. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="oval">
+    <solid android:color="@color/accion" />
+</shape>

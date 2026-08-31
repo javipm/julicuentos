@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Seek bar track layer-list (slice 4 S4.4): background rgba(170,163,206,0.4)
+     = @color/track_seek / progress fill #72E0B8 = @color/accion. Thin 6 dp bars drawn
+     under the 16 dp flat thumb(splitTrack=false so the thumb never splits the fill. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@android:id/background"
+        android:gravity="center_vertical"
+        android:height="6dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/track_seek" />
+            <corners android:radius="3dp" />
+        </shape>
+    </item>
+    <item
+        android:id="@android:id/progress"
+        android:gravity="center_vertical"
+        android:height="6dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/accion" />
+            <corners android:radius="3dp" />
+        </shape>
+    </item>
+</layer-list>

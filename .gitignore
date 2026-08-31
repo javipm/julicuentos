@@ -9,7 +9,7 @@ build/
 app/build/
 local.properties
 
-# Gradle distribution seeded locally (regenerable via tools/download-gradle.sh)
+# Gradle distribution seeded locally (unpacked at tools/gradle-dist/, see gradle/wrapper/gradle-wrapper.properties)
 tools/gradle-dist/
 
 # Bundled audio (~650MB, never in review surface) - see tasks S1.x

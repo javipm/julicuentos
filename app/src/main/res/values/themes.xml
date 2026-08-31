@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Dark flat theme (design.md D6): #17152E splash holds until first frame. -->
+<resources>
+    <style name="Theme.Julicuentos" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@color/fondo</item>
+        <item name="android:statusBarColor">@color/fondo</item>
+        <!-- API 23+ attribute; silently ignored on the API 22 target device. -->
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>

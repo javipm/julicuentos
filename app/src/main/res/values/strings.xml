@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Spanish user-facing strings (theme-design spec "Spanish strings registry").
+     Slice 1 base set; the full verbatim registry pass lands in S5.8. -->
+<resources>
+    <string name="app_name">Julicuentos</string>
+
+    <!-- Catalog screen -->
+    <string name="catalog_title">Julicuentos</string>
+    <string name="catalog_subtitle">Elige un cuento y empieza a escuchar</string>
+
+    <!-- Transport labels -->
+    <string name="play">Reproducir</string>
+    <string name="pause">Pausar</string>
+    <string name="next">Siguiente</string>
+
+    <!-- Player eyebrow -->
+    <string name="reproduciendo">REPRODUCIENDO</string>
+
+    <!-- Slice 1 placeholder screen (removed in slice 3) -->
+    <string name="slice1_placeholder">Julicuentos — Slice 1</string>
+</resources>

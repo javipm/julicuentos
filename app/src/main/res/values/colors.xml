@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Locked palette tokens (design.md D6, theme-design spec). -->
+<resources>
+    <color name="fondo">#17152E</color>
+    <color name="superficie">#28244B</color>
+    <color name="accion">#72E0B8</color>
+    <color name="temporizador">#FFB66E</color>
+    <color name="texto">#F8F7FF</color>
+    <color name="textoSuave">#AAA3CE</color>
+    <color name="track">#3D3860</color>
+</resources>

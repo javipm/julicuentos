@@ -6,20 +6,20 @@
     <item
         android:id="@android:id/background"
         android:gravity="center_vertical"
-        android:height="6dp">
+        android:height="4dp">
         <shape android:shape="rectangle">
-            <solid android:color="@color/track_seek" />
-            <corners android:radius="3dp" />
+            <solid android:color="@color/track" />
+            <corners android:radius="2dp" />
         </shape>
     </item>
     <item
         android:id="@android:id/progress"
         android:gravity="center_vertical"
-        android:height="6dp">
+        android:height="4dp">
         <clip>
             <shape android:shape="rectangle">
                 <solid android:color="@color/accion" />
-                <corners android:radius="3dp" />
+                <corners android:radius="2dp" />
             </shape>
         </clip>
     </item>

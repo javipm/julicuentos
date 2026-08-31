@@ -4,5 +4,5 @@
      no ring, no elevation. -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="oval">
     <solid android:color="@color/texto" />
-    <size android:width="20dp" android:height="20dp" />
+    <size android:width="14dp" android:height="14dp" />
 </shape>

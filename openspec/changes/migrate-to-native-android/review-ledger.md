@@ -97,3 +97,11 @@ Owner feedback: player "regulinchi", catalog needed gaps + whole covers. Owner r
 | R6-002 | MAJOR | AndroidManifest.xml | ACCESS_NETWORK_STATE strip (R-1) could SecurityException in media3 DefaultBandwidthMeter on connectivity change | **Settled with device evidence**: wifi OFF/ON toggles with active playback → process alive, playback continued, 0 SecurityExceptions. Strip retained; DV soak still pending. |
 | R6-003 | NOTE | CoverHaloView.kt | Peach timer ring radius used base-ring inset (17 vs 18 dp) | **Fixed**: radius from own inset. |
 | R6-004 | NOTE | values-w1024dp/integers.xml | Stale "5 columns" comment | **Fixed**: comment updated to 4. |
+
+## Design iteration 2 — square covers + Spotify seek (owner feedback) · 2026-08-31
+
+Owner feedback on the Opus pass: 16:9 frames made no sense (covers are square art — consult assumption wrong); seek bar style rejected. Applied inline:
+- Covers square 1:1 everywhere: catalog card ratio 1:1, player land 460×460, portrait 460×460 centered (was match_parent×396); miniplayer/queue already square.
+- Seek Spotify-style: track 4dp rounded 2dp solid slate (@color/track), mint clipped fill, thumb 14dp white dot (was 20dp).
+- versionCode 7, installed on device, catalog + player screenshots verified.
+- Data note for owner: covers/101-dalmatas/cover.jpg shows "La Noche de las Narices Frías" art (owner-managed mapping).

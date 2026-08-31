@@ -7,6 +7,6 @@
     <dimen name="player_play_size">88dp</dimen>
     <dimen name="player_bottom_padding">16dp</dimen>
     <dimen name="player_panel_pad">28dp</dimen>
-    <dimen name="player_cover_w">560dp</dimen>
-    <dimen name="player_cover_h">315dp</dimen>
+    <dimen name="player_cover_w">460dp</dimen>
+    <dimen name="player_cover_h">460dp</dimen>
 </resources>

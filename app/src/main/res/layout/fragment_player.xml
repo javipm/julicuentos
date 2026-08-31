@@ -61,11 +61,13 @@
          (design-consult C7); FIT_CENTER art on a matte, rect ring (C2). -->
     <com.julicuentos.app.ui.player.CoverHaloView
         android:id="@+id/player_cover_wrap"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/player_cover_port_h"
+        android:layout_width="@dimen/player_cover_w"
+        android:layout_height="@dimen/player_cover_w"
         android:layout_marginStart="@dimen/player_port_inset"
         android:layout_marginEnd="@dimen/player_port_inset"
-        app:layout_constraintTop_toBottomOf="@id/player_top_bar">
+        app:layout_constraintTop_toBottomOf="@id/player_top_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <ImageView
             android:id="@+id/player_cover_img"

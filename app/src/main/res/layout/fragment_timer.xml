@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Timer screen (S5.2; specs/sleep-timer "Timer selection UI"): header (✕ +
+     "Temporizador" Fredoka 20), helper copy, and five single-select 56 dp rows
+     with 16 dp radius. Selected: solid peach + dark bold text; unselected:
+     surface + light text. Choosing applies immediately and pops back. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:orientation="vertical">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/header_padding_h"
+        android:paddingEnd="@dimen/header_padding_h"
+        android:paddingTop="@dimen/header_padding_top"
+        android:paddingBottom="@dimen/header_padding_bottom">
+
+        <FrameLayout
+            android:id="@+id/timer_back"
+            android:layout_width="@dimen/min_touch"
+            android:layout_height="@dimen/min_touch"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground">
+
+            <ImageView
+                android:layout_width="@dimen/queue_btn"
+                android:layout_height="@dimen/queue_btn"
+                android:layout_gravity="center"
+                android:contentDescription="@string/cerrar"
+                android:src="@drawable/ic_close" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/timer_title"
+            style="@style/TextAppearance.Jc.20"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/header_padding_h"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="@string/temporizador" />
+    </LinearLayout>
+
+    <!-- Helper copy -->
+    <TextView
+        android:id="@+id/timer_helper"
+        style="@style/TextAppearance.Jc.14"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/header_padding_h"
+        android:paddingEnd="@dimen/header_padding_h"
+        android:paddingBottom="@dimen/timer_list_gap"
+        android:text="@string/temporizador_helper" />
+
+    <!-- Options: 15 / 30 / 45 min / end of story / off -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/queue_padding_h"
+        android:paddingEnd="@dimen/queue_padding_h">
+
+        <TextView
+            android:id="@+id/timer_row_15"
+            style="@style/TextAppearance.Jc.Button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/timer_row_height"
+            android:layout_marginBottom="@dimen/timer_list_gap"
+            android:background="@drawable/bg_row_surface"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:text="@string/timer_15"
+            android:textColor="@color/texto" />
+
+        <TextView
+            android:id="@+id/timer_row_30"
+            style="@style/TextAppearance.Jc.Button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/timer_row_height"
+            android:layout_marginBottom="@dimen/timer_list_gap"
+            android:background="@drawable/bg_row_surface"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:text="@string/timer_30"
+            android:textColor="@color/texto" />
+
+        <TextView
+            android:id="@+id/timer_row_45"
+            style="@style/TextAppearance.Jc.Button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/timer_row_height"
+            android:layout_marginBottom="@dimen/timer_list_gap"
+            android:background="@drawable/bg_row_surface"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:text="@string/timer_45"
+            android:textColor="@color/texto" />
+
+        <TextView
+            android:id="@+id/timer_row_end"
+            style="@style/TextAppearance.Jc.Button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/timer_row_height"
+            android:layout_marginBottom="@dimen/timer_list_gap"
+            android:background="@drawable/bg_row_surface"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:text="@string/timer_al_terminar"
+            android:textColor="@color/texto" />
+
+        <TextView
+            android:id="@+id/timer_row_off"
+            style="@style/TextAppearance.Jc.Button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/timer_row_height"
+            android:background="@drawable/bg_row_surface"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:text="@string/desactivar"
+            android:textColor="@color/texto" />
+    </LinearLayout>
+</LinearLayout>

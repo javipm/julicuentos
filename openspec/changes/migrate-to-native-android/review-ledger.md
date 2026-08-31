@@ -69,3 +69,16 @@ The owner removed `stories.json` + `covers/` from version control (`git rm --cac
 | R4-002 | NOTE | SeekBarController.kt | metadata tick mid-drag mixed new duration with old max → preview drift | **Fixed**: seekBar.max updated regardless of dragging. |
 | R4-003 | NOTE | TimeFormat.kt | ceil via (v+999)/1000 overflows at Long.MAX_VALUE, violating KDoc | **Fixed**: overflow-safe ceil (v/1000 + carry). |
 | R4-004 | NOTE | PlayerFragment.kt | Error card showed English repository/library messages | **Fixed**: mapped to Spanish copy (error_audio_faltante / error_generico), diagnostic kept in logcat. |
+
+## Slice 5 — Queue + Timer + Persistence (pre-commit review, risk lens)
+
+**Review:** fresh-context `review-risk` on staged diff (~2600 insertions, two-agent seam: persistence/timer core + UI completion) · **Date:** 2026-08-31
+**Verdict:** 1 CRITICAL + 1 WARNING + 1 SUGGESTION, all resolved pre-commit. Verified clean: timer expiry + 10×1s fade + cancel rules (incl. notification/focus-loss pause path), endOfStory suppression REAL in onEnded, persistence guards (hydration gate, user-wins discard, tolerant parser, D3 elapsedRealtime anchor + validity window), queue semantics (de-dup, clamped moves, no-wrap auto-advance, circular ⏭, play-now preserves queue), single source of truth across the two-agent seam, 72dp rows / 48dp visuals in 52dp targets, flat design, 100% Spanish strings, versionCode 5, 61 unit tests behavior-asserting.
+
+| id | Severity | Location | Finding | Disposition |
+|---|---|---|---|---|
+| R5-001 | CRITICAL | MainActivity.kt | No Activity.onStop flush — spec "Flush cadence (5 s + onStop)" + screen-off acceptance violated; last <5 s of mutations unprotected against memory-pressure kill | **Fixed**: onStop → repository.flushNow() (not on isFinishing). |
+| R5-002 | WARNING | PlaybackRepository.hydrate | User mutations issued during connect set userMutated → markDirty early-returned pre-hydration → hydrate skipped snapshot AND left dirty unarmed → user's fresh state silently unpersisted on force-stop | **Fixed**: after the user-wins discard, re-arm markDirty() so the next tick/onStop flush persists the user's state. |
+| R5-003 | SUGGESTION | QueueAdapter.submit | notifyDataSetChanged fine at current scale (mutation-driven only); ListAdapter/DiffUtil if rows grow | Noted, no change (per-slice rule: mutation-driven updates, no progress rebinds). |
+
+**Process notes:** slice-5 first agent crashed mid-run (build left broken: stubs referenced removed placeholder strings); recovery agent finished UI + docs against the surviving core. Asset state (64 stories) is owner-managed content, untouched by agents.

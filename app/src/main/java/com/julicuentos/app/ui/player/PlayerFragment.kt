@@ -11,9 +11,11 @@ import androidx.fragment.app.Fragment
 import com.julicuentos.app.MainActivity
 import com.julicuentos.app.R
 import com.julicuentos.app.catalog.Story
+import com.julicuentos.app.common.TimeFormat
 import com.julicuentos.app.media.Bitmaps
 import com.julicuentos.app.playback.PlaybackRepository
 import com.julicuentos.app.playback.PlayerState
+import com.julicuentos.app.playback.TimerState
 
 /**
  * Player screen (tasks S4.5; specs/playback "Play/pause and transport", "Error
@@ -22,8 +24,11 @@ import com.julicuentos.app.playback.PlayerState
  *
  * Pure view work over the shared [PlaybackRepository] snapshot — no business
  * logic here (design.md D5). It binds:
- *  - the cover (rounded-square halo [CoverHaloView], 500 ms ring progress;
- *    [setTimerActive] stays false until slice 5 wires the sleep timer),
+ *  - the cover (rounded-square halo [CoverHaloView], 500 ms ring progress),
+ *  - the sleep-timer state (slice 5): a 1 Hz peach countdown line
+ *    ("Temporizador: m:ss" / "Temporizador: al terminar este cuento") driven by
+ *    the repository timer listener, GONE when off, with the halo's peach outer
+ *    ring mirroring the active mode),
  *  - [SeekBarController] (drag-preview + exactly one commit-on-release; zero
  *    player calls while dragging — specs/playback "Seek = drag-preview +
  *    commit-on-release"),
@@ -56,6 +61,7 @@ class PlayerFragment : Fragment() {
     private lateinit var errorMsg: TextView
     private lateinit var errorRetry: View
     private lateinit var errorClose: View
+    private lateinit var timerLine: TextView
     private lateinit var seekController: SeekBarController
 
     /** Story id the cover/title currently show; guards async cover decode. */
@@ -71,6 +77,11 @@ class PlayerFragment : Fragment() {
     private val progressListener = object : PlaybackRepository.ProgressListener {
         override fun onProgress(snapshot: PlaybackRepository.ProgressSnapshot) =
             onProgressInternal(snapshot)
+    }
+
+    private val timerListener = object : PlaybackRepository.TimerListener {
+        override fun onTimerChanged(snapshot: PlaybackRepository.TimerSnapshot) =
+            bindTimer(snapshot)
     }
 
     override fun onCreateView(
@@ -95,6 +106,7 @@ class PlayerFragment : Fragment() {
         errorMsg = view.findViewById(R.id.player_error_msg)
         errorRetry = view.findViewById(R.id.player_error_retry)
         errorClose = view.findViewById(R.id.player_error_close)
+        timerLine = view.findViewById(R.id.player_timer_line)
 
         val seekBar = view.findViewById<SeekBar>(R.id.player_seek)
         val position = view.findViewById<TextView>(R.id.player_position)
@@ -103,9 +115,6 @@ class PlayerFragment : Fragment() {
             c.onCommit = { targetMs -> repo.seekTo(targetMs) }
             c.attach()
         }
-
-        // Sleep timer wire-up lands in slice 5; keep the peach ring off for now.
-        halo.setTimerActive(false)
 
         view.findViewById<View>(R.id.player_back).setOnClickListener {
             parentFragmentManager.popBackStack()
@@ -138,19 +147,23 @@ class PlayerFragment : Fragment() {
         repo.connect()
         repo.addStateListener(stateListener)
         repo.addProgressListener(progressListener)
+        repo.addTimerListener(timerListener)
         bindState(repo.state)
+        bindTimer(PlaybackRepository.TimerSnapshot(repo.currentTimer, repo.timerRemainingMs()))
     }
 
     override fun onStop() {
         super.onStop()
         repo.removeStateListener(stateListener)
         repo.removeProgressListener(progressListener)
+        repo.removeTimerListener(timerListener)
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         repo.removeStateListener(stateListener)
         repo.removeProgressListener(progressListener)
+        repo.removeTimerListener(timerListener)
     }
 
     // =====================================================================
@@ -255,6 +268,33 @@ class PlayerFragment : Fragment() {
         if (duration > 0L) {
             val ratio = (snapshot.positionMs.toFloat() / duration.toFloat()).coerceIn(0f, 1f)
             halo.setProgress(ratio)
+        }
+    }
+
+    // =====================================================================
+    // Sleep-timer visibility (1 Hz repository ticks; specs/sleep-timer
+    // "Timer visibility on the player")
+    // =====================================================================
+
+    private fun bindTimer(snapshot: PlaybackRepository.TimerSnapshot) {
+        when (snapshot.state) {
+            is TimerState.Minutes -> {
+                timerLine.text = getString(
+                    R.string.timer_line_minutes,
+                    TimeFormat.formatRemaining(snapshot.remainingMs)
+                )
+                timerLine.visibility = View.VISIBLE
+                halo.setTimerActive(true)
+            }
+            TimerState.EndOfStory -> {
+                timerLine.text = getString(R.string.timer_line_end)
+                timerLine.visibility = View.VISIBLE
+                halo.setTimerActive(true)
+            }
+            TimerState.Off -> {
+                timerLine.visibility = View.GONE
+                halo.setTimerActive(false)
+            }
         }
     }
 

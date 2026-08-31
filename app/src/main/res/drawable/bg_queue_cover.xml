@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Queue row cover placeholder scrim: dark rgba(23,21,46,0.55) behind the
+     image while it decodes (S5.1). -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="@color/scrim_overflow" />
+</shape>

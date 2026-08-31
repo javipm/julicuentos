@@ -3,6 +3,7 @@ package com.julicuentos.app
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.julicuentos.app.playback.PlaybackRepository
 import com.julicuentos.app.ui.catalog.CatalogFragment
 import com.julicuentos.app.ui.player.PlayerFragment
 import com.julicuentos.app.ui.queue.QueueFragment
@@ -18,6 +19,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // (imports for PlaybackRepository are resolved by the class reference below)
         setContentView(R.layout.activity_main)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
@@ -31,6 +33,14 @@ class MainActivity : AppCompatActivity() {
     fun openQueue() = showFragment(QueueFragment())
 
     fun openTimer() = showFragment(TimerFragment())
+
+    override fun onStop() {
+        super.onStop()
+        // Immediate flush on screen-off/home so a memory-pressure kill cannot lose
+        // the last <5 s of mutations (specs/persistence "Flush cadence (5 s + onStop)";
+        // review R5-001).
+        if (!isFinishing) PlaybackRepository.get(this).flushNow()
+    }
 
     private fun showFragment(fragment: Fragment) {
         // Re-entrancy guard: rapid double taps must not stack duplicate entries of

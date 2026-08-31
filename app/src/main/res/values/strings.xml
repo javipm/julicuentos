@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Spanish user-facing strings (theme-design spec "Spanish strings registry").
-     Slice 3 adds the catalog/action-sheet/miniplayer set and removes the slice-1
-     placeholder. The full verbatim registry pass lands in S5.8. -->
+     Complete registry pass per S5.8: every screen's copy lives here, verbatim
+     where the RN copy is unchanged; no hardcoded UI text in Kotlin/layouts. -->
 <resources>
+    <!-- App / catalog -->
     <string name="app_name">Julicuentos</string>
-
-    <!-- Catalog screen -->
     <string name="catalog_title">Julicuentos</string>
     <string name="catalog_subtitle">Elige un cuento y empieza a escuchar</string>
     <string name="catalog_overflow">Más opciones</string>
@@ -29,7 +28,7 @@
     <string name="reproduciendo">REPRODUCIENDO</string>
     <string name="reproductor">Reproductor</string>
 
-    <!-- Player screen (tasks S4.5; theme-design spec "Spanish strings registry") -->
+    <!-- Player screen -->
     <string name="cargando_audio">Cargando audio…</string>
     <string name="cerrar">Cerrar</string>
     <string name="cerrar_reproductor">Cerrar reproductor</string>
@@ -39,18 +38,29 @@
     <string name="error_generico">No se pudo reproducir el cuento. Inténtalo de nuevo.</string>
     <string name="ver_cola">Ver cola</string>
     <string name="reintentar">Reintentar</string>
-
-    <!-- Navigation / shared -->
     <string name="volver_al_catalogo">Volver al catálogo</string>
+
+    <!-- Queue screen (S5.1; specs/queue "Queue screen") -->
     <string name="cola">Cola</string>
+    <string name="vaciar">Vaciar</string>
+    <string name="queue_empty">La cola está vacía. Añade cuentos desde el menú ⋮ de una tarjeta o con el botón + del reproductor.</string>
+    <string name="queue_move_up">Mover arriba</string>
+    <string name="queue_move_down">Mover abajo</string>
+    <string name="queue_remove">Quitar de la cola</string>
+    <string name="queue_added_ok">Añadido a la cola</string>
+
+    <!-- Timer screen (S5.2; specs/sleep-timer "Timer selection UI" -->
     <string name="temporizador">Temporizador</string>
+    <string name="temporizador_helper">Al vencer, se pausa la reproducción y se conserva la cola.</string>
+    <string name="timer_15">15 minutos</string>
+    <string name="timer_30">30 minutos</string>
+    <string name="timer_45">45 minutos</string>
+    <string name="timer_al_terminar">Al terminar este cuento</string>
+    <string name="desactivar">Desactivar</string>
+    <string name="timer_line_minutes">Temporizador: %1$s</string>
+    <string name="timer_line_end">Temporizador: al terminar este cuento</string>
 
-    <!-- Placeholder stubs (Player/Queue/Timer screens; replaced when the real
-         screens land in slices 4/5 — same pattern as the removed slice-1 stub). -->
-    <string name="queue_stub_subtitle">La cola llegará en una próxima versión.</string>
-    <string name="timer_stub_subtitle">El temporizador llegará en una próxima versión.</string>
-
-    <!-- Notification (slice 2) -->
+    <!-- Notification -->
     <string name="notification_channel_name">Reproducción</string>
     <string name="notif_play_pause">Reproducir / Pausa</string>
     <string name="notif_skip_back_15">Retroceder 15 s</string>

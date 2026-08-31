@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Queue screen (S5.1; specs/queue "Queue screen"): header (✕ back, "Cola"
+     Fredoka 20, "Vaciar" peach / disabled soft), RecyclerView of rows, and the
+     corrected empty-state copy. Flat surfaces only; touch targets >= 52 dp. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:orientation="vertical">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/header_padding_h"
+        android:paddingEnd="@dimen/header_padding_h"
+        android:paddingTop="@dimen/header_padding_top"
+        android:paddingBottom="@dimen/header_padding_bottom">
+
+        <FrameLayout
+            android:id="@+id/queue_back"
+            android:layout_width="@dimen/min_touch"
+            android:layout_height="@dimen/min_touch"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground">
+
+            <ImageView
+                android:layout_width="@dimen/queue_btn"
+                android:layout_height="@dimen/queue_btn"
+                android:layout_gravity="center"
+                android:contentDescription="@string/cerrar"
+                android:src="@drawable/ic_close" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/queue_title"
+            style="@style/TextAppearance.Jc.20"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/header_padding_h"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="@string/cola" />
+
+        <TextView
+            android:id="@+id/queue_vaciar"
+            style="@style/TextAppearance.Jc.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/min_touch"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:minWidth="@dimen/min_touch"
+            android:paddingStart="@dimen/queue_padding_h"
+            android:paddingEnd="@dimen/queue_padding_h"
+            android:text="@string/vaciar"
+            android:textColor="@color/temporizador" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/queue_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingStart="@dimen/queue_padding_h"
+        android:paddingEnd="@dimen/queue_padding_h"
+        android:paddingTop="@dimen/queue_padding_top"
+        android:paddingBottom="@dimen/queue_padding_bottom" />
+
+    <!-- Empty state (corrected copy; redirects to the real add affordances). -->
+    <TextView
+        android:id="@+id/queue_empty"
+        style="@style/TextAppearance.Jc.14"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:padding="@dimen/header_padding_h"
+        android:text="@string/queue_empty"
+        android:textAlignment="center"
+        android:visibility="gone" />
+</LinearLayout>

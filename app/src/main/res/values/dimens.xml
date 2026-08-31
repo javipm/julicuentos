@@ -71,4 +71,16 @@
         <dimen name="player_pill_top_gap">24dp</dimen>
         <dimen name="player_pill_padding_h">20dp</dimen>
         <dimen name="player_timer_line_gap">24dp</dimen>
+
+        <!-- Queue + timer screens (S5.1/S5.2) -->
+        <dimen name="queue_row_min_height">72dp</dimen>
+        <dimen name="queue_cover">56dp</dimen>
+        <dimen name="queue_btn">48dp</dimen>
+        <dimen name="queue_gap">4dp</dimen>
+        <dimen name="corner_cover">10dp</dimen>
+        <dimen name="timer_row_height">56dp</dimen>
+        <dimen name="timer_list_gap">8dp</dimen>
+        <dimen name="queue_padding_h">12dp</dimen>
+        <dimen name="queue_padding_top">8dp</dimen>
+        <dimen name="queue_padding_bottom">16dp</dimen>
     </resources>

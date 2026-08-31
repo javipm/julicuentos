@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Queue row (S5.1; specs/queue "Queue screen"): #28244B surface, radius 16,
+     min height 72 dp, 56 dp cover with 10 dp radius, bold 2-line title, and the
+     up/down/remove buttons (48 dp visuals inside full 52 dp touch targets —
+     queue-remove tinted peach). Rows never subscribe to progress. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/queue_gap"
+    android:background="@drawable/bg_row_surface"
+    android:gravity="center_vertical"
+    android:minHeight="@dimen/queue_row_min_height"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/queue_padding_h"
+    android:paddingTop="@dimen/queue_padding_top"
+    android:paddingBottom="@dimen/queue_padding_top"
+    android:paddingEnd="@dimen/queue_padding_top">
+
+    <ImageView
+        android:id="@+id/queue_cover"
+        android:layout_width="@dimen/queue_cover"
+        android:layout_height="@dimen/queue_cover"
+        android:background="@drawable/bg_queue_cover"
+        android:importantForAccessibility="no"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/queue_title"
+        style="@style/TextAppearance.Jc.Button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/queue_padding_h"
+        android:layout_marginEnd="@dimen/queue_padding_h"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textColor="@color/texto" />
+
+    <FrameLayout
+        android:id="@+id/queue_move_up"
+        android:layout_width="@dimen/min_touch"
+        android:layout_height="@dimen/min_touch"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground">
+
+        <ImageView
+            android:layout_width="@dimen/queue_btn"
+            android:layout_height="@dimen/queue_btn"
+            android:layout_gravity="center"
+            android:contentDescription="@string/queue_move_up"
+            android:src="@drawable/ic_chevron_up" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/queue_move_down"
+        android:layout_width="@dimen/min_touch"
+        android:layout_height="@dimen/min_touch"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground">
+
+        <ImageView
+            android:layout_width="@dimen/queue_btn"
+            android:layout_height="@dimen/queue_btn"
+            android:layout_gravity="center"
+            android:contentDescription="@string/queue_move_down"
+            android:src="@drawable/ic_chevron_down" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/queue_remove"
+        android:layout_width="@dimen/min_touch"
+        android:layout_height="@dimen/min_touch"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground">
+
+        <ImageView
+            android:layout_width="@dimen/queue_btn"
+            android:layout_height="@dimen/queue_btn"
+            android:layout_gravity="center"
+            android:contentDescription="@string/queue_remove"
+            android:src="@drawable/ic_close_peach" />
+    </FrameLayout>
+</LinearLayout>

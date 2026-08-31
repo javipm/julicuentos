@@ -406,3 +406,108 @@ Status: **DONE (host-verifiable scope)** — `assembleDebug` and
    tracked/committed and untouched).
 5. `player_timer_line` and `halo.setTimerActive` stay inert until slice 5 wires
    the sleep timer; the layouts declare the line GONE by default.
+
+## Slice 5 (completed after agent crash)
+
+Status: **DONE on the host (build + unit-test scope)**; on-device acceptance
+items remain pending (DV1–DV11 minus host-verified DV2; S5.10 deferred-device).
+
+
+### Core-by-previous-agent inventory (verified present, not rewritten)
+
+1. `persist/` (MiniJson.kt, PersistedState.kt, PlayerStore.kt,
+   RestoreCoordinator.kt) + tests `persist/PersistedStateParserTest.kt`,
+   `persist/RestoreCoordinatorTest.kt` — one SharedPreferences key, tolerant
+   parser, restore decision (user-wins, unknown-id drop, expired-timer→off).
+2. `playback/TimerLogic.kt` + `TimerState.kt` + `playback/TimerLogicTest.kt`
+   — three modes anchored to `elapsedRealtime()`, normalizeRestore validity window,
+   10×1 s fade schedule, `formatRemaining`-friendly remainingMs contract.
+3. `playback/QueueStore.kt` (`QueueStore` + `InMemoryQueueStore`) +
+   `playback/QueueStoreTest.kt` — ids-only queue, append+de-dup, clamped
+   moveUp/moveDown, filter remove, clear, peekNext/takeNext, setInitial.
+4. `playback/PlaybackService.kt` + `PlaybackRepository.kt` — timer mode
+   set/clear/minutes/end_of_story API (`currentTimer`, `timerRemainingMs()`,
+   `setTimerMinutes/setTimerEndOfStory/clearTimer`, `addTimerListener` with
+   `TimerSnapshot(state, remainingMs)`), 1 Hz elapsedRealtime ticker,
+   expiry → service fade → pause + off + immediate flush (queue untouched),
+   end-of-story suppresses auto-advance; queue mutations (`queueSnapshot`,
+   `enqueue`, `moveQueueUp/Down`, `removeFromQueue`, `clearQueue`,
+   `addQueueListener`) and `flushNow()`/hydration gate.
+5. Surviving layouts/drawables (fragment_queue.xml, item_queue_row.xml,
+   fragment_timer.xml, bg_queue_cover.xml, bg_row_surface.xml,
+   bg_timer_row_selected.xml, ic_chevron_up/down, ic_close_peach, ic_check_mint)
+   and `strings.xml` Spanish registry (placeholder strings already removed; not re-added).
+6. Layout/dimen/colore plumbing: `queue_*`/`timer_*`/`header_*` dimen,
+   colors temporizador/fondo/texto/superficie/textoSuave, min_touch 52 dp.
+7. Player layouts already declared `player_timer_line`(GONE by default)
+   and CoverHaloView already exposed `setTimerActive` (wired now, below).
+
+### What I finished (this recovery pass)
+
+1. `ui/queue/QueueAdapter.kt` (new): ids-only adapter over the repository's
+   queue store snapshot, resolving story data from the compiled-in catalog;
+   56 dp cover via the shared thumbnail pipeline (ThumbCache), title = bold 2-line
+   Button label; chevron-up / chevron-down / ✕(peach) in 52 dp touch targets
+   (48 dp visuals); stable ids; `submit()` called ONLY on queue-mutation
+   events (never on the 500 ms progress cadence).
+2. `ui/queue/QueueFragment.kt` (rewritten from stub): binds fragment_queue.xml,
+   ✕ → popBackStack; "Vaciar" peach/enabled when non-empty, soft/disabled
+   when empty; RecyclerView + LinearLayoutManager; empty-state copy
+   `@string/queue_empty` (spec-verbatim "La cola está vacía. Añade cuentos
+    desde el menú ⋮ de una tarjeta o con el botón + del reproductor."—the
+   brief's shorter string was superseded by the spec's suggested copy already in
+   the registry; queue listener attached in onStart, removed in onStop +
+   onDestroyView (repo.connect() idempotent.
+)
+3. `ui/timer/TimerFragment.kt` (rewritten from stub: five static 56 dp rows
+   (15/30/45, "Al terminar este cuento", "Desactivar"), selected row = solid
+   peach bg_timer_row_selected + dark bold text, others bg_row_surface + light
+   text; tap applies via repo (`setTimerMinutes` / `setTimerEndOfStory` /
+   `clearTimer`) and pops back immediately (spec "Choosing applies immediately
+   and pops back"); current mode highlighted on open (incl. onStart re-entry.
+
+4. `ui/player/PlayerFragment.kt`: wired the sleep-timer visibility (S5.4::
+   TimerListener (1 Hz repository ticks) drives `player_timer_line`
+   ("Temporizador: m:ss" via TimeFormat.formatRemaining, or the end-of-story
+   string; GONE when Off) and CoverHaloView.setTimerActive(active == Minutes/
+   EndOfStory); listener added in onStart (with an immediate snapshot bind
+   using currentTimer + timerRemainingMs()), removed in onStop + onDestroyView.
+−
+5. `docs/delivery.md` (new: build flow (`./gradlew assembleDebug`), adb
+   install −r + `--no-local` streamed fallback, ONE-TIME `adb uninstall
+   com.julicuentos.app` (RN signature mismatch) before first install; versionCode
+   monotonic policy (4 → 5 this slice); free-space note (~1.25 GB APK →
+   ~2.5 GB free for adb staging); content pipeline note (assets user-owned,
+   gitignored; tools/port-catalog.py regenerates stories.json + covers if
+   desired); device acceptance checklist verbatim from specs/delivery(a)–(e +
+   supporting) as the pending on-device run list (DV1–DV11, DV2 host-verified.
+
+6. `app/build.gradle.kts`: versionCode 4 → 5.
+7. tasks.md: S5.1–S5.9 marked [x]; S5.10 stays [ ] with
+   (deferred-device); DV1, DV3–DV11 annotated (deferred-device)；
+   S2.2/S2.3 deferred notes closed → [x] pointing at the slice-5
+   materializations (QueueStore/TimerLogic + tests, both green）。
+
+### Build evidence
+
+- Gate 1: `./gradlew assembleDebug` → **BUILD SUCCESSFUL**
+  (see numbered evidence below — full-output line this slice's run)。
+- Gate  ️2: `./gradlew testDebugUnitTest` → **BUILD SUCCESSFUL**;
+  persist tests (PersistedStateParserTest, RestoreCoordinatorTest),
+  playback tests (QueueStoreTest, TimerLogicTest), + TimeFormatTest all green.
+
+### Deviations and risks
+
+1. Queue-empty copy: kept the existing string (spec "Suggested copy" verbatim,
+   "…Añade cuentos desde el menú ⋮ de una tarjeta o con el botón +…") instead
+   of the brief's shorter paraphrase — the spec + registry own the copy.
+2. S2.2/S2.3 materialized under slice-5 names (`QueueStore`/`TimerLogic`)
+   rather than the slice-2 file names (`QueueLogic.kt`/`SleepTimer.kt`+`Fade.kt`);
+   closed as [x] with the alias noted, so task accounting matches the real tree.
+
+3. `stub_padding`/`stub_gap` dimen + TextAppearance.Jc.16/18 remain unused
+   by the queue/timer screens (their layouts use the player/catalog styles) —
+   dead-but-harmless resources, untouched.
+4. On-device acceptance remains the single open gate (DV1, DV3–DV11,
+   S5.10) — host evidence covers build/tests/static manifest audits only.
+

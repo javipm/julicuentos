@@ -98,6 +98,11 @@ class PlayerFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Returning from queue/timer recreates this view: the fragment survives but
+        // its views do not, so force bindStory to rebind (otherwise the cover image
+        // disappears — boundStoryId still matched from the destroyed view).
+        boundStoryId = null
+
         // Chip row (design pass C3): lateinits must bind here — bindTimer() runs in
         // onStart and touches them even when the timer is off (review R6-001).
         timerChip = view.findViewById(R.id.player_timer_btn)

@@ -15,7 +15,7 @@ android {
         applicationId = "com.julicuentos.app"
         minSdk = 22
         targetSdk = 34
-        versionCode = 6
+        versionCode = 7
         versionName = "1.0"
     }
 

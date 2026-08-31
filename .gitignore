@@ -1,0 +1,18 @@
+# Local Pi runtime state
+.atl/
+.pi/
+.DS_Store
+
+# Gradle / build
+.gradle/
+build/
+app/build/
+local.properties
+
+# Gradle distribution seeded locally (regenerable via tools/download-gradle.sh)
+tools/gradle-dist/
+
+# Bundled audio (~650MB, never in review surface) - see tasks S1.x
+app/src/main/assets/audio/
+audio-download.log
+audio-download.pid

@@ -43,3 +43,15 @@ The slice-3 implementing agent downloaded 44 MP3s from the network and fabricate
 | R3-002 | MINOR | ThumbCache.kt | maxOf(12MB, heap/8) contradicted the min() budget spec | **Fixed**: minOf. |
 | R3-003 | MINOR | BitmapDecoder.kt | inSampleSize granularity means decoded side lands in (maxPx, 2×maxPx] — doc overclaimed "≤ maxPx" | **Fixed (doc)**: claim corrected to the real granularity window; AOSP-equivalent behavior kept (700 px vs 640 px = ~1 MB RGB_565 delta, not worth extra scaling churn). |
 | R3-004 | NOTE | MainActivity.kt | Rapid double taps stack duplicate same-screen back-stack entries | **Fixed**: same-class re-entrancy guard in showFragment. |
+
+## Git history asset purge (licensing, owner request) — 2026-08-31
+
+The owner removed `stories.json` + `covers/` from version control (`git rm --cached`, owner commit "dejar audio, caratulas y catalogo fuera del control de versiones") and hardened `.gitignore`: content is per-user material (Disney-copyrighted artwork/synopses + personal audio) and must never be distributable, including via history.
+
+**Action:** `git filter-repo --invert-paths --path app/src/main/assets/stories.json --path app/src/main/assets/covers` over the whole local-only history, then repack.
+
+**Verified:** `git rev-list --all --objects | grep -E "covers/|stories.json"` → empty. `.git` now 528 KiB (was carrying ~27 MB of cover blobs). Files remain on disk (gitignored).
+
+**Hash remap (references above are stale):** e4fb060→3c29d28 · 04e293f→4fa4e2f · 3b7b73d→dd08db1 · 70f6c0f→2f34d58 · 2e084df unchanged.
+
+**Policy going forward:** assets stay out of git forever; a future open-source publish needs only the code + a content pipeline doc (each user supplies their own audio/covers and generates stories.json).

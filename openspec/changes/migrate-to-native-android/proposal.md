@@ -1,7 +1,7 @@
 # Proposal — migrate-to-native-android
 
 **Change:** `migrate-to-native-android` · **Phase:** propose · **Date:** 2026-08-30
-**Evidence base:** `openspec/changes/migrate-to-native-android/explore.md` (complete read-only exploration of the Expo/RN app at `~/Documents/apps/julicuentos`).
+**Evidence base:** `openspec/changes/migrate-to-native-android/explore.md` (complete read-only exploration of the Expo/RN app at `~/julicuentos-rn`).
 **Product decisions:** locked by the owner (see § Locked decisions). This document does not re-open them.
 
 ---
@@ -91,7 +91,7 @@ Work lands as incremental, individually buildable slices; no slice leaves the tr
 ## Affected areas
 
 - **This repo** (`julicuentos-native`): created from scratch — Gradle project, manifest, Kotlin sources, resources, `assets/` (20 MP3s already present, ~650 MB; catalog data and images still to be ported).
-- **Source RN repo** (`~/Documents/apps/julicuentos`): read-only. Not modified, not deleted; it stays available as the reference implementation and as a reinstallable fallback.
+- **Source RN repo** (`~/julicuentos-rn`): read-only. Not modified, not deleted; it stays available as the reference implementation and as a reinstallable fallback.
 - **The device**: one-time uninstall of the RN `com.julicuentos.app` build (signature mismatch makes an in-place upgrade impossible), losing the stored queue/position/1-key preference. From then on, plain `adb install -r` upgrades.
 - **Daily usage**: the sleep flow gains a notification/lock-screen control set and a fade-out ending — visible changes for the parent, none for the child's mental model (same screens, same words).
 

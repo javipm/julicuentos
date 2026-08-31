@@ -1,8 +1,8 @@
 # Exploration — migrate-to-native-android
 
 **Phase:** explore · **Change:** migrate-to-native-android · **Date:** 2026-08-30
-**Source explored (read-only):** `~/Documents/apps/julicuentos` (Expo SDK 49 / RN 0.72 / expo-av)
-**Target project:** `~/Documents/www/julicuentos-native` (Kotlin + XML views)
+**Source explored (read-only):** `~/julicuentos-rn` (Expo SDK 49 / RN 0.72 / expo-av)
+**Target project:** `~/julicuentos-native` (Kotlin + XML views)
 **Device:** Amazon Fire HD 10 7ª gen (KFSUWI / `suez`), Fire OS 5.3.x, Android 5.1.1 **API 22**, 1920×1200 @ ~1.5 density (≈1280×800 dp), no Google Play Services, sideload via adb (serial `<adb-serial>`).
 
 Nothing in the source repo was modified, and no generator/build was executed.

@@ -82,3 +82,18 @@ The owner removed `stories.json` + `covers/` from version control (`git rm --cac
 | R5-003 | SUGGESTION | QueueAdapter.submit | notifyDataSetChanged fine at current scale (mutation-driven only); ListAdapter/DiffUtil if rows grow | Noted, no change (per-slice rule: mutation-driven updates, no progress rebinds). |
 
 **Process notes:** slice-5 first agent crashed mid-run (build left broken: stubs referenced removed placeholder strings); recovery agent finished UI + docs against the surviving core. Asset state (64 stories) is owner-managed content, untouched by agents.
+
+## Design polish pass — Opus consult implemented (post-verify) · 2026-08-31
+
+Owner feedback: player "regulinchi", catalog needed gaps + whole covers. Owner requested a Claude-Opus design consult, delivered via Orca orchestration (worker `ctx_ba4c889c7b6d`, model opus/high) → `design-consult-opus.md` (12 prioritized deltas). Implemented by a writer agent (39 files, C1–C12): panel-based player split with 8/16/24 ladder + labeled Spanish chips, 16:9 whole covers on matte (rect-aware CoverHaloView), catalog 4 columns with gaps + mint "Sonando" card frame + overflow on cover, floating miniplayer card, queue index circles + duration lines, left-aligned timer rows with check.
+
+**Device evidence (Fire HD 10, KFSUWI API 22, adb):** installed v6, playback state=3 speed=1.0, seek verified by owner, wifi OFF/ON toggles → process alive, 0 crashes; screenshots of catalog + player confirm the consult landed.
+
+**Review (fresh review-risk lens) fixed pre-commit:**
+
+| id | Severity | Location | Finding | Disposition |
+|---|---|---|---|---|
+| R6-001 | BLOCKER | PlayerFragment.kt | timerChip/Icon/Label lateinit never assigned → UninitializedPropertyAccessException on every player open | **Fixed**: findViewById trio in onViewCreated. |
+| R6-002 | MAJOR | AndroidManifest.xml | ACCESS_NETWORK_STATE strip (R-1) could SecurityException in media3 DefaultBandwidthMeter on connectivity change | **Settled with device evidence**: wifi OFF/ON toggles with active playback → process alive, playback continued, 0 SecurityExceptions. Strip retained; DV soak still pending. |
+| R6-003 | NOTE | CoverHaloView.kt | Peach timer ring radius used base-ring inset (17 vs 18 dp) | **Fixed**: radius from own inset. |
+| R6-004 | NOTE | values-w1024dp/integers.xml | Stale "5 columns" comment | **Fixed**: comment updated to 4. |

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Seek bar thumb (tasks S4.4): 16 dp flat circle, white @color/texto so it reads
-     on both the gray track and the mint fill. Flat — no ring, no elevation (theme-design. -->
+<!-- Seek bar thumb (design-consult-opus.md C4): 20 dp flat circle, white
+     @color/texto so it reads on both the gray track and the mint fill. Flat —
+     no ring, no elevation. -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="oval">
     <solid android:color="@color/texto" />
-    <size android:width="16dp" android:height="16dp" />
+    <size android:width="20dp" android:height="20dp" />
 </shape>

@@ -35,6 +35,8 @@ class MiniPlayerView @JvmOverloads constructor(
         // would NPE on first bind (review R3-001).
         progressStrip = findViewById(R.id.mini_progress)
         coverView = findViewById(R.id.mini_cover)
+            // Rounded cover corners: the matte bg supplies the outline (design-consult C8).
+            coverView.clipToOutline = true
         titleView = findViewById(R.id.mini_title)
         statusView = findViewById(R.id.mini_status)
         playIcon = findViewById(R.id.mini_play_icon)

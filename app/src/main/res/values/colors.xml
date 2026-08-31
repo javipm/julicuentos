@@ -8,6 +8,12 @@
     <color name="texto">#F8F7FF</color>
     <color name="textoSuave">#AAA3CE</color>
     <color name="track">#3D3860</color>
+    <!-- Design-consult tokens (design-consult-opus.md C0): second surface step,
+         cover matte, and the hairline border (alias of track, kept separate so a
+         future track change does not move every border). -->
+    <color name="superficieAlta">#332E5C</color>
+    <color name="matte">#201C3D</color>
+    <color name="borde">#3D3860</color>
 
     <!-- Ported literals (theme-design spec "Locked palette tokens"): code values
          carried explicitly, not derivable from the six tokens. -->

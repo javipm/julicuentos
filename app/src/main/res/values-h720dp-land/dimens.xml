@@ -4,6 +4,9 @@
      "Dual-orientation player layouts"; tasks S4.2). -->
 <resources>
     <dimen name="player_section_gap">24dp</dimen>
-    <dimen name="player_play_size">72dp</dimen>
+    <dimen name="player_play_size">88dp</dimen>
     <dimen name="player_bottom_padding">32dp</dimen>
+    <dimen name="player_panel_pad">28dp</dimen>
+    <dimen name="player_cover_w">560dp</dimen>
+    <dimen name="player_cover_h">315dp</dimen>
 </resources>

@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Timer screen (S5.2; specs/sleep-timer "Timer selection UI"): header (✕ +
-     "Temporizador" Fredoka 20), helper copy, and five single-select 56 dp rows
-     with 16 dp radius. Selected: solid peach + dark bold text; unselected:
-     surface + light text. Choosing applies immediately and pops back. -->
+<!-- Timer screen (design-consult-opus.md C10; specs/sleep-timer "Timer selection UI"):
+     header (✕ + "Temporizador" Fredoka 20), helper copy, and five single-select
+     64 dp rows (10 dp gaps, 20 dp corners). Rows are LEFT-aligned (faster to scan)
+     with 20 dp start padding; selected = solid peach + dark bold text + dark check
+     glyph (pre-tinted ic_check_dark, API 22-safe); unselected = surface + light text.
+     Choosing applies immediately and pops back. -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -55,16 +57,17 @@
         android:layout_height="wrap_content"
         android:paddingStart="@dimen/header_padding_h"
         android:paddingEnd="@dimen/header_padding_h"
-        android:paddingBottom="@dimen/timer_list_gap"
+        android:paddingBottom="@dimen/timer_helper_padding"
         android:text="@string/temporizador_helper" />
 
-    <!-- Options: 15 / 30 / 45 min / end of story / off -->
+    <!-- Options: 15 / 30 / 45 min / end of story / off; left-aligned, 20 dp
+         container insets matching the header (design-consult C10). -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingStart="@dimen/queue_padding_h"
-        android:paddingEnd="@dimen/queue_padding_h">
+        android:paddingStart="@dimen/header_padding_h"
+        android:paddingEnd="@dimen/header_padding_h">
 
         <TextView
             android:id="@+id/timer_row_15"
@@ -76,7 +79,9 @@
             android:clickable="true"
             android:focusable="true"
             android:foreground="?attr/selectableItemBackground"
-            android:gravity="center"
+            android:gravity="center_vertical|start"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
             android:text="@string/timer_15"
             android:textColor="@color/texto" />
 
@@ -90,7 +95,9 @@
             android:clickable="true"
             android:focusable="true"
             android:foreground="?attr/selectableItemBackground"
-            android:gravity="center"
+            android:gravity="center_vertical|start"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
             android:text="@string/timer_30"
             android:textColor="@color/texto" />
 
@@ -104,7 +111,9 @@
             android:clickable="true"
             android:focusable="true"
             android:foreground="?attr/selectableItemBackground"
-            android:gravity="center"
+            android:gravity="center_vertical|start"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
             android:text="@string/timer_45"
             android:textColor="@color/texto" />
 
@@ -118,7 +127,9 @@
             android:clickable="true"
             android:focusable="true"
             android:foreground="?attr/selectableItemBackground"
-            android:gravity="center"
+            android:gravity="center_vertical|start"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
             android:text="@string/timer_al_terminar"
             android:textColor="@color/texto" />
 
@@ -131,7 +142,9 @@
             android:clickable="true"
             android:focusable="true"
             android:foreground="?attr/selectableItemBackground"
-            android:gravity="center"
+            android:gravity="center_vertical|start"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
             android:text="@string/desactivar"
             android:textColor="@color/texto" />
     </LinearLayout>

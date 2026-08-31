@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.SeekBar
 import android.widget.TextView
+import androidx.core.content.ContextCompat
+import androidx.core.widget.ImageViewCompat
 import androidx.fragment.app.Fragment
 import com.julicuentos.app.MainActivity
 import com.julicuentos.app.R
@@ -62,6 +64,9 @@ class PlayerFragment : Fragment() {
     private lateinit var errorRetry: View
     private lateinit var errorClose: View
     private lateinit var timerLine: TextView
+    private lateinit var timerChip: View
+    private lateinit var timerChipIcon: ImageView
+    private lateinit var timerChipLabel: TextView
     private lateinit var seekController: SeekBarController
 
     /** Story id the cover/title currently show; guards async cover decode. */
@@ -92,6 +97,12 @@ class PlayerFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // Chip row (design pass C3): lateinits must bind here — bindTimer() runs in
+        // onStart and touches them even when the timer is off (review R6-001).
+        timerChip = view.findViewById(R.id.player_timer_btn)
+        timerChipIcon = view.findViewById(R.id.player_timer_icon)
+        timerChipLabel = view.findViewById(R.id.player_timer_label)
 
         content = view.findViewById(R.id.player_content)
         loading = view.findViewById(R.id.player_loading)
@@ -277,6 +288,7 @@ class PlayerFragment : Fragment() {
     // =====================================================================
 
     private fun bindTimer(snapshot: PlaybackRepository.TimerSnapshot) {
+        val armed = snapshot.state != TimerState.Off
         when (snapshot.state) {
             is TimerState.Minutes -> {
                 timerLine.text = getString(
@@ -296,6 +308,24 @@ class PlayerFragment : Fragment() {
                 halo.setTimerActive(false)
             }
         }
+        setTimerChipArmed(armed)
+    }
+
+    /** Peach-filled chip + dark bold label while the sleep timer is armed (C3). */
+    private fun setTimerChipArmed(armed: Boolean) {
+        timerChip.setBackgroundResource(
+            if (armed) R.drawable.bg_chip_timer_on else R.drawable.bg_chip_control
+        )
+        val labelColor = ContextCompat.getColor(
+            requireContext(), if (armed) R.color.fondo else R.color.temporizador
+        )
+        timerChipLabel.setTextColor(labelColor)
+        ImageViewCompat.setImageTintList(
+            timerChipIcon,
+            ContextCompat.getColorStateList(
+                requireContext(), if (armed) R.color.fondo else R.color.temporizador
+            )
+        )
     }
 
     // =====================================================================

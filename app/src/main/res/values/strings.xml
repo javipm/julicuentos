@@ -13,6 +13,7 @@
     <!-- Story action sheet -->
     <string name="reproducir_ahora">Reproducir ahora</string>
     <string name="anadir_a_la_cola">Añadir a la cola</string>
+    <string name="anadir">Añadir</string>
     <string name="cancelar">Cancelar</string>
 
     <!-- Miniplayer -->

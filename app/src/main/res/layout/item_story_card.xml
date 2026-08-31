@@ -1,25 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Story card (S3.2/S3.3): square thumbnail with "Sonando" pill (bottom-left and
-     duration chip (bottom-right over the image; Fredoka 16 sp title (2 lines monitors,
-     Nunito 14 sp 2-line synopsis, and a 52 dp ⋮ overflow button. Flat: depth
-     is surface-on-background; pill/controls ride the card — no elevation (theme-design. -->
+<!-- Story card (design-consult-opus.md C5): framed tile. Fixed 16:9 cover on a
+     matte (every card identical height, grid rows align), Fredoka 16 sp title
+     (fixed 2 lines), Nunito 13 sp 2-line synopsis closing the card (no dead band),
+     and the 52 dp overflow button moved ONTO the cover top-right. Flat: depth is
+     surface-on-background; pill/chip ride the matte - no elevation (theme-design). -->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_margin="8dp"
     android:background="@drawable/bg_card"
     android:clickable="true"
     android:focusable="true"
-    android:foreground="?attr/selectableItemBackground">
+    android:foreground="?attr/selectableItemBackground"
+    android:padding="8dp">
 
     <ImageView
         android:id="@+id/story_cover"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/scrim_overflow"
+        android:background="@drawable/bg_cover_matte"
         android:importantForAccessibility="no"
-        android:scaleType="centerCrop"
-        app:layout_constraintDimensionRatio="1:1"
+        android:scaleType="fitCenter"
+        app:layout_constraintDimensionRatio="H,16:9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -62,12 +65,12 @@
         android:id="@+id/story_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/card_padding"
-        android:layout_marginEnd="@dimen/card_padding"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
         android:layout_marginTop="@dimen/card_title_top"
         android:ellipsize="end"
         android:fontFamily="@font/fredoka"
-        android:maxLines="2"
+        android:lines="2"
         android:textColor="@color/texto"
         android:textSize="@dimen/card_title_size"
         app:layout_constraintEnd_toEndOf="parent"
@@ -76,34 +79,39 @@
 
     <TextView
         android:id="@+id/story_synopsis"
-        style="@style/TextAppearance.Jc.14"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/card_padding"
-        android:layout_marginEnd="@dimen/card_padding"
-        android:layout_marginTop="@dimen/card_text_gap"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginTop="4dp"
         android:ellipsize="end"
-        android:maxLines="2"
+        android:fontFamily="@font/nunitosans"
+        android:lineSpacingExtra="1dp"
+        android:lines="2"
+        android:textColor="@color/textoSuave"
+        android:textSize="@dimen/card_desc_size"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/story_title" />
 
+    <!-- Overflow button rides the cover top-right: 52 dp circle scrim target,
+         20 dp glyph (design-consult C5). -->
     <FrameLayout
         android:id="@+id/overflow_btn"
         android:layout_width="@dimen/min_touch"
         android:layout_height="@dimen/min_touch"
-        android:layout_marginEnd="@dimen/card_padding"
-        android:background="@drawable/bg_overflow"
+        android:layout_margin="2dp"
+        android:background="@drawable/bg_overflow_circle"
         android:clickable="true"
         android:focusable="true"
         android:foreground="?attr/selectableItemBackground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/story_synopsis">
+        app:layout_constraintEnd_toEndOf="@id/story_cover"
+        app:layout_constraintTop_toTopOf="@id/story_cover">
 
         <ImageView
-            android:layout_width="@dimen/mini_icon"
-            android:layout_height="@dimen/mini_icon"
+            android:layout_width="@dimen/overflow_icon"
+            android:layout_height="@dimen/overflow_icon"
             android:layout_gravity="center"
             android:contentDescription="@string/catalog_overflow"
             android:src="@drawable/ic_overflow" />

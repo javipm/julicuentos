@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Miniplayer bar (S3.7): 6 dp progress strip on top, then a 64 dp row with
-     48 dp cover,  title (1 line + status line "Sonando"/"En pausa", a 52 dp mint
-     play/pause chip (corner ratio 0.22 ≈ 12 dp, and a 52 dp next button. Whole
-     bar clickable → opens the player; inner play/next consume their own taps. -->
+<!-- Miniplayer bar (design-consult-opus.md C8): floating card. Margins 8 dp all
+     around (bottom too, in-flow with the grid), 4 dp mint progress strip full-bleed
+     at the top of the card, then a 72 dp row: 56 dp matte cover (fitCenter, rounded
+     via clipToOutline), Fredoka 16 sp title + 12 sp status, a 52 dp mint play/pause
+     chip (16 dp corners) and a 52 dp next button, both with 26 dp glyphs. Whole bar
+     clickable - opens the player; inner play/next consume their own taps. -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/mini_root"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="8dp"
     android:background="@drawable/bg_miniplayer"
     android:clickable="true"
+    android:clipToOutline="true"
     android:focusable="true"
     android:foreground="?attr/selectableItemBackground"
-    android:orientation="vertical"
-    android:paddingBottom="@dimen/mini_inset_bottom">
+    android:orientation="vertical">
 
     <com.julicuentos.app.ui.catalog.MiniProgressStrip
         android:id="@+id/mini_progress"
@@ -32,9 +37,9 @@
             android:id="@+id/mini_cover"
             android:layout_width="@dimen/mini_cover"
             android:layout_height="@dimen/mini_cover"
-            android:background="@color/scrim_overflow"
+            android:background="@drawable/bg_cover_matte"
             android:importantForAccessibility="no"
-            android:scaleType="centerCrop" />
+            android:scaleType="fitCenter" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -50,6 +55,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
+                android:fontFamily="@font/fredoka"
                 android:maxLines="1" />
 
             <TextView
@@ -84,6 +90,7 @@
             android:id="@+id/mini_next_btn"
             android:layout_width="@dimen/min_touch"
             android:layout_height="@dimen/min_touch"
+            android:layout_marginStart="4dp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?attr/selectableItemBackground">

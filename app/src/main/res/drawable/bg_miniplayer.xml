@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Miniplayer bar: surface #28244B, top corners 12 dp — sits flush to the bottom of the
-     screen (specs/catalog "Miniplayer"). -->
+<!-- Miniplayer card (design-consult-opus.md C8): floating card — surface, 20 dp
+     corners on ALL four sides, 1 dp hairline border; the 8 dp screen margins make
+     it read as a card of the same family as the story tiles, not chrome. -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
     <solid android:color="@color/superficie" />
-    <corners
-        android:topLeftRadius="@dimen/corner_mini"
-        android:topRightRadius="@dimen/corner_mini"
-        android:bottomLeftRadius="0dp"
-        android:bottomRightRadius="0dp" />
+    <stroke android:width="1dp" android:color="@color/borde" />
+    <corners android:radius="@dimen/corner_mini" />
 </shape>

@@ -511,3 +511,89 @@ items remain pending (DV1–DV11 minus host-verified DV2; S5.10 deferred-device)
 4. On-device acceptance remains the single open gate (DV1, DV3–DV11,
    S5.10) — host evidence covers build/tests/static manifest audits only.
 
+## Design polish pass (Opus consult implementation)
+
+Implements openspec/changes/migrate-to-native-android/design-consult-opus.md (C1–C12)
+on top of the slice-5 tree. No commit made (per brief). versionCode 5 -> 6.
+
+### What changed per change id
+
+- C0 tokens: +3 colors (`superficieAlta #332E5C`, `matte #201C3D`, `borde #3D3860`).
+- C1 landscape player: symmetric 560+32+560 dp split (panel 560 dp, pad 28 land / 24
+  port, corners 24); right column wrapped in `bg_panel` (superficie + 1dp borde
+  hairline); strict 8/16/24 ladder (title 0 / desc 8 / seek 24 / transport 24 /
+  chips 16 / timer 16); hero title `TextAppearance.Jc.28` (new rung); close button
+  56 dp `bg_circle_surface` + 28 dp glyph at 16 dp margin.
+- C2 cover: `CoverHaloView` rect-aware (width/height independent clip rects, fixed
+  dp(20) corners, outline `setRoundRect`), `FIT_CENTER` + matte background; land
+  cover 560x315 via `player_cover_w/_h`, portrait cover match_parent x 396 dp.
+- C3 transport: primary row -15/play/+15 (60/88/60 dp, gap 20, icons 32/40);
+  labelled chip row Temporizador / Añadir / Ver cola (bg_chip_control, min 52 dp,
+  icon 24 + 8 gap + Nunito Bold 14); timer chip swaps to bg_chip_timer_on + dark
+  label/icon when armed (PlayerFragment.setTimerChipArmed); new string `anadir`;
+  new glyph `ic_list` for "Ver cola".
+- C4 seek: `bg_seek_thumb` 20 dp; labels moved BELOW the 6 dp bar (gap 6); removed
+  the seek-block double inset; kept the in-flight `<clip>` progress fix.
+- C5 catalog card: fixed `H,16:9` cover on `bg_cover_matte` with `clipToOutline`
+  (StoryHolder.init), title fixed `lines=2` (Fredoka 16, margins 4), synopsis
+  Nunito 13 sp `lines=2` bottom-constrained (dead band gone), overflow moved onto
+  the cover top-right (52 dp `bg_overflow_circle`, 20 dp glyph), pill/chip margins
+  6 dp, `corner_pill` 8 dp.
+- C6 grid: w1024dp -> 4 columns; gutters 8/8/40 (bottom 12 with miniplayer);
+  header pad 24/16, subtitle 14 sp marginTop 4.
+- C7 portrait player: cover OUTSIDE the panel (match_parent x 396 dp, 24 margins),
+  24 dp gap, panel match_parent + 24 margins + bg_panel + 24 padding; same ladder.
+- C8 miniplayer: floating card (margins 8, corners 20 all + borde stroke,
+  clipToOutline), bar 72 dp, strip 4 dp, cover 56 matte fitCenter + clipToOutline,
+  pad 16, title Fredoka 16, play chip corners 16, icons 26 (play/next).
+- C9 queue rows: gaps 8, min height 76, cover 60 matte fitCenter + clipToOutline,
+  corners 20 (via corner_card), title Fredoka 16 + duration line Nunito 12 sp
+  (#AAA3CE, TimeFormat.formatTime), row buttons 26 dp glyphs (chevrons re-tinted
+  soft via ImageView tint, remove stays peach).
+- C10 timer rows: 64 dp / gap 10, left-aligned with 20 dp start padding, selected
+  row keeps solid peach (corners 20 via corner_card) + dark bold + trailing
+  pre-tinted `ic_check_dark` (24 dp) via compound drawable; helper paddingBottom 16;
+  list insets 20.
+- C11 "Marco Sonando": `bg_card_sonando` (4 dp mint frame) swapped in
+  StoryAdapter.bindPill; CoverHaloView peach timer ring 3 -> 4 dp.
+- C12 queue order: 32 dp `bg_index_circle` (Fredoka 18, #17152E) bound as
+  position+1; current row swaps to peach `bg_index_circle_current` (adapter
+  setCurrentId fed by QueueFragment).
+
+### Files touched (27)
+
+Res: colors, dimens (values, values-land, values-h720dp-land), styles, strings,
+integers (values-w1024dp), 11 drawables added (bg_panel, bg_circle_surface,
+bg_chip_control, bg_chip_timer_on, bg_cover_matte, bg_overflow_circle,
+bg_card_sonando, bg_index_circle, bg_index_circle_current, ic_list, ic_check_dark)
++ 3 rewritten (bg_miniplayer, bg_seek_thumb, bg_seekbar_track kept as-is).
+Layouts: fragment_player (portrait), layout-w600dp-land/fragment_player,
+item_story_card, fragment_catalog, view_mini_player, item_queue_row,
+fragment_timer. Kotlin: CoverHaloView, PlayerFragment, StoryAdapter,
+MiniPlayerView, QueueAdapter, QueueFragment, TimerFragment.
+
+### Build evidence
+
+- Gate 1: `./gradlew assembleDebug` -> BUILD SUCCESSFUL (per group A/B/C + final).
+- Gate 2: `./gradlew testDebugUnitTest` -> BUILD SUCCESSFUL, 61/61 tests green
+  (QueueStore 19 / TimeFormat 5 / RestoreCoordinator 7 / TimerLogic 12 /
+  PersistedStateParser 18).
+
+### Deviations from the consult
+
+1. `player_panel_w/_h` + `player_cover_w/_h` also defined in the default
+   `values/dimens.xml` (same 560/315 values): AAPT2 refused to link qualifier-only
+   dimens referenced from `layout-w600dp-land`; the portrait layouts never read
+   them, so this is inert.
+2. `queue_btn` stays 48 dp for the header ✕ glyphs; the row chevrons/remove use a
+   new `queue_row_icon` 26 dp (consult's "48 -> 26" applies to row buttons only).
+3. Portrait cover uses the consult's sanctioned alternative ("match_parent with
+   396 dp height") instead of a values-port 704x396.
+4. `bg_index_circle_current` is a second drawable (not in the +8 token list) to
+   express the peach current-item variant cleanly on API 22.
+5. The brief's note about `values-h720dp-land` holding a stale `player_cover 460dp`
+   did not match the tree (that bucket only had section_gap/play_size/bottom_pad);
+   the base `player_cover 340dp` / `player_controls_width 520dp` were removed.
+6. `player_bottom_padding`/`player_section_gap` remain defined but unused by the
+   new player layouts (dead-but-harmless, same precedent as stub_*; section_gap
+   still drives the empty/error overlays).

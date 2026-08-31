@@ -84,6 +84,7 @@ class QueueFragment : Fragment() {
     /** Re-snapshots the queue and mirrors header/empty state. Queue events only. */
     private fun onQueueChanged() {
         val ids = repo.queueSnapshot()
+        adapter.setCurrentId(repo.currentStory?.id)
         adapter.submit(ids)
         val hasItems = ids.isNotEmpty()
         emptyView.visibility = if (hasItems) View.GONE else View.VISIBLE

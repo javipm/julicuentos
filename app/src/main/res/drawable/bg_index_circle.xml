@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Queue order number circle (design-consult-opus.md C12): mint for "next up",
+     swapped to peach for the currently-playing row at bind time. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="oval">
+    <solid android:color="@color/accion" />
+</shape>

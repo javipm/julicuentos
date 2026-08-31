@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Player labelled chip (design-consult-opus.md C3): second surface step
+     #332E5C so chips read as controls on top of the #28244B panel; no stroke. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="@color/superficieAlta" />
+    <corners android:radius="16dp" />
+</shape>

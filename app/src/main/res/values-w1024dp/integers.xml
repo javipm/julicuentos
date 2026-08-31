@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- width >= 1024 dp → 5 columns (Fire landscape ~1280 dp logical）. -->
+<!-- width >= 1024 dp → 4 columns (design pass C6; Fire landscape ~1280 dp logical). -->
 <resources>
-    <integer name="catalog_grid_columns">5</integer>
+    <integer name="catalog_grid_columns">4</integer>
 </resources>

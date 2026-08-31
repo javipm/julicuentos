@@ -86,7 +86,14 @@ class TimerFragment : Fragment() {
                 if (isSelected) R.drawable.bg_timer_row_selected else R.drawable.bg_row_surface
             )
             rowView.setTextColor(
-                ContextCompat.getColor(requireContext(), if (isSelected) R.color.fondo else R.color.texto)
+                ContextCompat.getColor(
+                    requireContext(), if (isSelected) R.color.fondo else R.color.texto
+                )
+            )
+            // Trailing dark check on the selected row (design-consult C10); the glyph
+            // is pre-tinted ic_check_dark so API 22 needs no drawableTint.
+            rowView.setCompoundDrawablesRelativeWithIntrinsicBounds(
+                0, 0, if (isSelected) R.drawable.ic_check_dark else 0, 0
             )
         }
     }

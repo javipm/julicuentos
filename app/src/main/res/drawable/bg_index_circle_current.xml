@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Queue order number circle, currently-playing variant (design-consult-opus.md
+     C12): peach "this one is on now, these are next". -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="oval">
+    <solid android:color="@color/temporizador" />
+</shape>

@@ -5,38 +5,40 @@
     <dimen name="min_touch">52dp</dimen>
 
     <!-- Corners -->
-    <dimen name="corner_card">16dp</dimen>
+    <dimen name="corner_card">20dp</dimen>
+    <dimen name="overflow_icon">20dp</dimen>
+    <dimen name="card_desc_size">13sp</dimen>
     <dimen name="corner_thumb">8dp</dimen>
     <dimen name="corner_chip">8dp</dimen>
     <dimen name="corner_overflow">16dp</dimen>
-    <dimen name="corner_mini">12dp</dimen>
-    <dimen name="corner_play_chip">12dp</dimen>
+    <dimen name="corner_mini">20dp</dimen>
+    <dimen name="corner_play_chip">16dp</dimen>
     <dimen name="corner_sheet">16dp</dimen>
-    <dimen name="corner_pill">12dp</dimen>
+    <dimen name="corner_pill">8dp</dimen>
 
     <!-- Catalog grid -->
-    <dimen name="grid_padding_h">12dp</dimen>
+    <dimen name="grid_padding_h">8dp</dimen>
     <dimen name="grid_padding_top">8dp</dimen>
-    <dimen name="grid_padding_bottom">32dp</dimen>
-    <dimen name="grid_padding_bottom_mini">16dp</dimen>
+    <dimen name="grid_padding_bottom">40dp</dimen>
+    <dimen name="grid_padding_bottom_mini">12dp</dimen>
     <dimen name="card_padding">12dp</dimen>
     <dimen name="card_text_gap">6dp</dimen>
     <dimen name="card_title_top">10dp</dimen>
     <dimen name="card_title_size">16sp</dimen>
-    <dimen name="overlay_margin">8dp</dimen>
+    <dimen name="overlay_margin">6dp</dimen>
     <dimen name="pill_padding_h">10dp</dimen>
     <dimen name="pill_padding_v">3dp</dimen>
     <dimen name="chip_padding_h">8dp</dimen>
     <dimen name="chip_padding_v">3dp</dimen>
 
     <!-- Miniplayer -->
-    <dimen name="mini_bar_height">64dp</dimen>
-    <dimen name="mini_strip_height">6dp</dimen>
-    <dimen name="mini_cover">48dp</dimen>
+    <dimen name="mini_bar_height">72dp</dimen>
+    <dimen name="mini_strip_height">4dp</dimen>
+    <dimen name="mini_cover">56dp</dimen>
     <dimen name="mini_inset_bottom">8dp</dimen>
     <dimen name="mini_text_gap">2dp</dimen>
-    <dimen name="mini_padding_h">10dp</dimen>
-    <dimen name="mini_icon">24dp</dimen>
+    <dimen name="mini_padding_h">16dp</dimen>
+    <dimen name="mini_icon">26dp</dimen>
 
     <!-- Sheet -->
     <dimen name="sheet_padding">20dp</dimen>
@@ -45,8 +47,8 @@
 
     <!-- Header -->
     <dimen name="header_padding_h">20dp</dimen>
-    <dimen name="header_padding_top">20dp</dimen>
-    <dimen name="header_padding_bottom">12dp</dimen>
+    <dimen name="header_padding_top">24dp</dimen>
+    <dimen name="header_padding_bottom">16dp</dimen>
 
     <!-- Placeholder stub screens -->
     <dimen name="stub_padding">24dp</dimen>
@@ -56,31 +58,45 @@
              sectionGap 24, playSize 72, bottomPadding 32; values-land keeps the
              compact overrides 12/64/16 and values-h720dp-land restores the roomy set. -->
         <dimen name="player_top_bar_size">56dp</dimen>
-        <dimen name="player_transport_icon">52dp</dimen>
-        <dimen name="player_cover">340dp</dimen>
-        <dimen name="player_land_gap">28dp</dimen>
-        <dimen name="player_controls_width">520dp</dimen>
+        <dimen name="player_transport_icon">32dp</dimen>
+        <dimen name="player_land_gap">32dp</dimen>
         <dimen name="player_section_gap">24dp</dimen>
         <dimen name="player_bottom_padding">32dp</dimen>
         <dimen name="player_desc_gap">8dp</dimen>
-        <dimen name="player_seek_labels_gap">8dp</dimen>
-        <dimen name="player_transport_top_gap">24dp</dimen>
-        <dimen name="player_transport_gap">8dp</dimen>
-        <dimen name="player_play_size">72dp</dimen>
-        <dimen name="player_icon_play">34dp</dimen>
-        <dimen name="player_pill_top_gap">24dp</dimen>
+        <dimen name="player_seek_labels_gap">6dp</dimen>
+        <dimen name="player_seek_top_gap">24dp</dimen>
+    <dimen name="player_transport_top_gap">24dp</dimen>
+        <dimen name="player_transport_gap">20dp</dimen>
+        <dimen name="player_play_size">88dp</dimen>
+        <dimen name="player_icon_play">40dp</dimen>
+        <dimen name="player_pill_top_gap">16dp</dimen>
         <dimen name="player_pill_padding_h">20dp</dimen>
-        <dimen name="player_timer_line_gap">24dp</dimen>
+        <dimen name="player_timer_line_gap">16dp</dimen>
 
         <!-- Queue + timer screens (S5.1/S5.2) -->
-        <dimen name="queue_row_min_height">72dp</dimen>
-        <dimen name="queue_cover">56dp</dimen>
+        <dimen name="queue_row_min_height">76dp</dimen>
+        <dimen name="queue_cover">60dp</dimen>
         <dimen name="queue_btn">48dp</dimen>
-        <dimen name="queue_gap">4dp</dimen>
-        <dimen name="corner_cover">10dp</dimen>
-        <dimen name="timer_row_height">56dp</dimen>
-        <dimen name="timer_list_gap">8dp</dimen>
+    <dimen name="queue_row_icon">26dp</dimen>
+    <dimen name="queue_index_size">32dp</dimen>
+        <dimen name="queue_gap">8dp</dimen>
+        <dimen name="corner_cover">12dp</dimen>
+        <dimen name="timer_row_height">64dp</dimen>
+        <dimen name="timer_list_gap">10dp</dimen>
         <dimen name="queue_padding_h">12dp</dimen>
         <dimen name="queue_padding_top">8dp</dimen>
         <dimen name="queue_padding_bottom">16dp</dimen>
-    </resources>
+    <dimen name="timer_helper_padding">16dp</dimen>
+        <dimen name="corner_panel">24dp</dimen>
+    <dimen name="player_panel_pad">24dp</dimen>
+    <dimen name="player_panel_w">560dp</dimen>
+    <dimen name="player_cover_w">560dp</dimen>
+    <dimen name="player_cover_h">315dp</dimen>
+    <dimen name="player_port_inset">24dp</dimen>
+    <dimen name="player_cover_port_h">396dp</dimen>
+    <dimen name="player_cover_panel_gap">24dp</dimen>
+    <dimen name="player_close_icon">28dp</dimen>
+    <dimen name="player_transport_btn_size">60dp</dimen>
+    <dimen name="player_chip_icon">24dp</dimen>
+    <dimen name="player_chip_gap">8dp</dimen>
+</resources>

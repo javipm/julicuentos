@@ -84,6 +84,10 @@ class StoryAdapter(
     private fun bindPill(holder: StoryHolder, position: Int) {
         val isCurrent = stories[position].id == currentId
         holder.pill.visibility = if (isCurrent) View.VISIBLE else View.GONE
+        // The whole card announces "playing": 4 dp mint frame (design-consult C11).
+        holder.itemView.setBackgroundResource(
+            if (isCurrent) R.drawable.bg_card_sonando else R.drawable.bg_card
+        )
     }
 
     class StoryHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -93,5 +97,11 @@ class StoryAdapter(
         val duration = itemView.findViewById<TextView>(R.id.chip_duration)
         val cover = itemView.findViewById<ImageView>(R.id.story_cover)
         val pill = itemView.findViewById<TextView>(R.id.pill_sonando)
+
+        init {
+            // Real rounded corners on the cover bitmap (design-consult C5); the
+            // matte background supplies the outline, clipToOutline does the rest.
+            cover.clipToOutline = true
+        }
     }
 }

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Cover mat (design-consult-opus.md C2/C5): #201C3D letterbox mat behind
+     fitCenter cover art, 12 dp corners — the passe-partout behind every cover. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="@color/matte" />
+    <corners android:radius="12dp" />
+</shape>

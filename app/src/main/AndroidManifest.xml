@@ -3,9 +3,14 @@
      PlaybackService follows the media3 canonical manifest pattern: the service exposes
      the MediaSessionService interface action so MediaButtonReceiver can hand
      media-button intents to it on API 22 (design.md §5; S2.5/S2.6). -->
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Exactly the delivery-spec permission set; INTERNET is absent by design. -->
+    <!-- verify R-1 (owner decision): media3 AARs merge ACCESS_NETWORK_STATE; the app
+         resolves only asset:/// and file:// sources, so the permission is removed to
+         keep the delivery-spec surface. If a future media3 upgrade needs it, revert. -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" tools:node="remove" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />

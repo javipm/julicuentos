@@ -15,6 +15,12 @@
         <item name="android:textColor">@color/texto</item>
     </style>
 
+    <style name="TextAppearance.Jc.28" parent="TextAppearance.Jc">
+        <item name="android:textSize">28sp</item>
+        <item name="android:fontFamily">@font/fredoka</item>
+        <item name="android:textColor">@color/texto</item>
+    </style>
+
     <style name="TextAppearance.Jc.24" parent="TextAppearance.Jc">
         <item name="android:textSize">24sp</item>
         <item name="android:fontFamily">@font/fredoka</item>

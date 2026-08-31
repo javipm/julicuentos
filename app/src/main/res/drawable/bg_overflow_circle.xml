@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Cover ⋮ scrim circle (design-consult-opus.md C5): the overflow button sits on
+     the cover art top-right; 52 dp circle keeps the touch target, scrim keeps it
+     legible over art. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="oval">
+    <solid android:color="@color/scrim_overflow" />
+</shape>

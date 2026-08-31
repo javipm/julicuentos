@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Timer chip armed (design-consult-opus.md C3): solid peach fill with dark
+     bold label — same selected-state trick as bg_timer_row_selected. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="@color/temporizador" />
+    <corners android:radius="16dp" />
+</shape>

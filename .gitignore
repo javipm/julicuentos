@@ -12,7 +12,11 @@ local.properties
 # Gradle distribution seeded locally (unpacked at tools/gradle-dist/, see gradle/wrapper/gradle-wrapper.properties)
 tools/gradle-dist/
 
-# Bundled audio (~650MB, never in review surface) - see tasks S1.x
+# Contenido local del reproductor: audio, caratulas y catalogo.
+# No se versiona: es material propio de cada usuario y no puede distribuirse.
+# Cada quien aporta sus propios audios y genera su stories.json.
 app/src/main/assets/audio/
+app/src/main/assets/covers/
+app/src/main/assets/stories.json
 audio-download.log
 audio-download.pid

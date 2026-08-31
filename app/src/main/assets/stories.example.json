@@ -1,0 +1,18 @@
+[
+  {
+    "id": "mi-primer-cuento",
+    "titulo": "Mi primer cuento",
+    "descripcion": "Plantilla de catalogo. Copia este fichero a stories.json y anade una entrada por cada audio que tengas. El campo id es la clave de todo: debe coincidir con el nombre del mp3 y con la carpeta de la caratula.",
+    "duracionSegundos": 1200,
+    "cover": "covers/mi-primer-cuento/cover.jpg",
+    "thumbnail": "covers/mi-primer-cuento/thumbnail.jpg"
+  },
+  {
+    "id": "otro-cuento",
+    "titulo": "Otro cuento",
+    "descripcion": "Segunda entrada de ejemplo. duracionSegundos es un entero en segundos; puedes obtenerlo con: ffprobe -v error -show_entries format=duration -of csv=p=0 audio/otro-cuento.mp3",
+    "duracionSegundos": 2045,
+    "cover": "covers/otro-cuento/cover.jpg",
+    "thumbnail": "covers/otro-cuento/thumbnail.jpg"
+  }
+]

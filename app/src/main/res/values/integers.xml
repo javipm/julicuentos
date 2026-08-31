@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Catalog grid columns < 768 dp logical width → 2 (design.md D6; specs/catalog). -->
+<resources>
+    <integer name="catalog_grid_columns">2</integer>
+</resources>

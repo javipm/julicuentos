@@ -19,9 +19,9 @@ object BitmapDecoder {
 
     /**
      * Decodes an asset-relative JPEG path (e.g. "covers/<id>/cover.jpg") downsampled
-     * so the longer side <= approximately [maxPx]. Never returns a bitmap
-     * larger than [maxPx] on either side? The standard `inSampleSize` loop targets
-     * both dimensions <= 2x maxPx, then decodes; the actual result is ~maxPx or less.
+     * with power-of-two `inSampleSize`. Because of that granularity the decoded
+     * longer side lands in the (maxPx, 2*maxPx] window (review R3-003: the previous
+     * doc overclaimed "<= maxPx"). Memory stays bounded by the caller-side caches.
      */
     fun decodeSampled(context: Context, assetPath: String, maxPx: Int): Bitmap? {
 

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Placeholder screens for the stub Player/Queue/Timer fragments (S3.1): title,
+       subtitle note, "Volver al catálogo" back link (pops the fragment back stack.). -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="@dimen/stub_padding">
+
+    <TextView
+        android:id="@+id/placeholder_title"
+        style="@style/TextAppearance.Jc.24"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/placeholder_subtitle"
+        style="@style/TextAppearance.Jc.14"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/stub_gap"
+        android:gravity="center"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/placeholder_back"
+        style="@style/TextAppearance.Jc.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/stub_gap"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:gravity="center"
+        android:minHeight="@dimen/action_row_min"
+        android:minWidth="@dimen/min_touch"
+        android:paddingStart="@dimen/stub_padding"
+        android:paddingEnd="@dimen/stub_padding"
+        android:text="@string/volver_al_catalogo"
+        android:textColor="@color/textoSuave" />
+</LinearLayout>

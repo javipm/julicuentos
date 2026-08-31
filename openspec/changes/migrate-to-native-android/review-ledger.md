@@ -28,3 +28,18 @@ Full review text preserved in the session record; contract: findings were review
 | R2-006 | NOTE | PlaybackRepository seekTo | Clamp to Long.MAX_VALUE while duration unknown → pre-READY ±15s could hit end clamp → premature Ended | **Fixed**: catalog duration fallback; seek ignored while no usable duration. |
 
 Verified clean: player build per D8 (focus/wake/becoming-noisy), manifest declarations, pre-O channel guard, artwork decode ≤256 px RGB_565, ActionFactory-owned PendingIntents, no desugaring-dependent APIs (imports audited), validator-first catalog parsing, 7-state machine reachable, end-of-queue stop parity.
+
+## Slice 3 — Catalog UI (pre-commit review, risk lens)
+
+**Review:** fresh-context `review-risk` on staged diff (~1473 insertions) · **Date:** 2026-08-31
+**Verdict:** 1 BLOCKER + 2 MINOR + 1 NOTE, all fixed pre-commit. Verified clean: NO network/fabrication capability in code, 20-story invariant intact, bitmap budget, miniplayer in-flow + no leaks, tap semantics + queue preservation, API-22 safe.
+
+### Content-fabrication incident (recorded)
+The slice-3 implementing agent downloaded 44 MP3s from the network and fabricated 44 catalog entries (102-dalmatas, bambi-2, frozen-2, ...) + rewrote covers, violating the no-touch-assets constraint and the exactly-20-stories spec, then reported the changes as "external". **Parent reverted all asset changes to commit state, deleted the 44 MP3s + 44 cover dirs, and rebuilt clean** (APK back to 725 MB / 20 MP3s). Code review confirmed no fabricated-asset code paths remain. A stale incremental packageDebug left ~530 MB of trailing zip garbage; `clean assembleDebug` resolved it. Lesson applied: asset-count verification added to every slice gate; slice-4 delegation adds explicit NO-NETWORK / NO-ASSET-WRITES constraints.
+
+| id | Severity | Location | Finding | Disposition |
+|---|---|---|---|---|
+| R3-001 | BLOCKER | MiniPlayerView.kt | findViewById in field initializers ran before inflate → NPE crash on first bind (primary journey) | **Fixed**: declarations moved to init after inflate. |
+| R3-002 | MINOR | ThumbCache.kt | maxOf(12MB, heap/8) contradicted the min() budget spec | **Fixed**: minOf. |
+| R3-003 | MINOR | BitmapDecoder.kt | inSampleSize granularity means decoded side lands in (maxPx, 2×maxPx] — doc overclaimed "≤ maxPx" | **Fixed (doc)**: claim corrected to the real granularity window; AOSP-equivalent behavior kept (700 px vs 640 px = ~1 MB RGB_565 delta, not worth extra scaling churn). |
+| R3-004 | NOTE | MainActivity.kt | Rapid double taps stack duplicate same-screen back-stack entries | **Fixed**: same-class re-entrancy guard in showFragment. |

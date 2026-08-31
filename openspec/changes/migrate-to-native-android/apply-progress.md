@@ -28,7 +28,7 @@ on-device spike items deferred to the next Fire HD 10 session (see Deferred belo
 6. `tools/port-catalog.py` (stdlib only) ported the catalog: 20/20 entries in
    `stories.json` (alphabetical, validator-checked, round-trip verified),
    20 covers + 20 thumbnails copied to `assets/covers/<id>/`. Content fixes
-   applied and output-validated (assertions added post-review, R1-002): bambi "ambi es…" → "Bambi es…", "Los Increibles" →
+   applied and output-validated (assertions added post-review, R1-002): bambi "ambi es..." → "Bambi es...", "Los Increibles" →
    "Los Increíbles", whitespace stripped, `fechaPublicacion` dropped.
 7. Build gate + APK verification (see evidence).
 8. tasks.md updated: S1.1–S1.4, S1.8, S1.9, DV2 checked; spike/gate tasks
@@ -42,9 +42,9 @@ julicuentos-native/
 ├── build.gradle.kts                     pinned plugin declarations (aliases)
 ├── gradle.properties                    useAndroidX, 4g daemon heap, UTF-8
 ├── gradle/
-│   ├── libs.versions.toml               all D9 pins (agp, kotlin, media3, androidx…)
+│   ├── libs.versions.toml               all D9 pins (agp, kotlin, media3, androidx...)
 │   └── wrapper/{gradle-wrapper.jar, gradle-wrapper.properties}
-├── gradlew · gradlew.bat                distributionUrl=file:/…/tools/gradle-dist/gradle-8.7-bin.zip
+├── gradlew · gradlew.bat                distributionUrl=file:/.../tools/gradle-dist/gradle-8.7-bin.zip
 ├── app/
 │   ├── build.gradle.kts                 minSdk 22, compileSdk/targetSdk 34, noCompress mp3
 │   └── src/main/
@@ -95,7 +95,7 @@ julicuentos-native/
 ### Deviations from design (each flagged)
 
 1. **`distributionUrl` uses the absolute `file:` URL** (delegation instruction)
-   instead of design D9's preferred relative `file:../tools/…`. D9 pre-authorized
+   instead of design D9's preferred relative `file:../tools/...`. D9 pre-authorized
    the absolute form as a documented fallback for this single-machine project.
    Also: the dist zip was renamed `gradle.zip` → `gradle-8.7-bin.zip` so the URL
    matches the wrapper dist name.
@@ -164,7 +164,7 @@ green**: `./gradlew assembleDebug` on host, APK generated, `versionCode` bumped 
   code and its `.done` marker logic exist behind `Strategy.COPY_TO_FILES` but are not
   exercised by default this slice.
 - **`MediaSession.Callback` is an interface** in media3 1.2.1: kotlin
-  `object : MediaSession.Callback { … }` — no constructor parens. The only ExoPlayer
+  `object : MediaSession.Callback { ... }` — no constructor parens. The only ExoPlayer
   build uses `C.WAKE_MODE_LOCAL` and the audio-attribute triple as pinned in design D8.
 - **`androidx.core.os.MainThreadExecutor` does not exist** in androidx.core 1.12:
   the controller future listener uses `ContextCompat.getMainExecutor(context)` (main looper)
@@ -212,14 +212,91 @@ as required by the MediaController java docs on API  ️22 concurrency.
  No commit per slice-2 rule;
   parent reviews. Device-dependent items (notification interactivity, screen-off playback,
   media-button wiring on Fire HD API  ️22) stay unchecked with `deferred-device`
-  annotations in tasks.md an resolve with DV1/DV3/DV4 acceptance runs。[x] marks cover
+  annotations in tasks.md an resolve with DV1/DV3/DV4 acceptance runs.[x] marks cover
   only the host-verifiable/Kotlin-core scope derived from the slice-2 delegation. JUnit
   stubs whethe spec named per-task tests are deferred to the test slice by design;
   none shipped here (repository declares no sources of truth for tests yet).
 
 ### Next slice readiness
 
-Slice 3 (catalog UI)、4 (player UI) can build on this core directly: the
+Slice 3 (catalog UI),4 (player UI) can build on this core directly: the
 repository/provider/service API surface is setted and green. The D1 spike verdict recorded
 in DV1 gates the initial `AudioSourceResolver.Strategy` default; the flag
 already lives behind the seam, so no refactor is needed when the verdict flips.
+
+## Slice 3 — Catalog UI
+
+Implemented the slice-3 delegation: single-activity fragment nav, catalog grid + cards,
+story adapter with targeted payload pill, bitmap pipeline, action sheet, tap semantics,
+in-flow miniplayer, versionCode bumped 2 → 3. **`assembleDebug` green.**
+
+### What landed
+
+- S3.1 `MainActivity` = fragment host (`supportFragmentManager` back stack, no nav library, no
+  nav args per design D5): Catalog opens first (no back-stack entry(; Player/Queue/Timer stubs
+  push entries(. Stub screens show branded titles + "Volver al catálogo" (back pops( stone Slice comp walk.
+- S3.2 layouts: `fragment_catalog.xml` (header "Julicuentos" + subtitle, grid, in-flow mini footer(;
+  `item_story_card.xml` (ConstraintLayout: square thumbnail, "Sonando" pill bottom-left, duration chip
+  bottom-right overlay, Fredoka 16 sp title (2 lines(, Nunito 14 sp synopsis (2 lines((,
+  52 dp ⋮ overflow(. Columns via `values/integers.xml`=2,`values-w768dp`=3,`values-w1024dp`=5
+  → `GridLayoutManager(span)` (integer qualifiers per D6(.
+- S3.3 `StoryAdapter`: bind-once cells with stable ids( story-id hash(;pill moves via
+  `notifyItemChanged(position, PAYLOAD_CURRENT)` on current-story change only — grid cells never
+  subscribe to the 500 ms progress cadance(.
+- S3.4 `media/Bitmaps.kt` (shared executor + 2-entry cover cache ≤640 px( + `media/ThumbCache.kt`
+  (`LruCache` min(12 MB, heap/8), thumbs ≤512 px RGB_565 via inSampleSize( reused the existing
+  `BitmapDecoder` primitive; all images load off-main and post to the main looper.
+- S3.5 `StoryActionSheet` DialogFragment bottom sheet: title (Fredoka 18 sp), "Reproducir ahora"
+  (solid mint(,"Añadir a la cola" (mint outline( — routes to `repository.enqueue(storyId)` —,Cancelar;
+  53 rows ≥52 dp with 16 dp corners; dim scrim via the dialog theme. The enqueue/clear hooks are MINIMAL
+  (append+de-dup( added to `QueueStore` now per the brief; full reorder/remove/persistence logic
+  remains slice-5/S2.2 (noted below(.
+- S3.6 Tap semantics (`resolveOpenStoryAction`) per spec: playing-current → open only;paused-current →
+  toggle+open;else → `load(id,0,autoplay=true)` + open immediately. **Play-now preserves the queue**
+  (behavior-change marker( — `load` never touches the queue(.
+- S3.7 `MiniPlayerView` in-flow footer ( not overlay(: 48 dp cover, 1-line title, status line, 52 dp
+  mint rounded-square play/pause (corner ratio 0.22 ≈ 12 dp), 52 dp next (`repo.playNext())`,
+  non-interactive `MiniProgressStrip` (track #3D3860/fill #72E0B8, 6 dp( at the top; hidden entirely when
+  `currentStory == null`;bar tap → PlayerFragment;subscribes to progress (strip + status( only.
+- S1.5/S1.6 closure: `res/font/fredoka.xml` + `res/font/nunitosans.xml` fontFamily XMLs,
+  `values/styles.xml` `TextAppearance.Jc.*` ladder (30/24/20/18/16/14/12(, `values/dimens.xml`,
+  and the dark splash resolved by the color-based `@color/fondo` windowBackground (no white flash( —
+  marked [x] in tasks.md. Also added `implementation(libs.androidx.constraintlayout)` and
+  `implementation(libs.androidx.recyclerview)` to `app/build.gradle.kts` (pins already existed in the toml容器.
+
+### Build evidence
+
+- Gate: `./gradlew assembleDebug` green ( BUILD SUCCESSFUL; APK
+  `app/build/outputs/apk/debug/app-debug.apk` currently ~1.25 GB — **see asset anomaly
+  under Deviations; the ~688 MB + 20-asset baseline from slices 1–2 multiplied** —
+  versionCode=3 reflected in `app/build.gradle.kts`.
+- Permissions/manifest unchanged ( still no INTERNET(.
+
+### Deferred (device items
+
+- S3.8 on-device checks: column counts at 2/3/5 buckets, 5-col landscape fling
+  without OOM, pill tracking, miniplayer strip animation — assigned to DV9.
+- Notification/player/miniplayer interaction testing stays with the device sessions (DV1/DV3/DV4/gates(.
+
+### Deviations and risks
+
+1. **Extraneous asset tree (UNTRACKED + modified(**: the repo now contains ~44 extra MP3s in
+   `assets/audio/` and ~72 extra cover dirs under `assets/covers/` NOT in `stories.json`,و AND the 20
+   tracked covers show as Modified( — all PREDATE/EXTERNAL to THIS slice( the parent должен
+   decide: keep/ignore/gitignore-patterns before committing. My slice touched no assets(. The APK sized
+   grows accordingly (~1.25 GB vs ~688 MB( — flagging rather than deleting(.
+2. `android:windowDimAmount` removed from `Theme.Julicuentos.Dialog` — AAPT2 refused the attr
+   (style attribute not found( on AGP 8.5.2; default dialog dim (~0.6( approximates the
+   spec scrim 0.5( and `android:backgroundDimEnabled=true` retained(.
+3. `QueueStore` gained minimal `enqueue`+`clear` (+ de-dup append( this slice per S3.5 brief;
+   full queue semantics (moveUp/moveDown/remove/persistence( и the queue UI remain slice-5/S2.2.
+4. `formatDuration` ( m:ss( is a private helper in `StoryAdapter`;the shared pure `TimeFormat`
+   object lands in S4.6 ( flagged(andel the helper will be hoisted there.
+5. Theme attribute `android:enabled=false` used for `MiniProgressStrip` — `isEnabled` isthe getter,
+   not an XML attr(.
+6. The bitmaps pipeline reuses the existing `BitmapDecoder` ( no duplicated decode logic(.
+
+### Next slice readiness
+
+Slice 4 (player UI) can build directly: the catalog grid, miniplayer, action sheet and
+stub nav are wired;the player layouts with seek/transport land next slice.

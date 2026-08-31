@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Spanish user-facing strings (theme-design spec "Spanish strings registry").
-     Slice 1 base set; the full verbatim registry pass lands in S5.8. -->
+     Slice 3 adds the catalog/action-sheet/miniplayer set and removes the slice-1
+     placeholder. The full verbatim registry pass lands in S5.8. -->
 <resources>
     <string name="app_name">Julicuentos</string>
 
     <!-- Catalog screen -->
     <string name="catalog_title">Julicuentos</string>
     <string name="catalog_subtitle">Elige un cuento y empieza a escuchar</string>
+    <string name="catalog_overflow">Más opciones</string>
+    <string name="story_description_fallback">Cuento</string>
+
+    <!-- Story action sheet -->
+    <string name="reproducir_ahora">Reproducir ahora</string>
+    <string name="anadir_a_la_cola">Añadir a la cola</string>
+    <string name="cancelar">Cancelar</string>
+
+    <!-- Miniplayer -->
+    <string name="sonando">Sonando</string>
+    <string name="en_pausa">En pausa</string>
 
     <!-- Transport labels -->
     <string name="play">Reproducir</string>
@@ -15,9 +27,20 @@
 
     <!-- Player eyebrow -->
     <string name="reproduciendo">REPRODUCIENDO</string>
+    <string name="reproductor">Reproductor</string>
 
-    <!-- Slice 1 placeholder screen (removed in slice 3) -->
-    <string name="slice1_placeholder">Julicuentos — Slice 1</string>
+    <!-- Navigation / shared -->
+    <string name="volver_al_catalogo">Volver al catálogo</string>
+    <string name="cola">Cola</string>
+    <string name="temporizador">Temporizador</string>
+
+    <!-- Placeholder stubs (Player/Queue/Timer screens; replaced when the real
+         screens land in slices 4/5 — same pattern as the removed slice-1 stub). -->
+    <string name="player_stub_subtitle">La pantalla del reproductor llegará en una próxima versión.</string>
+    <string name="queue_stub_subtitle">La cola llegará en una próxima versión.</string>
+    <string name="timer_stub_subtitle">El temporizador llegará en una próxima versión.</string>
+
+    <!-- Notification (slice 2) -->
     <string name="notification_channel_name">Reproducción</string>
     <string name="notif_play_pause">Reproducir / Pausa</string>
     <string name="notif_skip_back_15">Retroceder 15 s</string>

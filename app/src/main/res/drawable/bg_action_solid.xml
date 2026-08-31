@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Sheet primary action: solid mint fill (text = #17152E on-accent), 16 dp corners. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="@color/accion" />
+    <corners android:radius="@dimen/corner_sheet" />
+</shape>

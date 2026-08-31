@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Play glyph, dark #17152E (text-on-accent) — for mint chips (miniplayer etc.). -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#FF17152E"
+        android:pathData="M8,5v14l11,-7z" />
+</vector>

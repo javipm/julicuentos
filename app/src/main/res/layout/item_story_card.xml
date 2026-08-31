@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Story card (S3.2/S3.3): square thumbnail with "Sonando" pill (bottom-left and
+     duration chip (bottom-right over the image; Fredoka 16 sp title (2 lines monitors,
+     Nunito 14 sp 2-line synopsis, and a 52 dp ⋮ overflow button. Flat: depth
+     is surface-on-background; pill/controls ride the card — no elevation (theme-design. -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_card"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground">
+
+    <ImageView
+        android:id="@+id/story_cover"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/scrim_overflow"
+        android:importantForAccessibility="no"
+        android:scaleType="centerCrop"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/pill_sonando"
+        style="@style/TextAppearance.Jc.Badge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/overlay_margin"
+        android:layout_marginStart="@dimen/overlay_margin"
+        android:background="@drawable/bg_pill_sonando"
+        android:paddingStart="@dimen/pill_padding_h"
+        android:paddingEnd="@dimen/pill_padding_h"
+        android:paddingTop="@dimen/pill_padding_v"
+        android:paddingBottom="@dimen/pill_padding_v"
+        android:text="@string/sonando"
+        android:textColor="@color/fondo"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/story_cover"
+        app:layout_constraintStart_toStartOf="@id/story_cover" />
+
+    <TextView
+        android:id="@+id/chip_duration"
+        style="@style/TextAppearance.Jc.12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/overlay_margin"
+        android:layout_marginEnd="@dimen/overlay_margin"
+        android:background="@drawable/bg_chip_duration"
+        android:paddingStart="@dimen/chip_padding_h"
+        android:paddingEnd="@dimen/chip_padding_h"
+        android:paddingTop="@dimen/chip_padding_v"
+        android:paddingBottom="@dimen/chip_padding_v"
+        android:textColor="@color/texto"
+        app:layout_constraintBottom_toBottomOf="@id/story_cover"
+        app:layout_constraintEnd_toEndOf="@id/story_cover" />
+
+    <TextView
+        android:id="@+id/story_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/card_padding"
+        android:layout_marginEnd="@dimen/card_padding"
+        android:layout_marginTop="@dimen/card_title_top"
+        android:ellipsize="end"
+        android:fontFamily="@font/fredoka"
+        android:maxLines="2"
+        android:textColor="@color/texto"
+        android:textSize="@dimen/card_title_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/story_cover" />
+
+    <TextView
+        android:id="@+id/story_synopsis"
+        style="@style/TextAppearance.Jc.14"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/card_padding"
+        android:layout_marginEnd="@dimen/card_padding"
+        android:layout_marginTop="@dimen/card_text_gap"
+        android:ellipsize="end"
+        android:maxLines="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/story_title" />
+
+    <FrameLayout
+        android:id="@+id/overflow_btn"
+        android:layout_width="@dimen/min_touch"
+        android:layout_height="@dimen/min_touch"
+        android:layout_marginEnd="@dimen/card_padding"
+        android:background="@drawable/bg_overflow"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/story_synopsis">
+
+        <ImageView
+            android:layout_width="@dimen/mini_icon"
+            android:layout_height="@dimen/mini_icon"
+            android:layout_gravity="center"
+            android:contentDescription="@string/catalog_overflow"
+            android:src="@drawable/ic_overflow" />
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

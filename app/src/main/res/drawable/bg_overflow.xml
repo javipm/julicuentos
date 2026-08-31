@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Card ⋮ overflow button scrim: rgba(23,21,46,0.55) (locked literal). -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="@color/scrim_overflow" />
+    <corners android:radius="@dimen/corner_overflow" />
+</shape>

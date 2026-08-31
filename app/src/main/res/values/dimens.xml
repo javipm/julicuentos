@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Spacing/geometry tokens (design.md D6; theme-design spec 52 dp touch budget). -->
+<resources>
+    <!-- Touch budget -->
+    <dimen name="min_touch">52dp</dimen>
+
+    <!-- Corners -->
+    <dimen name="corner_card">16dp</dimen>
+    <dimen name="corner_thumb">8dp</dimen>
+    <dimen name="corner_chip">8dp</dimen>
+    <dimen name="corner_overflow">16dp</dimen>
+    <dimen name="corner_mini">12dp</dimen>
+    <dimen name="corner_play_chip">12dp</dimen>
+    <dimen name="corner_sheet">16dp</dimen>
+    <dimen name="corner_pill">12dp</dimen>
+
+    <!-- Catalog grid -->
+    <dimen name="grid_padding_h">12dp</dimen>
+    <dimen name="grid_padding_top">8dp</dimen>
+    <dimen name="grid_padding_bottom">32dp</dimen>
+    <dimen name="grid_padding_bottom_mini">16dp</dimen>
+    <dimen name="card_padding">12dp</dimen>
+    <dimen name="card_text_gap">6dp</dimen>
+    <dimen name="card_title_top">10dp</dimen>
+    <dimen name="card_title_size">16sp</dimen>
+    <dimen name="overlay_margin">8dp</dimen>
+    <dimen name="pill_padding_h">10dp</dimen>
+    <dimen name="pill_padding_v">3dp</dimen>
+    <dimen name="chip_padding_h">8dp</dimen>
+    <dimen name="chip_padding_v">3dp</dimen>
+
+    <!-- Miniplayer -->
+    <dimen name="mini_bar_height">64dp</dimen>
+    <dimen name="mini_strip_height">6dp</dimen>
+    <dimen name="mini_cover">48dp</dimen>
+    <dimen name="mini_inset_bottom">8dp</dimen>
+    <dimen name="mini_text_gap">2dp</dimen>
+    <dimen name="mini_padding_h">10dp</dimen>
+    <dimen name="mini_icon">24dp</dimen>
+
+    <!-- Sheet -->
+    <dimen name="sheet_padding">20dp</dimen>
+    <dimen name="action_row_min">52dp</dimen>
+    <dimen name="action_row_gap">12dp</dimen>
+
+    <!-- Header -->
+    <dimen name="header_padding_h">20dp</dimen>
+    <dimen name="header_padding_top">20dp</dimen>
+    <dimen name="header_padding_bottom">12dp</dimen>
+
+    <!-- Placeholder stub screens -->
+    <dimen name="stub_padding">24dp</dimen>
+    <dimen name="stub_gap">12dp</dimen>
+</resources>

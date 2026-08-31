@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Miniplayer bar (S3.7): 6 dp progress strip on top, then a 64 dp row with
+     48 dp cover,  title (1 line + status line "Sonando"/"En pausa", a 52 dp mint
+     play/pause chip (corner ratio 0.22 ≈ 12 dp, and a 52 dp next button. Whole
+     bar clickable → opens the player; inner play/next consume their own taps. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mini_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_miniplayer"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/mini_inset_bottom">
+
+    <com.julicuentos.app.ui.catalog.MiniProgressStrip
+        android:id="@+id/mini_progress"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/mini_strip_height"
+        android:enabled="false" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/mini_bar_height"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/mini_padding_h"
+        android:paddingEnd="@dimen/mini_padding_h">
+
+        <ImageView
+            android:id="@+id/mini_cover"
+            android:layout_width="@dimen/mini_cover"
+            android:layout_height="@dimen/mini_cover"
+            android:background="@color/scrim_overflow"
+            android:importantForAccessibility="no"
+            android:scaleType="centerCrop" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/mini_padding_h"
+            android:layout_marginEnd="@dimen/mini_padding_h"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/mini_title"
+                style="@style/TextAppearance.Jc.16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1" />
+
+            <TextView
+                android:id="@+id/mini_status"
+                style="@style/TextAppearance.Jc.12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mini_text_gap"
+                android:ellipsize="end"
+                android:maxLines="1" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/mini_play_btn"
+            android:layout_width="@dimen/min_touch"
+            android:layout_height="@dimen/min_touch"
+            android:background="@drawable/bg_play_chip"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground">
+
+            <ImageView
+                android:id="@+id/mini_play_icon"
+                android:layout_width="@dimen/mini_icon"
+                android:layout_height="@dimen/mini_icon"
+                android:layout_gravity="center"
+                android:contentDescription="@string/play"
+                android:src="@drawable/ic_play_dark" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/mini_next_btn"
+            android:layout_width="@dimen/min_touch"
+            android:layout_height="@dimen/min_touch"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground">
+
+            <ImageView
+                android:id="@+id/mini_next_icon"
+                android:layout_width="@dimen/mini_icon"
+                android:layout_height="@dimen/mini_icon"
+                android:layout_gravity="center"
+                android:contentDescription="@string/next"
+                android:src="@drawable/ic_act_next" />
+        </FrameLayout>
+    </LinearLayout>
+</LinearLayout>

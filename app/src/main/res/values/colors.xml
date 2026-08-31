@@ -8,4 +8,15 @@
     <color name="texto">#F8F7FF</color>
     <color name="textoSuave">#AAA3CE</color>
     <color name="track">#3D3860</color>
+
+    <!-- Ported literals (theme-design spec "Locked palette tokens"): code values
+         carried explicitly, not derivable from the six tokens. -->
+    <!-- rgba(23,21,46,0.55)) — card ⋮ button scrim. -->
+    <color name="scrim_overflow">#8C17152E</color>
+    <!-- rgba(0,0,0,0.5)) — modal/sheet scrim. -->
+    <color name="scrim_modal">#80000000</color>
+    <!-- rgba(114,224,184,0.28)) — cover halo base ring (player slice). -->
+    <color name="ring_base">#4772E0B8</color>
+    <!-- rgba(170,163,206,0.4)) — seek-bar track (player slice.). -->
+    <color name="track_seek">#66AAA3CE</color>
 </resources>

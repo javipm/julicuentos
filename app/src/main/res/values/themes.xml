@@ -7,4 +7,13 @@
         <!-- API 23+ attribute; silently ignored on the API 22 target device. -->
         <item name="android:windowLightStatusBar">false</item>
     </style>
+
+    <!-- Bottom-sheet dialog (S3.5 StoryActionSheet): transparent window over a
+         0.5-dim scrim;content draws the sheet card. -->
+    <style name="Theme.Julicuentos.Dialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
 </resources>

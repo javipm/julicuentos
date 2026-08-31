@@ -267,6 +267,13 @@ class PlaybackRepository private constructor(context: Context) {
         if (nextId != null) load(nextId, 0L, true)
     }
 
+    // ---------- queue mutations (slice-3 sheet hook; full queue UI/logic lands
+    // in slice 5 — S2.2/S5.x). Play-now preserves the queue by design
+    // (specs/queue "Play-now preserves the queue") — load never touches it. ----------
+
+    fun enqueue(storyId: String) { queue.enqueue(storyId) }
+    fun clearQueue() { queue.clear() }
+
     // ---------- next-resolution (queue head else circular catalog next ----------
 
     private fun resolveNextId(currentStoryId: String?): String? {

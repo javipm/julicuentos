@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- TextAppearance ladder (theme-design spec "Bundled fonts and TextAppearances").
+     Sizes: 30 screen title (Fredoka), 24 player title (Fredoka), 20 headers/
+     queue/timer (Fredoka）, 18 sheet title (Fredoka),  ​16 body/miniplayer title
+     (Nunito 400）,  ​14 card description/labels/timer line (Nunito 400 soft),
+     12 seek times/miniplayer status/badges (Nunito 400 soft). Card/sheet titles
+     that must render Fredoka at 16/18 use an explicit android:fontFamily on the view
+     (the ladder's 16 face is body — miniplayer title — by the spec's font mapping. -->
+<resources>
+    <style name="TextAppearance.Jc" parent="TextAppearance.AppCompat" />
+
+    <style name="TextAppearance.Jc.30" parent="TextAppearance.Jc">
+        <item name="android:textSize">30sp</item>
+        <item name="android:fontFamily">@font/fredoka</item>
+        <item name="android:textColor">@color/texto</item>
+    </style>
+
+    <style name="TextAppearance.Jc.24" parent="TextAppearance.Jc">
+        <item name="android:textSize">24sp</item>
+        <item name="android:fontFamily">@font/fredoka</item>
+        <item name="android:textColor">@color/texto</item>
+    </style>
+
+    <style name="TextAppearance.Jc.20" parent="TextAppearance.Jc">
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@font/fredoka</item>
+        <item name="android:textColor">@color/texto</item>
+    </style>
+
+    <style name="TextAppearance.Jc.18" parent="TextAppearance.Jc">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/fredoka</item>
+        <item name="android:textColor">@color/texto</item>
+    </style>
+
+    <style name="TextAppearance.Jc.16" parent="TextAppearance.Jc">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/nunitosans</item>
+        <item name="android:textColor">@color/texto</item>
+    </style>
+
+    <style name="TextAppearance.Jc.14" parent="TextAppearance.Jc">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/nunitosans</item>
+        <item name="android:textColor">@color/textoSuave</item>
+    </style>
+
+    <style name="TextAppearance.Jc.12" parent="TextAppearance.Jc">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/nunitosans</item>
+        <item name="android:textColor">@color/textoSuave</item>
+    </style>
+
+    <!-- Nunito Sans 700 button-label face (bold selects the 700 TTF in nunitosans.xml). -->
+    <style name="TextAppearance.Jc.Button" parent="TextAppearance.Jc.16">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- "Sonando" pill text （Nunito Sans 700, 12sp（ badges. -->
+    <style name="TextAppearance.Jc.Badge" parent="TextAppearance.Jc.12">
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>

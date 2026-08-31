@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Nunito Sans family: 400 Regular (body) + 700 Bold (button labels, the
+     "Sonando" badge, queue titles — theme-design spec). `textStyle=bold` selects
+     the 700 face automatically. -->
+<font-family xmlns:android="http://schemas.android.com/apk/res/android">
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="400"
+        android:font="@font/nunitosans_regular" />
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="700"
+        android:font="@font/nunitosans_bold" />
+</font-family>

@@ -18,4 +18,9 @@
 
     <!-- Slice 1 placeholder screen (removed in slice 3) -->
     <string name="slice1_placeholder">Julicuentos — Slice 1</string>
+    <string name="notification_channel_name">Reproducción</string>
+    <string name="notif_play_pause">Reproducir / Pausa</string>
+    <string name="notif_skip_back_15">Retroceder 15 s</string>
+    <string name="notif_skip_fwd_15">Avanzar 15 s</string>
+    <string name="notif_next">Siguiente</string>
 </resources>

@@ -1,0 +1,1159 @@
+- generic [active] [ref=f2e1]:
+  - generic [ref=f2e2]:
+    - banner [ref=f2e3]:
+      - banner [ref=f2e4]:
+        - generic [ref=f2e8]:
+          - text: 
+          - 'link "todocoleccion: compra y venta de antigüedades y objetos de colección" [ref=f2e11] [cursor=pointer]':
+            - /url: /
+          - list [ref=f2e16]:
+            - listitem [ref=f2e17]:
+              - link "Acceder" [ref=f2e18] [cursor=pointer]:
+                - /url: /acceder/?cod=ent
+            - listitem [ref=f2e19]:
+              - button "" [ref=f2e20] [cursor=pointer]
+          - search [ref=f2e24]:
+            - generic [ref=f2e26]:
+              - generic [ref=f2e27]: Buscador de todocoleccion
+              - generic [ref=f2e28]:
+                - button " Buscador de todocoleccion" [ref=f2e29] [cursor=pointer]:
+                  - generic [ref=f2e30]: 
+                  - generic [ref=f2e31]: Buscador de todocoleccion
+                - searchbox "Buscador de todocoleccion" [ref=f2e33]
+                - text: 
+          - link "Avanzada" [ref=f2e35] [cursor=pointer]:
+            - /url: /buscador/turbo
+        - navigation [ref=f2e36]:
+          - list [ref=f2e38]:
+            - listitem [ref=f2e39]:
+              - button "Catálogo" [ref=f2e40] [cursor=pointer]
+              - text: 
+            - listitem [ref=f2e41]:
+              - link "Subastas" [ref=f2e42] [cursor=pointer]:
+                - /url: /subastas
+            - listitem [ref=f2e43]:
+              - link "Tiendas" [ref=f2e44] [cursor=pointer]:
+                - /url: /tiendas
+            - listitem [ref=f2e45]:
+              - link "Orientaprecios" [ref=f2e46] [cursor=pointer]:
+                - /url: /orientaprecios
+            - listitem [ref=f2e47]:
+              - link "Vender" [ref=f2e48] [cursor=pointer]:
+                - /url: /ayuda/vender
+            - listitem [ref=f2e49]:
+              - link "Mi todocoleccion" [ref=f2e50] [cursor=pointer]:
+                - /url: /mitc
+            - listitem [ref=f2e51]:
+              - link "" [ref=f2e52] [cursor=pointer]:
+                - /url: /mitc?mostrarbmtc
+    - generic [ref=f2e55]:
+      - generic [ref=f2e57]:
+        - list [ref=f2e58]:
+          - listitem [ref=f2e59] [cursor=pointer]
+          - listitem [ref=f2e60] [cursor=pointer]
+          - listitem [ref=f2e61] [cursor=pointer]
+          - listitem [ref=f2e62] [cursor=pointer]
+        - generic [ref=f2e65]:
+          - generic [ref=f2e67]:
+            - generic [ref=f2e68]: NEXT todocoleccion
+            - generic [ref=f2e69]: Las nuevas tendencias del coleccionismo ya tienen su lugar en NEXT todocoleccion. ¡Descúbrelo!
+            - link "Descubrir NEXT" [ref=f2e71] [cursor=pointer]:
+              - /url: https://next.todocoleccion.net/
+          - img "NEXT todocoleccion" [ref=f2e75]
+      - generic [ref=f2e76]:
+        - heading "Compra, vende y subasta online antigüedades y objetos de colección" [level=1] [ref=f2e77]
+        - paragraph [ref=f2e78]: Descubre nuestro mercado de Antigüedades, Arte, Libros y Coleccionismo.
+      - generic [ref=f2e79]:
+        - generic [ref=f2e80]:
+          - heading "Las secciones más populares de todocoleccion" [level=2] [ref=f2e81]
+          - link "Ver todas " [ref=f2e83] [cursor=pointer]:
+            - /url: /s/catalogo
+            - generic [ref=f2e84]:
+              - generic [ref=f2e85]: Ver todas
+              - generic [ref=f2e86]: 
+        - generic [ref=f2e90]:
+          - generic [ref=f2e91]:
+            - group "1 / 9" [ref=f2e92]:
+              - generic [ref=f2e94]:
+                - heading [level=3] [ref=f2e95]:
+                  - link "Libros" [ref=f2e96] [cursor=pointer]:
+                    - /url: /s/libros
+                - navigation [ref=f2e97]:
+                  - listitem [ref=f2e98]:
+                    - link "Libros de segunda mano" [ref=f2e99] [cursor=pointer]:
+                      - /url: /s/libros-de-segunda-mano
+                  - listitem [ref=f2e100]:
+                    - link "Libros antiguos" [ref=f2e101] [cursor=pointer]:
+                      - /url: /s/libros-antiguos-raros-curiosos
+                  - listitem [ref=f2e102]:
+                    - link "Libros de literatura" [ref=f2e103] [cursor=pointer]:
+                      - /url: /s/libros-segunda-mano-literatura
+                  - listitem [ref=f2e104]:
+                    - link "Bellas artes y ocio" [ref=f2e105] [cursor=pointer]:
+                      - /url: /s/libros-segunda-mano-bellas-artes
+                - img "Compra venta de libros antiguos, de segunda mano y nuevos" [ref=f2e108]
+            - group "2 / 9" [ref=f2e109]:
+              - generic [ref=f2e111]:
+                - heading [level=3] [ref=f2e112]:
+                  - link "Antigüedades" [ref=f2e113] [cursor=pointer]:
+                    - /url: /s/antiguedades
+                - navigation [ref=f2e114]:
+                  - listitem [ref=f2e115]:
+                    - link "Porcelanas y cerámicas" [ref=f2e116] [cursor=pointer]:
+                      - /url: /s/porcelana-y-ceramica-antigua
+                  - listitem [ref=f2e117]:
+                    - link "Antigüedades religiosas" [ref=f2e118] [cursor=pointer]:
+                      - /url: /s/antiguedades-religiosas
+                  - listitem [ref=f2e119]:
+                    - link "Antigüedades técnicas" [ref=f2e120] [cursor=pointer]:
+                      - /url: /s/antiguedades-tecnicas
+                  - listitem [ref=f2e121]:
+                    - link "Muebles antiguos" [ref=f2e122] [cursor=pointer]:
+                      - /url: /s/muebles-antiguos
+                - img "Venta y subasta de antigüedades y objetos de colección" [ref=f2e125]
+            - group "3 / 9" [ref=f2e126]:
+              - generic [ref=f2e128]:
+                - heading [level=3] [ref=f2e129]:
+                  - link "Juguetes y juegos" [ref=f2e130] [cursor=pointer]:
+                    - /url: /s/juguetes
+                - navigation [ref=f2e131]:
+                  - listitem [ref=f2e132]:
+                    - link "Muñecas" [ref=f2e133] [cursor=pointer]:
+                      - /url: /s/munecas-de-coleccion
+                  - listitem [ref=f2e134]:
+                    - link "Figuras de acción" [ref=f2e135] [cursor=pointer]:
+                      - /url: /s/figuras-de-accion
+                  - listitem [ref=f2e136]:
+                    - link "Videojuegos y consolas" [ref=f2e137] [cursor=pointer]:
+                      - /url: /s/videojuegos-consolas-antiguas
+                  - listitem [ref=f2e138]:
+                    - link "Trenes" [ref=f2e139] [cursor=pointer]:
+                      - /url: /s/trenes-de-juguete
+                - img "Compra venta de juguetes antiguos, muñecas y juegos clásicos" [ref=f2e142]
+            - group "4 / 9" [ref=f2e143]:
+              - generic [ref=f2e145]:
+                - heading [level=3] [ref=f2e146]:
+                  - link "Arte" [ref=f2e147] [cursor=pointer]:
+                    - /url: /s/arte
+                - navigation [ref=f2e148]:
+                  - listitem [ref=f2e149]:
+                    - link "Pintura al óleo" [ref=f2e150] [cursor=pointer]:
+                      - /url: /s/arte-pintura
+                  - listitem [ref=f2e151]:
+                    - link "Arte religioso" [ref=f2e152] [cursor=pointer]:
+                      - /url: /s/arte-religioso
+                  - listitem [ref=f2e153]:
+                    - link "Esculturas" [ref=f2e154] [cursor=pointer]:
+                      - /url: /s/arte-escultura
+                  - listitem [ref=f2e155]:
+                    - link "Dibujos" [ref=f2e156] [cursor=pointer]:
+                      - /url: /s/arte-dibujos
+                - img "Venta y subasta de pinturas y arte de colección" [ref=f2e159]
+            - group "5 / 9" [ref=f2e160]:
+              - generic [ref=f2e162]:
+                - heading [level=3] [ref=f2e163]:
+                  - link "Música, discos..." [ref=f2e164] [cursor=pointer]:
+                    - /url: /s/musica-discos-vinilos
+                - navigation [ref=f2e165]:
+                  - listitem [ref=f2e166]:
+                    - link "Discos de vinilo" [ref=f2e167] [cursor=pointer]:
+                      - /url: /s/discos-vinilo
+                  - listitem [ref=f2e168]:
+                    - link "CD" [ref=f2e169] [cursor=pointer]:
+                      - /url: /s/cds-musica
+                  - listitem [ref=f2e170]:
+                    - link "Casetes" [ref=f2e171] [cursor=pointer]:
+                      - /url: /s/casetes-antiguos
+                  - listitem [ref=f2e172]:
+                    - link "Instrumentos musicales" [ref=f2e173] [cursor=pointer]:
+                      - /url: /s/instrumentos-musicales-antiguos
+                - img "Compra venta de discos de vinilo, CDs y todo tipo de música" [ref=f2e176]
+            - group "6 / 9" [ref=f2e177]:
+              - generic [ref=f2e179]:
+                - heading [level=3] [ref=f2e180]:
+                  - link "Monedas y billetes" [ref=f2e181] [cursor=pointer]:
+                    - /url: /s/numismatica-monedas-billetes
+                - navigation [ref=f2e182]:
+                  - listitem [ref=f2e183]:
+                    - link "Monedas españolas" [ref=f2e184] [cursor=pointer]:
+                      - /url: /s/monedas-espana-modernas-contemporaneas
+                  - listitem [ref=f2e185]:
+                    - link "Monedas internacionales" [ref=f2e186] [cursor=pointer]:
+                      - /url: /s/monedas-extranjeras
+                  - listitem [ref=f2e187]:
+                    - link "Notafilia - Billetes" [ref=f2e188] [cursor=pointer]:
+                      - /url: /s/billetes-antiguos
+                  - listitem [ref=f2e189]:
+                    - link "Monedas de Europa" [ref=f2e190] [cursor=pointer]:
+                      - /url: /s/monedas-de-europa
+                - img "Monedas antiguas y billetes de colección en venta y subasta" [ref=f2e193]
+            - group "7 / 9" [ref=f2e194]:
+              - generic [ref=f2e196]:
+                - heading [level=3] [ref=f2e197]:
+                  - link "Coleccionismo papel" [ref=f2e198] [cursor=pointer]:
+                    - /url: /s/coleccionismo
+                - navigation [ref=f2e199]:
+                  - listitem [ref=f2e200]:
+                    - link "Cromos y álbumes" [ref=f2e201] [cursor=pointer]:
+                      - /url: /s/coleccionismo-cromos-albumes
+                  - listitem [ref=f2e202]:
+                    - link "Revistas y periódicos" [ref=f2e203] [cursor=pointer]:
+                      - /url: /s/coleccionismo-revistas-periodicos-actuales
+                  - listitem [ref=f2e204]:
+                    - link "Documentos antiguos" [ref=f2e205] [cursor=pointer]:
+                      - /url: /s/coleccionismo-documentos-antiguos
+                  - listitem [ref=f2e206]:
+                    - link "Carteles gran formato" [ref=f2e207] [cursor=pointer]:
+                      - /url: /s/coleccionismo-carteles
+                - img "Cromos y álbumes, revistas y periódicos, documentos… compra venta de coleccionismo de papel" [ref=f2e210]
+            - group "8 / 9" [ref=f2e211]:
+              - generic [ref=f2e213]:
+                - heading [level=3] [ref=f2e214]:
+                  - link "Coleccionismo militar" [ref=f2e215] [cursor=pointer]:
+                    - /url: /s/militar
+                - navigation [ref=f2e216]:
+                  - listitem [ref=f2e217]:
+                    - link "Armas y complementos" [ref=f2e218] [cursor=pointer]:
+                      - /url: /s/armas-de-coleccion
+                  - listitem [ref=f2e219]:
+                    - link "Medallas e insignias" [ref=f2e220] [cursor=pointer]:
+                      - /url: /s/medallas-insignias-militares
+                  - listitem [ref=f2e221]:
+                    - link "Cascos y uniformes" [ref=f2e222] [cursor=pointer]:
+                      - /url: /s/cascos-uniformes-militares
+                  - listitem [ref=f2e223]:
+                    - link "Guerra civil española" [ref=f2e224] [cursor=pointer]:
+                      - /url: /s/coleccionismo-guerra-civil-espanola
+                - img "Venta y subastas de coleccionismo militar" [ref=f2e227]
+            - group "9 / 9" [ref=f2e228]:
+              - generic [ref=f2e230]:
+                - heading [level=3] [ref=f2e231]:
+                  - link "Tebeos y cómics" [ref=f2e232] [cursor=pointer]:
+                    - /url: /s/tebeos-comics
+                - navigation [ref=f2e233]:
+                  - listitem [ref=f2e234]:
+                    - link "Bruguera" [ref=f2e235] [cursor=pointer]:
+                      - /url: /s/comics-bruguera
+                  - listitem [ref=f2e236]:
+                    - link "Editoriales actuales" [ref=f2e237] [cursor=pointer]:
+                      - /url: /s/otros-comics-actuales
+                  - listitem [ref=f2e238]:
+                    - link "Vértice" [ref=f2e239] [cursor=pointer]:
+                      - /url: /s/comics-vertice
+                  - listitem [ref=f2e240]:
+                    - link "Forum" [ref=f2e241] [cursor=pointer]:
+                      - /url: /s/comics-forum
+                - img "Compra venta de tebeos antiguos y cómics de colección" [ref=f2e244]
+          - button "Next slide" [ref=f2e245] [cursor=pointer]
+          - button "Previous slide" [disabled] [ref=f2e246]
+      - generic [ref=f2e247]:
+        - generic [ref=f2e248]:
+          - heading [level=2] [ref=f2e249]:
+            - link "Semana del Coleccionismo de Papel" [ref=f2e251] [cursor=pointer]:
+              - /url: /s/coleccionismo
+            - text: hasta el domingo, 6 de septiembre
+          - link "Ver todos " [ref=f2e253] [cursor=pointer]:
+            - /url: /s/coleccionismo?O=seg
+            - generic [ref=f2e254]:
+              - generic [ref=f2e255]: Ver todos
+              - generic [ref=f2e256]: 
+        - generic [ref=f2e260]:
+          - generic [ref=f2e261]:
+            - group "1 / 15" [ref=f2e262]:
+              - generic [ref=f2e263]:
+                - generic [ref=f2e264]:
+                  - generic [ref=f2e265]:
+                    - button "" [ref=f2e268] [cursor=pointer]
+                    - 'img "Coleccionismo álbumes: adrenalyn 2014 15, contiene 471 cromos" [ref=f2e271]'
+                    - generic [ref=f2e272]:
+                      - generic [ref=f2e273]: 
+                      - text: 7d 8h
+                  - heading [level=3] [ref=f2e275]:
+                    - link "adrenalyn 2014 15, contiene 471 cromos" [ref=f2e276] [cursor=pointer]:
+                      - /url: /album-incompleto/adrenalyn-2014-15-contiene-471-cromos~x664015620
+                - generic [ref=f2e277]:
+                  - generic [ref=f2e278]: Álbumes antiguos incompletos
+                  - generic [ref=f2e280]: 28,00 €
+                  - generic [ref=f2e282]: 0 pujas
+            - group "2 / 15" [ref=f2e283]:
+              - generic [ref=f2e284]:
+                - generic [ref=f2e285]:
+                  - generic [ref=f2e286]:
+                    - button "" [ref=f2e289] [cursor=pointer]
+                    - 'img "Otros artículos de coleccionismo en papel: 1944 Psdte. I. Estudios Ilerdenses y Alcalde de Tárrega invitan Iª Exposición del Libro Tarregense" [ref=f2e292]'
+                  - heading [level=3] [ref=f2e294]:
+                    - link "1944 Psdte. I. Estudios Ilerdenses y Alcalde de Tárrega invitan Iª Exposición del Libro Tarregense" [ref=f2e295] [cursor=pointer]:
+                      - /url: /otros-articulos-coleccionismo-en-papel/1944-psdte-i-estudios-ilerdenses-alcalde-tarrega-invitan-i-exposicion-libro-tarregense~x264452519
+                - generic [ref=f2e296]:
+                  - generic [ref=f2e297]: Otros artículos de coleccionismo en papel
+                  - generic [ref=f2e299]: 10,00 €
+                  - generic [ref=f2e301]: Admite ofertas
+            - group "3 / 15" [ref=f2e302]:
+              - generic [ref=f2e303]:
+                - generic [ref=f2e304]:
+                  - generic [ref=f2e305]:
+                    - button "" [ref=f2e308] [cursor=pointer]
+                    - 'img "Coleccionismo: 1959 Invitación al VIII Salón del Hogar Moderno en Cúpula del Coliseum Sello Tampón de la FAD - BCN." [ref=f2e311]'
+                  - heading [level=3] [ref=f2e313]:
+                    - link "1959 Invitación al VIII Salón del Hogar Moderno en Cúpula del Coliseum Sello Tampón de la FAD - BCN." [ref=f2e314] [cursor=pointer]:
+                      - /url: /coleccionismo/1959-invitacion-viii-salon-hogar-moderno-cupula-coliseum-sello-tampon-fad-bcn~x264441039
+                - generic [ref=f2e315]:
+                  - generic [ref=f2e316]: Láminas antiguas, programas y otros documentos antiguos
+                  - generic [ref=f2e318]: 30,00 €
+                  - generic [ref=f2e320]: Admite ofertas
+            - group "4 / 15" [ref=f2e321]:
+              - generic [ref=f2e322]:
+                - generic [ref=f2e323]:
+                  - generic [ref=f2e324]:
+                    - button "" [ref=f2e327] [cursor=pointer]
+                    - 'img "Catálogos publicitarios: 1985 CATÁLOGO ESPECIAL DE LIBROS CIENTÍFICOS Y TÉCNICOS Diaz de Santos S..A Madrid - Barcelona" [ref=f2e330]'
+                  - heading [level=3] [ref=f2e332]:
+                    - link "1985 CATÁLOGO ESPECIAL DE LIBROS CIENTÍFICOS Y TÉCNICOS Diaz de Santos S..A Madrid - Barcelona" [ref=f2e333] [cursor=pointer]:
+                      - /url: /catalogos-publicitarios/1985-catalogo-especial-libros-cientificos-tecnicos-diaz-santos-s-madrid-barcelona~x264268964
+                - generic [ref=f2e334]:
+                  - generic [ref=f2e335]: Catálogos publicitarios antiguos
+                  - generic [ref=f2e337]: 10,00 €
+                  - generic [ref=f2e339]: Admite ofertas
+            - group "5 / 15" [ref=f2e340]:
+              - generic [ref=f2e341]:
+                - generic [ref=f2e342]:
+                  - generic [ref=f2e343]:
+                    - button "" [ref=f2e346] [cursor=pointer]
+                    - 'img "Coleccionismo: 1927 IV CONGRESO NACIONAL DE RIEGOS - BARCELONA- PONENCIA D. JOSÉ Mª BOIX RASPALL" [ref=f2e349]'
+                  - heading [level=3] [ref=f2e351]:
+                    - link "1927 IV CONGRESO NACIONAL DE RIEGOS - BARCELONA- PONENCIA D. JOSÉ Mª BOIX RASPALL" [ref=f2e352] [cursor=pointer]:
+                      - /url: /coleccionismo/1927-iv-congreso-nacional-riegos-barcelona-ponencia-d-jose-m-boix-raspall~x264266200
+                - generic [ref=f2e353]:
+                  - generic [ref=f2e354]: Láminas antiguas, programas y otros documentos antiguos
+                  - generic [ref=f2e356]: 10,00 €
+                  - generic [ref=f2e358]: Admite ofertas
+            - group "6 / 15" [ref=f2e359]:
+              - generic [ref=f2e360]:
+                - generic [ref=f2e361]:
+                  - generic [ref=f2e362]:
+                    - button "" [ref=f2e365] [cursor=pointer]
+                    - 'img "Facturas antiguas: 1927 Notaria del Dr. D. Antonio Par - Factura Escrituras de Compra a D. Agustín Valls" [ref=f2e368]'
+                  - heading [level=3] [ref=f2e370]:
+                    - link "1927 Notaria del Dr. D. Antonio Par - Factura Escrituras de Compra a D. Agustín Valls" [ref=f2e371] [cursor=pointer]:
+                      - /url: /facturas-antiguas/1927-notaria-dr-d-antonio-par-factura-escrituras-compra-d-agustin-valls~x263562200
+                - generic [ref=f2e372]:
+                  - generic [ref=f2e373]: Facturas antiguas
+                  - generic [ref=f2e375]: 12,00 €
+                  - generic [ref=f2e377]: Admite ofertas
+            - group "7 / 15" [ref=f2e378]:
+              - generic [ref=f2e379]:
+                - generic [ref=f2e380]:
+                  - generic [ref=f2e381]:
+                    - button "" [ref=f2e384] [cursor=pointer]
+                    - 'img "Coleccionismo: 1973 Agradecimiento a Agustí Valls i Cascante por haber facilitado la fotografía de dos esculturas" [ref=f2e387]'
+                  - heading [level=3] [ref=f2e389]:
+                    - link "1973 Agradecimiento a Agustí Valls i Cascante por haber facilitado la fotografía de dos esculturas" [ref=f2e390] [cursor=pointer]:
+                      - /url: /coleccionismo/1973-agradecimiento-agusti-valls-i-cascante-por-haber-facilitado-fotografia-dos-esculturas~x262904425
+                - generic [ref=f2e391]:
+                  - generic [ref=f2e392]: Láminas antiguas, programas y otros documentos antiguos
+                  - generic [ref=f2e394]: 12,00 €
+                  - generic [ref=f2e396]: Admite ofertas
+            - group "8 / 15" [ref=f2e397]:
+              - generic [ref=f2e398]:
+                - generic [ref=f2e399]:
+                  - generic [ref=f2e400]:
+                    - button "" [ref=f2e403] [cursor=pointer]
+                    - 'img "Coleccionismo: 1969 Recordatori de Mercedes Solà i Català fragment Cant Espiritual d´en Maragall i Pare Nostre (1)" [ref=f2e406]'
+                  - heading [level=3] [ref=f2e408]:
+                    - link "1969 Recordatori de Mercedes Solà i Català fragment Cant Espiritual d´en Maragall i Pare Nostre (1)" [ref=f2e409] [cursor=pointer]:
+                      - /url: /coleccionismo/1969-recordatori-mercedes-sola-i-catala-fragment-cant-espiritual-den-maragall-i-pare-nostre-1~x262730415
+                - generic [ref=f2e410]:
+                  - generic [ref=f2e411]: Láminas antiguas, programas y otros documentos antiguos
+                  - generic [ref=f2e413]: 6,00 €
+                  - generic [ref=f2e415]: Admite ofertas
+            - group "9 / 15" [ref=f2e416]:
+              - generic [ref=f2e417]:
+                - generic [ref=f2e418]:
+                  - generic [ref=f2e419]:
+                    - button "" [ref=f2e422] [cursor=pointer]
+                    - 'img "Coleccionismo de revistas y periódicos: 1915-50 ca. LOTE 5 RECORTES PERIÓDICO AFECTAN A VALLS CASCANTE (Banca Valls particular)" [ref=f2e425]'
+                  - heading [level=3] [ref=f2e427]:
+                    - link "1915-50 ca. LOTE 5 RECORTES PERIÓDICO AFECTAN A VALLS CASCANTE (Banca Valls particular)" [ref=f2e428] [cursor=pointer]:
+                      - /url: /coleccionismo-revistas-periodicos/1915-50-ca-lote-5-recortes-periodico-afectan-valls-cascante-banca-valls-particular~x262727715
+                - generic [ref=f2e429]:
+                  - generic [ref=f2e430]: "Revistas y periódicos modernos: números antiguos"
+                  - generic [ref=f2e432]: 6,00 €
+                  - generic [ref=f2e434]: Admite ofertas
+            - group "10 / 15" [ref=f2e435]:
+              - generic [ref=f2e436]:
+                - generic [ref=f2e437]:
+                  - generic [ref=f2e438]:
+                    - button "" [ref=f2e441] [cursor=pointer]
+                    - 'img "Coleccionismo de revistas y periódicos: 1947 SIGUEME Nº 51 ÓRGANO MENSUAL DE LAS CONGREGACIONES MARIANAS - LÉRIDA" [ref=f2e444]'
+                  - heading [level=3] [ref=f2e446]:
+                    - link "1947 SIGUEME Nº 51 ÓRGANO MENSUAL DE LAS CONGREGACIONES MARIANAS - LÉRIDA" [ref=f2e447] [cursor=pointer]:
+                      - /url: /coleccionismo-revistas-periodicos/1947-sigueme-n-51-organo-mensual-congregaciones-marianas-lerida~x262706730
+                - generic [ref=f2e448]:
+                  - generic [ref=f2e449]: "Revistas y periódicos modernos: números antiguos"
+                  - generic [ref=f2e451]: 6,00 €
+                  - generic [ref=f2e453]: Admite ofertas
+            - group "11 / 15" [ref=f2e454]:
+              - generic [ref=f2e455]:
+                - generic [ref=f2e456]:
+                  - generic [ref=f2e457]:
+                    - button "" [ref=f2e460] [cursor=pointer]
+                    - 'img "Facturas antiguas: 1926 Cuenta de Honorarios y Adelantos de Agustín Valls Cascante a Notaría Leopoldo Rodés - Barcelona" [ref=f2e463]'
+                  - heading [level=3] [ref=f2e465]:
+                    - link "1926 Cuenta de Honorarios y Adelantos de Agustín Valls Cascante a Notaría Leopoldo Rodés - Barcelona" [ref=f2e466] [cursor=pointer]:
+                      - /url: /facturas-antiguas/1926-cuenta-honorarios-adelantos-agustin-valls-cascante-notaria-leopoldo-rodes-barcelona~x262698305
+                - generic [ref=f2e467]:
+                  - generic [ref=f2e468]: Facturas antiguas
+                  - generic [ref=f2e470]: 10,00 €
+                  - generic [ref=f2e472]: Admite ofertas
+            - group "12 / 15" [ref=f2e473]:
+              - generic [ref=f2e474]:
+                - generic [ref=f2e475]:
+                  - generic [ref=f2e476]:
+                    - button "" [ref=f2e479] [cursor=pointer]
+                    - 'img "Coleccionismo: 1948 Felicitación Navideña el Alcalde y Corporación Municipal de Lérida Acuarela Roig Nadal" [ref=f2e482]'
+                  - heading [level=3] [ref=f2e484]:
+                    - link "1948 Felicitación Navideña el Alcalde y Corporación Municipal de Lérida Acuarela Roig Nadal" [ref=f2e485] [cursor=pointer]:
+                      - /url: /coleccionismo/1948-felicitacion-navidena-alcalde-corporacion-municipal-lerida-acuarela-roig-nadal~x262642210
+                - generic [ref=f2e486]:
+                  - generic [ref=f2e487]: Láminas antiguas, programas y otros documentos antiguos
+                  - generic [ref=f2e489]: 12,00 €
+                  - generic [ref=f2e491]: Admite ofertas
+            - group "13 / 15" [ref=f2e492]:
+              - generic [ref=f2e493]:
+                - generic [ref=f2e494]:
+                  - generic [ref=f2e495]:
+                    - button "" [ref=f2e498] [cursor=pointer]
+                    - 'img "Coleccionismo: 1948 RAFAEL GONZALEZ GALLEGO Comisario Nacional del Paro Felicitación Navideña y Año Nuevo" [ref=f2e501]'
+                  - heading [level=3] [ref=f2e503]:
+                    - link "1948 RAFAEL GONZALEZ GALLEGO Comisario Nacional del Paro Felicitación Navideña y Año Nuevo" [ref=f2e504] [cursor=pointer]:
+                      - /url: /coleccionismo/1948-rafael-gonzalez-gallego-comisario-nacional-paro-felicitacion-navidena-ano-nuevo~x262640500
+                - generic [ref=f2e505]:
+                  - generic [ref=f2e506]: Láminas antiguas, programas y otros documentos antiguos
+                  - generic [ref=f2e508]: 10,00 €
+                  - generic [ref=f2e510]: Admite ofertas
+            - group "14 / 15" [ref=f2e511]:
+              - generic [ref=f2e512]:
+                - generic [ref=f2e513]:
+                  - generic [ref=f2e514]:
+                    - button "" [ref=f2e517] [cursor=pointer]
+                    - 'img "Coleccionismo cromos antiguos: sobre sin abrir, heroes legendarios" [ref=f2e520]'
+                    - generic [ref=f2e521]:
+                      - generic [ref=f2e522]: 
+                      - text: 7d 8h
+                  - heading [level=3] [ref=f2e524]:
+                    - link "sobre sin abrir, heroes legendarios" [ref=f2e525] [cursor=pointer]:
+                      - /url: /cromos-antiguos/sobre-sin-abrir-heroes-legendarios~x571601602
+                - generic [ref=f2e526]:
+                  - generic [ref=f2e527]: Cromos antiguos
+                  - generic [ref=f2e529]: 22,75 €
+                  - generic [ref=f2e531]: 0 pujas
+            - group "15 / 15" [ref=f2e532]:
+              - generic [ref=f2e533]:
+                - generic [ref=f2e534]:
+                  - generic [ref=f2e535]:
+                    - button "" [ref=f2e538] [cursor=pointer]
+                    - 'img "Etiquetas antiguas: HAGA SU OFERTA - ANTIGUA ETIQUETA DE VINO LICOR coñac manzanilla fino SANLUCAR JEREZ CADIZ EL PUERTO" [ref=f2e541]'
+                  - heading [level=3] [ref=f2e543]:
+                    - link "HAGA SU OFERTA - ANTIGUA ETIQUETA DE VINO LICOR coñac manzanilla fino SANLUCAR JEREZ CADIZ EL PUERTO" [ref=f2e544] [cursor=pointer]:
+                      - /url: /etiquetas-antiguas/haga-su-oferta-antigua-etiqueta-vino-licor-conac-manzanilla-fino-sanlucar-jerez-cadiz-puerto~x705146535
+                - generic [ref=f2e545]:
+                  - generic [ref=f2e546]: Etiquetas antiguas
+                  - generic [ref=f2e548]: 3,00 €
+                  - generic [ref=f2e550]: Admite ofertas
+          - button "Next slide" [ref=f2e551] [cursor=pointer]
+          - button "Previous slide" [disabled] [ref=f2e552]
+      - generic [ref=f2e553]:
+        - generic [ref=f2e554]:
+          - heading "Los lotes más buscados en todocoleccion" [level=2] [ref=f2e555]
+          - link "Ver todos " [ref=f2e557] [cursor=pointer]:
+            - /url: /s/catalogo?O=c
+            - generic [ref=f2e558]:
+              - generic [ref=f2e559]: Ver todos
+              - generic [ref=f2e560]: 
+        - generic [ref=f2e564]:
+          - generic [ref=f2e565]:
+            - group "1 / 15" [ref=f2e566]:
+              - generic [ref=f2e567]:
+                - generic [ref=f2e568]:
+                  - generic [ref=f2e569]:
+                    - button "" [ref=f2e572] [cursor=pointer]
+                    - 'img "Muñeca Cayetana: ANTIGUA MUÑECA CAYETANA ORIGINAL AÑOS 40" [ref=f2e575]'
+                  - heading [level=3] [ref=f2e577]:
+                    - link "ANTIGUA MUÑECA CAYETANA ORIGINAL AÑOS 40" [ref=f2e578] [cursor=pointer]:
+                      - /url: /muneca-cayetana/antigua-muneca-cayetana-original-anos-40~x29380549
+                - generic [ref=f2e579]:
+                  - generic [ref=f2e580]: Muñeca Cayetana de colección
+                  - generic [ref=f2e582]: 299,00 €
+                  - generic [ref=f2e584]: Admite ofertas
+            - group "2 / 15" [ref=f2e585]:
+              - generic [ref=f2e586]:
+                - generic [ref=f2e587]:
+                  - generic [ref=f2e588]:
+                    - button "" [ref=f2e591] [cursor=pointer]
+                    - 'img "Muñecas porcelana: ANTIGUA MUÑECA ALEMANA GERMANY CABEZA NUMERADA EN PORCELANA CUERPO ARTICULADO MADERA S.XIX, 58 CMTS" [ref=f2e594]'
+                  - heading [level=3] [ref=f2e596]:
+                    - link "ANTIGUA MUÑECA ALEMANA GERMANY CABEZA NUMERADA EN PORCELANA CUERPO ARTICULADO MADERA S.XIX, 58 CMTS" [ref=f2e597] [cursor=pointer]:
+                      - /url: /munecas-porcelana-alemana/antigua-muneca-alemana-germany-cabeza-numerada-porcelana-cuerpo-articulado-madera-s-xix-58-cmts~x112159179
+                - generic [ref=f2e598]:
+                  - generic [ref=f2e599]: Muñecas alemanas antiguas de porcelana
+                  - generic [ref=f2e601]: 299,00 €
+                  - generic [ref=f2e603]: Admite ofertas
+            - group "3 / 15" [ref=f2e604]:
+              - generic [ref=f2e605]:
+                - generic [ref=f2e606]:
+                  - generic [ref=f2e607]:
+                    - button "" [ref=f2e610] [cursor=pointer]
+                    - 'img "Arte: 1758 ÁRBOL GENEALÓGICO. GERONA. GIRONA. FAMILIA GOVERN. DIBUJO A TINTA. SIGLO XVIII." [ref=f2e613]'
+                  - heading [level=3] [ref=f2e615]:
+                    - link "1758 ÁRBOL GENEALÓGICO. GERONA. GIRONA. FAMILIA GOVERN. DIBUJO A TINTA. SIGLO XVIII." [ref=f2e616] [cursor=pointer]:
+                      - /url: /arte-dibujos/1758-arbol-genealogico-gerona-girona-familia-govern-dibujo-tinta-siglo-xviii~x117623611
+                - generic [ref=f2e617]:
+                  - generic [ref=f2e618]: Dibujos antiguos hasta el siglo XVIII
+                  - generic [ref=f2e620]: 250,00 €
+                  - generic [ref=f2e622]: Admite ofertas
+            - group "4 / 15" [ref=f2e623]:
+              - generic [ref=f2e624]:
+                - generic [ref=f2e625]:
+                  - generic [ref=f2e626]:
+                    - button "" [ref=f2e629] [cursor=pointer]
+                    - 'img "Arte: J.CASTELLS NIÑO DE PRAGA TALLA DE MADERA POLICROMADA" [ref=f2e632]'
+                  - heading [level=3] [ref=f2e634]:
+                    - link "J.CASTELLS NIÑO DE PRAGA TALLA DE MADERA POLICROMADA" [ref=f2e635] [cursor=pointer]:
+                      - /url: /arte-religioso/j-castells-nino-praga-talla-madera-policromada~x150064670
+                - generic [ref=f2e636]:
+                  - generic [ref=f2e637]: Escultura religiosa antigua
+                  - generic [ref=f2e639]: 990,00 €
+                  - generic [ref=f2e641]: Admite ofertas
+            - group "5 / 15" [ref=f2e642]:
+              - generic [ref=f2e643]:
+                - generic [ref=f2e644]:
+                  - generic [ref=f2e645]:
+                    - button "" [ref=f2e648] [cursor=pointer]
+                    - 'img "Arte: Magistral dibujo, papel verjurado sobre tinta, principios del XVIII circa 1720, gran calidad" [ref=f2e651]'
+                    - generic [ref=f2e652]:
+                      - generic [ref=f2e653]: 
+                      - text: 7d 7h
+                  - heading [level=3] [ref=f2e655]:
+                    - link "Magistral dibujo, papel verjurado sobre tinta, principios del XVIII circa 1720, gran calidad" [ref=f2e656] [cursor=pointer]:
+                      - /url: /arte-dibujos/magistral-dibujo-papel-verjurado-sobre-tinta-principios-xviii-circa-1720-gran-calidad~x36664881
+                - generic [ref=f2e657]:
+                  - generic [ref=f2e658]: Dibujos antiguos hasta el siglo XVIII
+                  - generic [ref=f2e660]: 136,00 €
+                  - generic [ref=f2e662]: 0 pujas
+            - group "6 / 15" [ref=f2e663]:
+              - generic [ref=f2e664]:
+                - generic [ref=f2e665]:
+                  - generic [ref=f2e666]:
+                    - button "" [ref=f2e669] [cursor=pointer]
+                    - 'img "Arte: VIRGEN PASTORA PINTOR OCAÑA FIRMADO" [ref=f2e672]'
+                  - heading [level=3] [ref=f2e674]:
+                    - link "VIRGEN PASTORA PINTOR OCAÑA FIRMADO" [ref=f2e675] [cursor=pointer]:
+                      - /url: /arte-religioso/virgen-pastora-pintor-ocana-firmado~x137318658
+                - generic [ref=f2e676]:
+                  - generic [ref=f2e677]: Otras pinturas religiosas antiguas
+                  - generic [ref=f2e679]: 990,00 €
+                  - generic [ref=f2e681]: Admite ofertas
+            - group "7 / 15" [ref=f2e682]:
+              - generic [ref=f2e683]:
+                - generic [ref=f2e684]:
+                  - generic [ref=f2e685]:
+                    - button "" [ref=f2e688] [cursor=pointer]
+                    - 'img "Arte: 1612 COLECCIÓN DE 22 GRABADOS DE CAZA. VENATIONES. ANTONIO TEMPESTA. CHRISTOFFER VAN SICHEM." [ref=f2e691]'
+                  - heading [level=3] [ref=f2e693]:
+                    - link "1612 COLECCIÓN DE 22 GRABADOS DE CAZA. VENATIONES. ANTONIO TEMPESTA. CHRISTOFFER VAN SICHEM." [ref=f2e694] [cursor=pointer]:
+                      - /url: /arte-grabados/1612-coleccion-22-grabados-caza-venationes-antonio-tempesta-christoffer-van-sichem~x113734311
+                - generic [ref=f2e695]:
+                  - generic [ref=f2e696]: Grabados antiguos (hasta s. XVIII)
+                  - generic [ref=f2e698]: 6.500,00 €
+                  - generic [ref=f2e700]: Admite ofertas
+            - group "8 / 15" [ref=f2e701]:
+              - generic [ref=f2e702]:
+                - generic [ref=f2e703]:
+                  - generic [ref=f2e704]:
+                    - button "" [ref=f2e707] [cursor=pointer]
+                    - 'img "Catálogos de música: EL ÚLTIMO DE LA FILA GRABACIONES COMPLETAS - LIBRO GRUPO ESPAÑOL MÚSICA POP ROCK FOTOS MANOLO GARCÍA" [ref=f2e710]'
+                    - generic [ref=f2e711]:
+                      - generic [ref=f2e712]: 
+                      - text: 10d 10h
+                  - heading [level=3] [ref=f2e714]:
+                    - link "EL ÚLTIMO DE LA FILA GRABACIONES COMPLETAS - LIBRO GRUPO ESPAÑOL MÚSICA POP ROCK FOTOS MANOLO GARCÍA" [ref=f2e715] [cursor=pointer]:
+                      - /url: /musica-catalogos/el-ultimo-fila-grabaciones-completas-libro-grupo-espanol-musica-pop-rock-fotos-manolo-garcia~x51361005
+                - generic [ref=f2e716]:
+                  - generic [ref=f2e717]: Catálogos de música, libros y cancioneros segunda mano
+                  - generic [ref=f2e719]: 160,00 €
+                  - generic [ref=f2e721]: 0 pujas
+            - group "9 / 15" [ref=f2e722]:
+              - generic [ref=f2e723]:
+                - generic [ref=f2e724]:
+                  - generic [ref=f2e725]:
+                    - button "" [ref=f2e728] [cursor=pointer]
+                    - 'img "Relojes - Lotus: RELOJ DE SEÑORA LOTUS CON BAÑO EN ORO" [ref=f2e731]'
+                  - heading [level=3] [ref=f2e733]:
+                    - link "RELOJ DE SEÑORA LOTUS CON BAÑO EN ORO" [ref=f2e734] [cursor=pointer]:
+                      - /url: /relojes-lotus/reloj-senora-lotus-bano-oro~x42388565
+                - generic [ref=f2e735]:
+                  - generic [ref=f2e736]: Relojes Lotus antiguos
+                  - generic [ref=f2e738]: 70,00 €
+                  - generic [ref=f2e740]: Admite ofertas
+            - group "10 / 15" [ref=f2e741]:
+              - generic [ref=f2e742]:
+                - generic [ref=f2e743]:
+                  - generic [ref=f2e744]:
+                    - button "" [ref=f2e747] [cursor=pointer]
+                    - 'img "Muñeca española clasica: Excelente muñeca española de cartón antigua 38 cmts en su caja Original" [ref=f2e750]'
+                  - heading [level=3] [ref=f2e752]:
+                    - link "Excelente muñeca española de cartón antigua 38 cmts en su caja Original" [ref=f2e753] [cursor=pointer]:
+                      - /url: /muneca-espanola-clasica/excelente-muneca-espanola-carton-antigua-38-cmts-su-caja-original~x160340674
+                - generic [ref=f2e754]:
+                  - generic [ref=f2e755]: Otras muñecas españolas antiguas hasta 1960
+                  - generic [ref=f2e757]: 175,00 €
+                  - generic [ref=f2e759]: Admite ofertas
+            - group "11 / 15" [ref=f2e760]:
+              - generic [ref=f2e761]:
+                - generic [ref=f2e762]:
+                  - generic [ref=f2e763]:
+                    - button "" [ref=f2e766] [cursor=pointer]
+                    - 'img "Arte: LITOGRAFIA LA DIMENSIÓN DEL SUEÑO DE J.M. SUBIRACHS EDICIÓN LIMITADA FIRMADA A LÁPIZ POR EL AUTOR" [ref=f2e769]'
+                    - generic [ref=f2e770]:
+                      - generic [ref=f2e771]: 
+                      - text: 5d 7h
+                  - heading [level=3] [ref=f2e773]:
+                    - link "LITOGRAFIA LA DIMENSIÓN DEL SUEÑO DE J.M. SUBIRACHS EDICIÓN LIMITADA FIRMADA A LÁPIZ POR EL AUTOR" [ref=f2e774] [cursor=pointer]:
+                      - /url: /arte-litografias/litografia-dimension-sueno-j-m-subirachs-edicion-limitada-firmada-lapiz-por-autor~x167470088
+                - generic [ref=f2e775]:
+                  - generic [ref=f2e776]: Litografías antiguas
+                  - generic [ref=f2e778]: 130,00 €
+                  - generic [ref=f2e780]: 0 pujas
+            - group "12 / 15" [ref=f2e781]:
+              - generic [ref=f2e782]:
+                - generic [ref=f2e783]:
+                  - generic [ref=f2e784]:
+                    - button "" [ref=f2e787] [cursor=pointer]
+                    - 'img "Coleccionismo de moluscos: Gran caracola de mar. Caracola marina. Malacología." [ref=f2e790]'
+                  - heading [level=3] [ref=f2e792]:
+                    - link "Gran caracola de mar. Caracola marina. Malacología." [ref=f2e793] [cursor=pointer]:
+                      - /url: /coleccionismo-moluscos/gran-caracola-mar-caracola-marina-malacologia~x116775851
+                - generic [ref=f2e794]:
+                  - generic [ref=f2e795]: Coleccionismo de moluscos
+                  - generic [ref=f2e797]: 60,00 €
+                  - generic [ref=f2e799]: Admite ofertas
+            - group "13 / 15" [ref=f2e800]:
+              - generic [ref=f2e801]:
+                - generic [ref=f2e802]:
+                  - generic [ref=f2e803]:
+                    - button "" [ref=f2e806] [cursor=pointer]
+                    - 'img "Muñecas porcelana: Antigua muñeca cabeza de porcelana armand marseille 30 cmts, original años 20. R80" [ref=f2e809]'
+                  - heading [level=3] [ref=f2e811]:
+                    - link "Antigua muñeca cabeza de porcelana armand marseille 30 cmts, original años 20. R80" [ref=f2e812] [cursor=pointer]:
+                      - /url: /munecas-porcelana-alemana/antigua-muneca-cabeza-porcelana-armand-marseille-30-cmts-original-anos-20-r80~x190197723
+                - generic [ref=f2e813]:
+                  - generic [ref=f2e814]: Muñecas alemanas antiguas de porcelana
+                  - generic [ref=f2e816]: 135,00 €
+                  - generic [ref=f2e818]: Admite ofertas
+            - group "14 / 15" [ref=f2e819]:
+              - generic [ref=f2e820]:
+                - generic [ref=f2e821]:
+                  - generic [ref=f2e822]:
+                    - button "" [ref=f2e825] [cursor=pointer]
+                    - 'img "Carteles feria: CARTEL LAS FIESTAS DE PRIMAVERA SEVILLA AÑO 1992 - JUAN ROLDÁN PINTURA ARTE DISEÑO ANDALUCÍA ESPAÑA" [ref=f2e828]'
+                    - generic [ref=f2e829]:
+                      - generic [ref=f2e830]: 
+                      - text: 10d 9h
+                  - heading [level=3] [ref=f2e832]:
+                    - link "CARTEL LAS FIESTAS DE PRIMAVERA SEVILLA AÑO 1992 - JUAN ROLDÁN PINTURA ARTE DISEÑO ANDALUCÍA ESPAÑA" [ref=f2e833] [cursor=pointer]:
+                      - /url: /carteles-feria/cartel-fiestas-primavera-sevilla-ano-1992-juan-roldan-pintura-arte-diseno-andalucia-espana~x46527113
+                - generic [ref=f2e834]:
+                  - generic [ref=f2e835]: Carteles antiguos de ferias, fiestas y festejos
+                  - generic [ref=f2e837]: 150,00 €
+                  - generic [ref=f2e839]: 0 pujas
+            - group "15 / 15" [ref=f2e840]:
+              - generic [ref=f2e841]:
+                - generic [ref=f2e842]:
+                  - generic [ref=f2e843]:
+                    - button "" [ref=f2e846] [cursor=pointer]
+                    - 'img "Libros de segunda mano: EL VAMPIRO DE RAVENLOFT - ADVANCED DUNGEONS & DRAGONS 6 - LIBRO JUEGO AVENTURA FANTASÍA - TIMUN MAS" [ref=f2e849]'
+                    - generic [ref=f2e850]:
+                      - generic [ref=f2e851]: 
+                      - text: 10d 8h
+                  - heading [level=3] [ref=f2e853]:
+                    - link "EL VAMPIRO DE RAVENLOFT - ADVANCED DUNGEONS & DRAGONS 6 - LIBRO JUEGO AVENTURA FANTASÍA - TIMUN MAS" [ref=f2e854] [cursor=pointer]:
+                      - /url: /libros-segunda-mano-ciencia-ficcion-fantasia/el-vampiro-ravenloft-advanced-dungeons-dragons-6-libro-juego-aventura-fantasia-timun-mas~x47096722
+                - generic [ref=f2e855]:
+                  - generic [ref=f2e856]: Libros de ciencia ficción y fantasía de segunda mano
+                  - generic [ref=f2e858]: 84,00 €
+                  - generic [ref=f2e860]: 0 pujas
+          - button "Next slide" [ref=f2e861] [cursor=pointer]
+          - button "Previous slide" [disabled] [ref=f2e862]
+      - generic [ref=f2e864]:
+        - generic [ref=f2e865]:
+          - generic [ref=f2e866]:
+            - heading "Vender en todocoleccion es fácil, rápido y sin límites" [level=2] [ref=f2e868]
+            - paragraph [ref=f2e869]: Crea tu cuenta como particular, profesional o tienda. Publica todo lo que quieras y empieza a generar ingresos desde el primer minuto. En todocoleccion, cada objeto tiene una historia... y siempre hay alguien deseando descubrirla.
+          - link "Comenzar a vender" [ref=f2e870] [cursor=pointer]:
+            - /url: /ayuda/vender
+        - img "Vender en todocoleccion" [ref=f2e873]
+      - generic [ref=f2e874]:
+        - generic [ref=f2e875]:
+          - heading "Las subastas más pujadas de todocoleccion" [level=2] [ref=f2e876]
+          - link "Ver todos " [ref=f2e878] [cursor=pointer]:
+            - /url: /s/catalogo/subastas?O=sp
+            - generic [ref=f2e879]:
+              - generic [ref=f2e880]: Ver todos
+              - generic [ref=f2e881]: 
+        - generic [ref=f2e885]:
+          - generic [ref=f2e886]:
+            - group "1 / 15" [ref=f2e887]:
+              - generic [ref=f2e888]:
+                - generic [ref=f2e889]:
+                  - generic [ref=f2e890]:
+                    - button "" [ref=f2e893] [cursor=pointer]
+                    - 'img "Botellas antiguas: Botella Chartreuse Tarragona" [ref=f2e896]'
+                    - generic [ref=f2e897]:
+                      - generic [ref=f2e898]: 
+                      - text: 3d 14h
+                  - heading [level=3] [ref=f2e900]:
+                    - link "Botella Chartreuse Tarragona" [ref=f2e901] [cursor=pointer]:
+                      - /url: /botellas-antiguas/botella-chartreuse-tarragona~x704779660
+                - generic [ref=f2e902]:
+                  - generic [ref=f2e903]: Botellas antiguas
+                  - generic [ref=f2e905]: 952,00 €
+                  - generic [ref=f2e907]: 280 pujas
+            - group "2 / 15" [ref=f2e908]:
+              - generic [ref=f2e909]:
+                - generic [ref=f2e910]:
+                  - generic [ref=f2e911]:
+                    - button "" [ref=f2e914] [cursor=pointer]
+                    - 'img "Coleccionismo de vinos y licores: Botella antigua de 30 cm macallan whisky a estrenar nunca abierta" [ref=f2e917]'
+                    - generic [ref=f2e918]:
+                      - generic [ref=f2e919]: 
+                      - text: 10h 37m
+                  - heading [level=3] [ref=f2e921]:
+                    - link "Botella antigua de 30 cm macallan whisky a estrenar nunca abierta" [ref=f2e922] [cursor=pointer]:
+                      - /url: /coleccionismo-vinos-y-licores/botella-antigua-30-cm-macallan-whisky-estrenar-nunca-abierta~x704186905
+                - generic [ref=f2e923]:
+                  - generic [ref=f2e924]: Coleccionismo de vinos, licores y aguardientes
+                  - generic [ref=f2e926]:
+                    - generic [ref=f2e927]: 
+                    - generic [ref=f2e929]: 257,00 €
+                  - generic [ref=f2e930]: 220 pujas
+            - group "3 / 15" [ref=f2e931]:
+              - generic [ref=f2e932]:
+                - generic [ref=f2e933]:
+                  - generic [ref=f2e934]:
+                    - button "" [ref=f2e937] [cursor=pointer]
+                    - 'img "Arte: SAN JERÓNIMO PENITENTE - ANTIGUO ÓLEO SOBRE LIENZO -" [ref=f2e940]'
+                    - generic [ref=f2e941]:
+                      - generic [ref=f2e942]: 
+                      - text: 6d 8h
+                  - heading [level=3] [ref=f2e944]:
+                    - link "SAN JERÓNIMO PENITENTE - ANTIGUO ÓLEO SOBRE LIENZO -" [ref=f2e945] [cursor=pointer]:
+                      - /url: /arte-religioso/san-jeronimo-penitente-antiguo-oleo-sobre-lienzo-~x704598365
+                - generic [ref=f2e946]:
+                  - generic [ref=f2e947]: Pintura religiosa antigua al óleo
+                  - generic [ref=f2e949]:
+                    - generic [ref=f2e950]: 
+                    - generic [ref=f2e952]: 202,00 €
+                  - generic [ref=f2e953]: 216 pujas
+            - group "4 / 15" [ref=f2e954]:
+              - generic [ref=f2e955]:
+                - generic [ref=f2e956]:
+                  - generic [ref=f2e957]:
+                    - button "" [ref=f2e960] [cursor=pointer]
+                    - 'img "Antigüedades: ANTIGUO MANTÓN DE MANILA EN SEDA FINA BORDADO A MANO S. XIX" [ref=f2e963]'
+                    - generic [ref=f2e964]:
+                      - generic [ref=f2e965]: 
+                      - text: 7h 32m
+                  - heading [level=3] [ref=f2e967]:
+                    - link "ANTIGUO MANTÓN DE MANILA EN SEDA FINA BORDADO A MANO S. XIX" [ref=f2e968] [cursor=pointer]:
+                      - /url: /antiguedades/antiguo-manton-manila-seda-fina-bordado-mano-s-xix~x704131035
+                - generic [ref=f2e969]:
+                  - generic [ref=f2e970]: Mantones de manila antiguos
+                  - generic [ref=f2e972]: 322,00 €
+                  - generic [ref=f2e974]: 205 pujas
+            - group "5 / 15" [ref=f2e975]:
+              - generic [ref=f2e976]:
+                - generic [ref=f2e977]:
+                  - generic [ref=f2e978]:
+                    - button "" [ref=f2e981] [cursor=pointer]
+                    - 'img "Monedas antiguas de Europa: Lote 6 monedas PLATA 50 francs Francia 1974 1975 1976 1977 1978 1979" [ref=f2e984]'
+                    - generic [ref=f2e985]:
+                      - generic [ref=f2e986]: 
+                      - text: 4d 8h
+                  - heading [level=3] [ref=f2e988]:
+                    - link "Lote 6 monedas PLATA 50 francs Francia 1974 1975 1976 1977 1978 1979" [ref=f2e989] [cursor=pointer]:
+                      - /url: /monedas-antiguas-europa/lote-6-monedas-plata-50-francs-francia-1974-1975-1976-1977-1978-1979~x705095770
+                - generic [ref=f2e990]:
+                  - generic [ref=f2e991]: Monedas de Europa antiguas
+                  - generic [ref=f2e993]: 223,00 €
+                  - generic [ref=f2e995]: 199 pujas
+            - group "6 / 15" [ref=f2e996]:
+              - generic [ref=f2e997]:
+                - generic [ref=f2e998]:
+                  - generic [ref=f2e999]:
+                    - button "" [ref=f2e1002] [cursor=pointer]
+                    - 'img "Cine: ROSA-PROGRAMA DE LA PELICULA --LA DOLCE VITA" [ref=f2e1005]'
+                    - generic [ref=f2e1006]:
+                      - generic [ref=f2e1007]: 
+                      - text: 4d 4h
+                  - heading [level=3] [ref=f2e1009]:
+                    - link "ROSA-PROGRAMA DE LA PELICULA --LA DOLCE VITA" [ref=f2e1010] [cursor=pointer]:
+                      - /url: /cine-folletos-mano/rosa-programa-pelicula-la-dolce-vita~x704801710
+                - generic [ref=f2e1011]:
+                  - generic [ref=f2e1012]: Folletos antiguos de cine aventuras
+                  - generic [ref=f2e1014]: 163,99 €
+                  - generic [ref=f2e1016]: 189 pujas
+            - group "7 / 15" [ref=f2e1017]:
+              - generic [ref=f2e1018]:
+                - generic [ref=f2e1019]:
+                  - generic [ref=f2e1020]:
+                    - button "" [ref=f2e1023] [cursor=pointer]
+                    - 'img "Relojes de bolsillo: RELOJ DE BOLSILLO CON SÍMBOLOGÍA MASÓNICA" [ref=f2e1026]'
+                    - generic [ref=f2e1027]:
+                      - generic [ref=f2e1028]: 
+                      - text: 1d 8h
+                  - heading [level=3] [ref=f2e1030]:
+                    - link "RELOJ DE BOLSILLO CON SÍMBOLOGÍA MASÓNICA" [ref=f2e1031] [cursor=pointer]:
+                      - /url: /relojes-antiguos-bolsillo/reloj-bolsillo-simbologia-masonica~x704285725
+                - generic [ref=f2e1032]:
+                  - generic [ref=f2e1033]: Relojes antiguos de bolsillo carga manual
+                  - generic [ref=f2e1035]:
+                    - generic [ref=f2e1036]: 
+                    - generic [ref=f2e1038]: 141,00 €
+                  - generic [ref=f2e1039]: 178 pujas
+            - group "8 / 15" [ref=f2e1040]:
+              - generic [ref=f2e1041]:
+                - generic [ref=f2e1042]:
+                  - generic [ref=f2e1043]:
+                    - button "" [ref=f2e1046] [cursor=pointer]
+                    - 'img "Monedas Franco: LOTE MONEDAS PLATA 100 PESETAS 1966" [ref=f2e1049]'
+                    - generic [ref=f2e1050]:
+                      - generic [ref=f2e1051]: 
+                      - text: 1d 9h
+                  - heading [level=3] [ref=f2e1053]:
+                    - link "LOTE MONEDAS PLATA 100 PESETAS 1966" [ref=f2e1054] [cursor=pointer]:
+                      - /url: /monedas-franco/lote-monedas-plata-100-pesetas-1966~x704680670
+                - generic [ref=f2e1055]:
+                  - generic [ref=f2e1056]: Monedas del Estado Español de Franco de colección
+                  - generic [ref=f2e1058]: 139,00 €
+                  - generic [ref=f2e1060]: 161 pujas
+            - group "9 / 15" [ref=f2e1061]:
+              - generic [ref=f2e1062]:
+                - generic [ref=f2e1063]:
+                  - generic [ref=f2e1064]:
+                    - button "" [ref=f2e1067] [cursor=pointer]
+                    - 'img "Coleccionismo álbumes: ÁLBUM DE FÚTBOL FOTO-DEPORTE 1944, BRUGUERA" [ref=f2e1070]'
+                    - generic [ref=f2e1071]:
+                      - generic [ref=f2e1072]: 
+                      - text: 2d 7h
+                  - heading [level=3] [ref=f2e1074]:
+                    - link "ÁLBUM DE FÚTBOL FOTO-DEPORTE 1944, BRUGUERA" [ref=f2e1075] [cursor=pointer]:
+                      - /url: /album-incompleto/album-futbol-foto-deporte-1944-bruguera~x704405785
+                - generic [ref=f2e1076]:
+                  - generic [ref=f2e1077]: Álbumes antiguos incompletos
+                  - generic [ref=f2e1079]: 102,00 €
+                  - generic [ref=f2e1081]: 155 pujas
+            - group "10 / 15" [ref=f2e1082]:
+              - generic [ref=f2e1083]:
+                - generic [ref=f2e1084]:
+                  - generic [ref=f2e1085]:
+                    - button "" [ref=f2e1088] [cursor=pointer]
+                    - 'img "Plumas estilográficas antiguas: MONTEGRAPPA , PLUMA ESTILOGRAFICA , SERIE LIMITADA A 1000 ,,DETALLES EN PLATA DE LEY" [ref=f2e1091]'
+                    - generic [ref=f2e1092]:
+                      - generic [ref=f2e1093]: 
+                      - text: 1d 9h
+                  - heading [level=3] [ref=f2e1095]:
+                    - link "MONTEGRAPPA , PLUMA ESTILOGRAFICA , SERIE LIMITADA A 1000 ,,DETALLES EN PLATA DE LEY" [ref=f2e1096] [cursor=pointer]:
+                      - /url: /estilograficas-antiguas/montegrappa-pluma-estilografica-serie-limitada-1000-detalles-plata-ley~x704098780
+                - generic [ref=f2e1097]:
+                  - generic [ref=f2e1098]: Plumas estilográficas antiguas
+                  - generic [ref=f2e1100]: 110,00 €
+                  - generic [ref=f2e1102]: 149 pujas
+            - group "11 / 15" [ref=f2e1103]:
+              - generic [ref=f2e1104]:
+                - generic [ref=f2e1105]:
+                  - generic [ref=f2e1106]:
+                    - button "" [ref=f2e1109] [cursor=pointer]
+                    - 'img "Juguetes antiguos Payá: CAMIÓN BARREIROS REF. 3064 ¡CON CAJA! PAYÁ AÑOS 60/70" [ref=f2e1112]'
+                    - generic [ref=f2e1113]:
+                      - generic [ref=f2e1114]: 
+                      - text: 5d 5h
+                  - heading [level=3] [ref=f2e1116]:
+                    - link "CAMIÓN BARREIROS REF. 3064 ¡CON CAJA! PAYÁ AÑOS 60/70" [ref=f2e1117] [cursor=pointer]:
+                      - /url: /juguetes-antiguos-paya/camion-barreiros-ref-3064-caja-paya-anos-60-70~x704988010
+                - generic [ref=f2e1118]:
+                  - generic [ref=f2e1119]: Juguetes antiguos Marca Payá
+                  - generic [ref=f2e1121]: 102,00 €
+                  - generic [ref=f2e1123]: 140 pujas
+            - group "12 / 15" [ref=f2e1124]:
+              - generic [ref=f2e1125]:
+                - generic [ref=f2e1126]:
+                  - generic [ref=f2e1127]:
+                    - button "" [ref=f2e1130] [cursor=pointer]
+                    - 'img "Libros antiguos: 1876 - REVOLUCIÓN FRANCESA Y CONSULADO E IMPERIO - GRABADOS - HISTORIA DE FRANCIA" [ref=f2e1133]'
+                    - generic [ref=f2e1134]:
+                      - generic [ref=f2e1135]: 
+                      - text: 6d 8h
+                  - heading [level=3] [ref=f2e1137]:
+                    - link "1876 - REVOLUCIÓN FRANCESA Y CONSULADO E IMPERIO - GRABADOS - HISTORIA DE FRANCIA" [ref=f2e1138] [cursor=pointer]:
+                      - /url: /libros-antiguos-historia-moderna/1876-revolucion-francesa-consulado-e-imperio-grabados-historia-francia~x704551455
+                - generic [ref=f2e1139]:
+                  - generic [ref=f2e1140]: Libros antiguos de historia moderna
+                  - generic [ref=f2e1142]:
+                    - generic [ref=f2e1143]: 
+                    - generic [ref=f2e1145]: 77,02 €
+                  - generic [ref=f2e1146]: 134 pujas
+            - group "13 / 15" [ref=f2e1147]:
+              - generic [ref=f2e1148]:
+                - generic [ref=f2e1149]:
+                  - generic [ref=f2e1150]:
+                    - button "" [ref=f2e1153] [cursor=pointer]
+                    - 'img "Libros antiguos: AÑO 1662 - OBRAS DE SANTA TERESA DE JESUS - CAMINO DE PERFECCION - CARMELITAS - PERGAMINO" [ref=f2e1156]'
+                    - generic [ref=f2e1157]:
+                      - generic [ref=f2e1158]: 
+                      - text: 6d 8h
+                  - heading [level=3] [ref=f2e1160]:
+                    - link "AÑO 1662 - OBRAS DE SANTA TERESA DE JESUS - CAMINO DE PERFECCION - CARMELITAS - PERGAMINO" [ref=f2e1161] [cursor=pointer]:
+                      - /url: /libros-antiguos-religion/ano-1662-obras-santa-teresa-jesus-camino-perfeccion-carmelitas-pergamino~x704608170
+                - generic [ref=f2e1162]:
+                  - generic [ref=f2e1163]: Libros antiguos de religión
+                  - generic [ref=f2e1165]:
+                    - generic [ref=f2e1166]: 
+                    - generic [ref=f2e1168]: 66,00 €
+                  - generic [ref=f2e1169]: 124 pujas
+            - group "14 / 15" [ref=f2e1170]:
+              - generic [ref=f2e1171]:
+                - generic [ref=f2e1172]:
+                  - generic [ref=f2e1173]:
+                    - button "" [ref=f2e1176] [cursor=pointer]
+                    - 'img "Billetes españoles: 500 PESETAS DE 1940 , ENTIERRO CONDE DE ORGAZ" [ref=f2e1179]'
+                    - generic [ref=f2e1180]:
+                      - generic [ref=f2e1181]: 
+                      - text: 1d 9h
+                  - heading [level=3] [ref=f2e1183]:
+                    - link "500 PESETAS DE 1940 , ENTIERRO CONDE DE ORGAZ" [ref=f2e1184] [cursor=pointer]:
+                      - /url: /billetes-espanoles/500-pesetas-1940-entierro-conde-orgaz~x704042740
+                - generic [ref=f2e1185]:
+                  - generic [ref=f2e1186]: Billetes españoles antiguos
+                  - generic [ref=f2e1188]: 112,00 €
+                  - generic [ref=f2e1190]: 118 pujas
+            - group "15 / 15" [ref=f2e1191]:
+              - generic [ref=f2e1192]:
+                - generic [ref=f2e1193]:
+                  - generic [ref=f2e1194]:
+                    - button "" [ref=f2e1197] [cursor=pointer]
+                    - 'img "Joyeria: Collar vintage de 140 perlas con cierre de oro 18K y crisoprasa natural" [ref=f2e1200]'
+                    - generic [ref=f2e1201]:
+                      - generic [ref=f2e1202]: 
+                      - text: 3d 7h
+                  - heading [level=3] [ref=f2e1204]:
+                    - link "Collar vintage de 140 perlas con cierre de oro 18K y crisoprasa natural" [ref=f2e1205] [cursor=pointer]:
+                      - /url: /joyeria/collar-vintage-140-perlas-cierre-oro-18k-crisoprasa-natural~x698129895
+                - generic [ref=f2e1206]:
+                  - generic [ref=f2e1207]: Collares antiguos
+                  - generic [ref=f2e1209]: 182,00 €
+                  - generic [ref=f2e1211]: 117 pujas
+          - button "Next slide" [ref=f2e1212] [cursor=pointer]
+          - button "Previous slide" [disabled] [ref=f2e1213]
+      - generic [ref=f2e1215]:
+        - generic [ref=f2e1216]:
+          - link "Ir a Orientaprecios" [ref=f2e1218] [cursor=pointer]:
+            - /url: /orientaprecios
+          - generic [ref=f2e1219]:
+            - generic [ref=f2e1220]:
+              - img "Orientaprecios" [ref=f2e1222]
+              - heading "¿Cuánto cuesta?, ¿cuánto vale?" [level=2] [ref=f2e1223]
+            - paragraph [ref=f2e1224]: "Orientaprecios: conoce el valor de lo que tienes."
+            - paragraph [ref=f2e1225]: Todos nos preguntamos cuánto cuesta aquello que deseamos comprar o vender. Nuestro histórico de lotes vendidos te sacará de dudas. Solo tienes que hacer una búsqueda en Orientaprecios y encontrarás el valor aproximado de cualquier artículo que te imagines.
+          - search [ref=f2e1227]:
+            - generic [ref=f2e1229]:
+              - generic [ref=f2e1230]: Busca en Orientaprecios
+              - generic [ref=f2e1231]:
+                - button " Busca en Orientaprecios" [ref=f2e1232] [cursor=pointer]:
+                  - generic [ref=f2e1233]: 
+                  - generic [ref=f2e1234]: Busca en Orientaprecios
+                - searchbox "Busca en Orientaprecios" [ref=f2e1235]
+                - text: 
+        - img "Orientaprecios, guía de lotes vendidos" [ref=f2e1238]
+      - generic [ref=f2e1240]:
+        - generic [ref=f2e1241]:
+          - generic [ref=f2e1242]:
+            - heading "Colecciona Recuerdos" [level=2] [ref=f2e1243]
+            - paragraph [ref=f2e1244]: Las mejores historias coleccionistas
+          - link "Ver todas " [ref=f2e1245] [cursor=pointer]:
+            - /url: /colecciona-recuerdos
+            - generic [ref=f2e1246]: Ver todas
+            - generic [ref=f2e1247]: 
+        - generic [ref=f2e1250]:
+          - generic [ref=f2e1251]:
+            - 'img "Spiderman Marvel: del kiosco al salón." [ref=f2e1253]'
+            - generic [ref=f2e1254]:
+              - paragraph [ref=f2e1255]: "Marvel: del kiosco al salón. Cómics, cine, figuras y recuerdos"
+              - paragraph [ref=f2e1256]: Hay quien conoció Marvel con tebeos del kiosco, otros en el videoclub, alquilando una cinta de Spiderman o de los X-Men, y los más jóvenes en una pantalla gigante con palomitas.
+            - 'link "Marvel: del kiosco al salón. Cómics, cine, figuras y recuerdos"':
+              - /url: /colecciona-recuerdos/colecciones-unicas/marvel-kiosco-salon-comics-cine-juguetes-recuerdos
+          - generic [ref=f2e1258]:
+            - img "Maziguer Z Portada blog" [ref=f2e1260]
+            - generic [ref=f2e1261]:
+              - paragraph [ref=f2e1262]: Coleccionables que marcaron una generación
+              - paragraph [ref=f2e1263]: Coleccionables que marcaron una generación. Fascículos, Altaya, Planeta DeAgostini, maquetas, miniaturas, enciclopedias, soldaditos, coches, muñecas…
+            - link "Coleccionables que marcaron una generación":
+              - /url: /colecciona-recuerdos/colecciones-unicas/coleccionables-que-marcaron-una-generacion
+          - generic [ref=f2e1265]:
+            - img "Moto de hojalata" [ref=f2e1267]
+            - generic [ref=f2e1268]:
+              - paragraph [ref=f2e1269]: "Juguetes de hojalata: cuando el metal aprendió a jugar"
+              - paragraph [ref=f2e1270]: "Los juguetes de hojalata son mucho más que metal y pintura: son recuerdos en movimiento. Recorremos su historia, desde los talleres de Núremberg hasta la cuna juguetera de Ibi. Una ruta nostálgica por piezas que hoy siguen latiendo en vitrinas y colecciones."
+            - 'link "Juguetes de hojalata: cuando el metal aprendió a jugar"':
+              - /url: /colecciona-recuerdos/curiosidades/juguetes-hojalata
+      - generic [ref=f2e1272]:
+        - generic [ref=f2e1273]:
+          - generic [ref=f2e1274]:
+            - generic [ref=f2e1275]: 
+            - link "Entregas en 24h-48h":
+              - /url: /envios-tc
+          - paragraph [ref=f2e1277]: Entregas en 24h-48h
+          - paragraph [ref=f2e1278]: Envía o recibe todos tus pedidos en menos de 48h mediante nuestro servicio de Envíos tc.
+        - generic [ref=f2e1279]:
+          - generic [ref=f2e1280]:
+            - generic [ref=f2e1281]: 
+            - link "Pago seguro":
+              - /url: /pago-tc
+          - paragraph [ref=f2e1283]: Pago seguro
+          - paragraph [ref=f2e1284]: Realiza tus transacciones de forma segura y protegida a través de nuestra pasarela de Pago tc.
+        - generic [ref=f2e1285]:
+          - generic [ref=f2e1286]:
+            - generic [ref=f2e1287]: 
+            - link "Atención personalizada":
+              - /url: /ayuda
+          - paragraph [ref=f2e1289]: Atención personalizada
+          - paragraph [ref=f2e1290]: Estamos disponible las 24h para poder atender todas tus consultas de una forma personalizada.
+        - generic [ref=f2e1291]:
+          - generic [ref=f2e1292]:
+            - generic [ref=f2e1293]: 
+            - link "Te lo encontramos":
+              - /url: /teloencontramos
+          - paragraph [ref=f2e1295]: Te lo encontramos
+          - paragraph [ref=f2e1296]: Si estás buscando algo concreto y no lo encuentras, nosotros podemos ayudarte. ¡Cuéntanos!
+      - heading "todocoleccion, donde viven los recuerdos y la cultura del coleccionismo" [level=2] [ref=f2e1297]
+      - paragraph [ref=f2e1298]: Somos la mayor comunidad online de compra venta y subastas de Antigüedades, Arte, Libros y Coleccionismo. Conectamos a las personas con su historia, vivencias y emociones mediante los objetos que veneran.
+      - paragraph [ref=f2e1299]: En todocoleccion puedes comprar directamente o pujar en nuestras subastas por recuerdos que creíste no volver a ver. Libros antiguos y de segunda mano, juguetes antiguos, figuras de acción, muñecas antiguas, muebles de segunda mano, joyas de colección, objetos vintage, cromos de fútbol, monedas y sellos, relojes antiguos, discos de vinilo, arte religioso, postales, tebeos y cómics, películas, moda antigua, pintura al óleo, antigüedades técnicas y rústicas… Echa un vistazo a nuestro catálogo o utiliza nuestro buscador, ¡encuentra ese objeto único al que dar una nueva vida!
+  - contentinfo [ref=f2e1300]:
+    - generic [ref=f2e1301]:  
+    - generic [ref=f2e1306]:
+      - generic [ref=f2e1308]:
+        - generic [ref=f2e1309]:
+          - text:  
+          - generic "Quiénes somos  " [ref=f2e1310]:
+            - list [ref=f2e1311]:
+              - listitem [ref=f2e1312]:
+                - link "Quiénes somos" [ref=f2e1313] [cursor=pointer]:
+                  - /url: /quienes-somos
+              - listitem [ref=f2e1314]:
+                - link "Colecciona Recuerdos" [ref=f2e1315] [cursor=pointer]:
+                  - /url: /colecciona-recuerdos
+              - listitem [ref=f2e1316]:
+                - link "Sala de prensa" [ref=f2e1317] [cursor=pointer]:
+                  - /url: /sala-de-prensa
+              - listitem [ref=f2e1318]:
+                - link "El podcast del coleccionista" [ref=f2e1319] [cursor=pointer]:
+                  - /url: /colecciona-recuerdos/podcasts
+              - listitem [ref=f2e1320]:
+                - link "Blog todocoleccion" [ref=f2e1321] [cursor=pointer]:
+                  - /url: https://www.todocoleccionblog.net
+        - generic [ref=f2e1322]:
+          - text:  
+          - generic "Servicios  " [ref=f2e1323]:
+            - list [ref=f2e1324]:
+              - listitem [ref=f2e1325]:
+                - link "Servicios" [ref=f2e1326] [cursor=pointer]:
+                  - /url: /ayuda/servicios
+              - listitem [ref=f2e1327]:
+                - link "Pago tc" [ref=f2e1328] [cursor=pointer]:
+                  - /url: /ayuda/gestion-pago-tc
+              - listitem [ref=f2e1329]:
+                - link "Envíos tc" [ref=f2e1330] [cursor=pointer]:
+                  - /url: /envios-tc
+              - listitem [ref=f2e1331]:
+                - link "Orientaprecios" [ref=f2e1332] [cursor=pointer]:
+                  - /url: /orientaprecios
+              - listitem [ref=f2e1333]:
+                - link "todotasacion" [ref=f2e1334] [cursor=pointer]:
+                  - /url: https://todotasacion.com/
+              - listitem [ref=f2e1335]:
+                - link "Te lo encontramos" [ref=f2e1336] [cursor=pointer]:
+                  - /url: /teloencontramos
+        - generic [ref=f2e1337]:
+          - text:  
+          - generic "Vender  " [ref=f2e1338]:
+            - list [ref=f2e1339]:
+              - listitem [ref=f2e1340]:
+                - link "Vender" [ref=f2e1341] [cursor=pointer]:
+                  - /url: /ayuda/vender
+              - listitem [ref=f2e1342]:
+                - link "Cómo vender" [ref=f2e1343] [cursor=pointer]:
+                  - /url: /ayuda/como-vender
+              - listitem [ref=f2e1344]:
+                - link "Tiendas tc" [ref=f2e1345] [cursor=pointer]:
+                  - /url: /ayuda/tiendas
+        - generic [ref=f2e1346]:
+          - text:  
+          - generic "Centro de ayuda  " [ref=f2e1347]:
+            - list [ref=f2e1348]:
+              - listitem [ref=f2e1349]:
+                - link "Centro de ayuda" [ref=f2e1350] [cursor=pointer]:
+                  - /url: /ayuda
+              - listitem [ref=f2e1351]:
+                - link "Preguntas vendedor" [ref=f2e1352] [cursor=pointer]:
+                  - /url: /ayuda/preguntas-frecuentes/vendedores
+              - listitem [ref=f2e1353]:
+                - link "Preguntas comprador" [ref=f2e1354] [cursor=pointer]:
+                  - /url: /ayuda/preguntas-frecuentes/compradores
+              - listitem [ref=f2e1355]:
+                - link "Contactar" [ref=f2e1356] [cursor=pointer]:
+                  - /url: /ayuda/contactar
+      - generic [ref=f2e1357]:
+        - generic [ref=f2e1358]:
+          - generic [ref=f2e1359]:
+            - link [ref=f2e1361] [cursor=pointer]:
+              - /url: https://apps.apple.com/es/app/todocoleccion/id892347440?pt=1649480&ct=pie-web&mt=8
+              - img "Aplicación para iOS disponible en el App Store" [ref=f2e1363]
+            - link [ref=f2e1365] [cursor=pointer]:
+              - /url: https://play.google.com/store/apps/details?id=com.jaraxa.todocoleccion&referrer=utm_source%3Dtc-pie%26utm_medium%3Dlogotipo%26utm_campaign%3Dapp-android-pie-tc
+              - img "Aplicación para Android disponible en Google Play" [ref=f2e1367]
+          - generic [ref=f2e1368]:
+            - link "" [ref=f2e1370] [cursor=pointer]:
+              - /url: https://instagram.com/todocoleccion
+            - link "" [ref=f2e1373] [cursor=pointer]:
+              - /url: https://www.instagram.com/todocoleccion_libros
+            - link "句" [ref=f2e1376] [cursor=pointer]:
+              - /url: https://www.facebook.com/todocoleccion
+            - link "" [ref=f2e1379] [cursor=pointer]:
+              - /url: https://www.twitter.com/todocoleccion
+            - link "契" [ref=f2e1382] [cursor=pointer]:
+              - /url: https://www.pinterest.com/todocoleccion/
+            - link "" [ref=f2e1385] [cursor=pointer]:
+              - /url: https://www.youtube.com/user/todocoleccion
+            - link "" [ref=f2e1388] [cursor=pointer]:
+              - /url: https://www.tiktok.com/@todocolecciontc
+            - link "金" [ref=f2e1391] [cursor=pointer]:
+              - /url: https://www.todocoleccionblog.net
+        - paragraph [ref=f2e1394]:
+          - text: Copyright ©1997-2026 Zoconet, S.L. Todos los derechos reservados.
+          - link "Condiciones del Servicio" [ref=f2e1395] [cursor=pointer]:
+            - /url: /condiciones-del-servicio
+          - text: "|"
+          - link "Política de privacidad" [ref=f2e1396] [cursor=pointer]:
+            - /url: /politica-de-privacidad
+          - text: "|"
+          - link "Política de Cookies" [ref=f2e1397] [cursor=pointer]:
+            - /url: /politica-de-cookies
+        - generic [ref=f2e1398]:
+          - generic [ref=f2e1399]: "Hora oficial TC: 11:47:41 TR: 205 ms."
+          - generic [ref=f2e1400]:
+            - button "Español Español " [ref=f2e1403] [cursor=pointer]:
+              - img "Español" [ref=f2e1405]
+              - text: Español
+              - generic [ref=f2e1406]: 
+            - button "€ EUR " [ref=f2e1408] [cursor=pointer]:
+              - generic [ref=f2e1409]: € EUR
+              - generic [ref=f2e1410]: 

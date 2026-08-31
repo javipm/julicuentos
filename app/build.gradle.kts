@@ -15,7 +15,7 @@ android {
         applicationId = "com.julicuentos.app"
         minSdk = 22
         targetSdk = 34
-        versionCode = 1
+        versionCode =  2
         versionName = "1.0"
     }
 
@@ -44,5 +44,8 @@ android {
 dependencies {
     implementation(libs.androidx.core)
     implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.media)
+    implementation(libs.media3.exoplayer)
+    implementation(libs.media3.session)
     testImplementation(libs.junit)
 }

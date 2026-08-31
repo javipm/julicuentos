@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Slice 1 scaffold manifest. PlaybackService + MediaButtonReceiver arrive in slice 2. -->
+<!-- Slice 1 scaffold manifest + Slice 2 playback declarations.
+     PlaybackService follows the media3 canonical manifest pattern: the service exposes
+     the MediaSessionService interface action so MediaButtonReceiver can hand
+     media-button intents to it on API 22 (design.md §5; S2.5/S2.6). -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Exactly the delivery-spec permission set; INTERNET is absent by design. -->
@@ -24,6 +27,28 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Playback core (slice 2). The ONLY ExoPlayer lives here (design D5/D8).
+             exported=true so external media controls (notification shade, hardware keys)
+             can drive the session on API 22. -->
+        <service
+            android:name=".playback.PlaybackService"
+            android:exported="true"
+            android:foregroundServiceType="mediaPlayback">
+            <intent-filter>
+                <action android:name="androidx.media3.session.MediaSessionService" />
+            </intent-filter>
+        </service>
+
+        <!-- Media-button hardware keys / notification media-button intents on API 22
+             (design D2). Startsthe service when not running. -->
+        <receiver
+            android:name="androidx.media3.session.MediaButtonReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

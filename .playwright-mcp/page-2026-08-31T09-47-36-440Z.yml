@@ -1,0 +1,504 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - banner [ref=e4]:
+        - generic [ref=e8]:
+          - text: 
+          - 'link "todocoleccion: compra y venta de antigüedades y objetos de colección" [ref=e11] [cursor=pointer]':
+            - /url: /
+          - list [ref=e16]:
+            - listitem [ref=e17]:
+              - link "Acceder" [ref=e18] [cursor=pointer]:
+                - /url: /acceder/?cod=ent
+            - listitem [ref=e19]:
+              - button "" [ref=e20] [cursor=pointer]
+          - search [ref=e24]:
+            - generic [ref=e26]:
+              - generic [ref=e27]: Buscador de todocoleccion
+              - generic [ref=e28]:
+                - button " Buscador de todocoleccion" [ref=e29] [cursor=pointer]:
+                  - generic [ref=e30]: 
+                  - generic [ref=e31]: Buscador de todocoleccion
+                - searchbox "Buscador de todocoleccion" [ref=e33]
+                - text: 
+          - link "Avanzada" [ref=e35] [cursor=pointer]:
+            - /url: /buscador/turbo
+        - navigation [ref=e36]:
+          - list [ref=e38]:
+            - listitem [ref=e39]:
+              - button "Catálogo" [ref=e40] [cursor=pointer]
+              - text: 
+            - listitem [ref=e41]:
+              - link "Subastas" [ref=e42] [cursor=pointer]:
+                - /url: /subastas
+            - listitem [ref=e43]:
+              - link "Tiendas" [ref=e44] [cursor=pointer]:
+                - /url: /tiendas
+            - listitem [ref=e45]:
+              - link "Orientaprecios" [ref=e46] [cursor=pointer]:
+                - /url: /orientaprecios
+            - listitem [ref=e47]:
+              - link "Vender" [ref=e48] [cursor=pointer]:
+                - /url: /ayuda/vender
+            - listitem [ref=e49]:
+              - link "Mi todocoleccion" [ref=e50] [cursor=pointer]:
+                - /url: /mitc
+            - listitem [ref=e51]:
+              - link "" [ref=e52] [cursor=pointer]:
+                - /url: /mitc?mostrarbmtc
+    - generic [ref=e56]:
+      - alert [ref=e57]:
+        - generic [ref=e58]:
+          - generic [ref=e59]:
+            - generic [ref=e60]: 
+            - generic [ref=e63]: ¡Vaya! esta página no existe
+          - generic [ref=e64]: La buena noticia es que hay muchos lotes que pueden interesarte, usa nuestro buscador
+      - generic [ref=e67]:
+        - generic [ref=e68]:
+          - generic [ref=e69]: ¡Lo buscas, lo encuentras!
+          - search [ref=e73]:
+            - generic [ref=e75]:
+              - generic [ref=e76]: Buscar
+              - generic [ref=e77]:
+                - button " Buscar" [ref=e78] [cursor=pointer]:
+                  - generic [ref=e79]: 
+                  - generic [ref=e80]: Buscar
+                - searchbox "Buscar" [ref=e81]
+                - text: 
+        - generic [ref=e82]:
+          - heading "Explora nuestro catálogo" [level=2] [ref=e83]
+          - generic [ref=e85]:
+            - generic [ref=e87]:
+              - link [ref=e88] [cursor=pointer]:
+                - /url: /s/libros
+                - img "Libros" [ref=e90]
+              - heading [level=2] [ref=e92]:
+                - link "Libros" [ref=e93] [cursor=pointer]:
+                  - /url: /s/libros
+            - generic [ref=e95]:
+              - link [ref=e96] [cursor=pointer]:
+                - /url: /s/antiguedades
+                - img "Antigüedades" [ref=e98]
+              - heading [level=2] [ref=e100]:
+                - link "Antigüedades" [ref=e101] [cursor=pointer]:
+                  - /url: /s/antiguedades
+            - generic [ref=e103]:
+              - link [ref=e104] [cursor=pointer]:
+                - /url: /s/juguetes
+                - img "Juguetes y juegos" [ref=e106]
+              - heading [level=2] [ref=e108]:
+                - link "Juguetes y juegos" [ref=e109] [cursor=pointer]:
+                  - /url: /s/juguetes
+            - generic [ref=e111]:
+              - link [ref=e112] [cursor=pointer]:
+                - /url: /s/arte
+                - img "Arte" [ref=e114]
+              - heading [level=2] [ref=e116]:
+                - link "Arte" [ref=e117] [cursor=pointer]:
+                  - /url: /s/arte
+            - generic [ref=e119]:
+              - link [ref=e120] [cursor=pointer]:
+                - /url: /s/musica-discos-vinilos
+                - img "Música, discos, instrumentos..." [ref=e122]
+              - heading [level=2] [ref=e124]:
+                - link "Música, discos, instrumentos..." [ref=e125] [cursor=pointer]:
+                  - /url: /s/musica-discos-vinilos
+            - generic [ref=e127]:
+              - link [ref=e128] [cursor=pointer]:
+                - /url: /s/numismatica-monedas-billetes
+                - img "Numismática - Monedas y billetes" [ref=e130]
+              - heading [level=2] [ref=e132]:
+                - link "Numismática - Monedas y billetes" [ref=e133] [cursor=pointer]:
+                  - /url: /s/numismatica-monedas-billetes
+            - generic [ref=e135]:
+              - link [ref=e136] [cursor=pointer]:
+                - /url: /s/coleccionismo
+                - img "Coleccionismo papel" [ref=e138]
+              - heading [level=2] [ref=e140]:
+                - link "Coleccionismo papel" [ref=e141] [cursor=pointer]:
+                  - /url: /s/coleccionismo
+            - generic [ref=e143]:
+              - link [ref=e144] [cursor=pointer]:
+                - /url: /s/militar
+                - img "Coleccionismo militar" [ref=e146]
+              - heading [level=2] [ref=e148]:
+                - link "Coleccionismo militar" [ref=e149] [cursor=pointer]:
+                  - /url: /s/militar
+            - generic [ref=e151]:
+              - link [ref=e152] [cursor=pointer]:
+                - /url: /s/tebeos-comics
+                - img "Tebeos y cómics" [ref=e154]
+              - heading [level=2] [ref=e156]:
+                - link "Tebeos y cómics" [ref=e157] [cursor=pointer]:
+                  - /url: /s/tebeos-comics
+    - contentinfo [ref=e158]:
+      - generic [ref=e159]:  
+      - generic [ref=e164]:
+        - generic [ref=e166]:
+          - generic [ref=e167]:
+            - text:  
+            - generic "Quiénes somos  " [ref=e168]:
+              - list [ref=e169]:
+                - listitem [ref=e170]:
+                  - link "Quiénes somos" [ref=e171] [cursor=pointer]:
+                    - /url: /quienes-somos
+                - listitem [ref=e172]:
+                  - link "Colecciona Recuerdos" [ref=e173] [cursor=pointer]:
+                    - /url: /colecciona-recuerdos
+                - listitem [ref=e174]:
+                  - link "Sala de prensa" [ref=e175] [cursor=pointer]:
+                    - /url: /sala-de-prensa
+                - listitem [ref=e176]:
+                  - link "El podcast del coleccionista" [ref=e177] [cursor=pointer]:
+                    - /url: /colecciona-recuerdos/podcasts
+                - listitem [ref=e178]:
+                  - link "Blog todocoleccion" [ref=e179] [cursor=pointer]:
+                    - /url: https://www.todocoleccionblog.net
+          - generic [ref=e180]:
+            - text:  
+            - generic "Servicios  " [ref=e181]:
+              - list [ref=e182]:
+                - listitem [ref=e183]:
+                  - link "Servicios" [ref=e184] [cursor=pointer]:
+                    - /url: /ayuda/servicios
+                - listitem [ref=e185]:
+                  - link "Pago tc" [ref=e186] [cursor=pointer]:
+                    - /url: /ayuda/gestion-pago-tc
+                - listitem [ref=e187]:
+                  - link "Envíos tc" [ref=e188] [cursor=pointer]:
+                    - /url: /envios-tc
+                - listitem [ref=e189]:
+                  - link "Orientaprecios" [ref=e190] [cursor=pointer]:
+                    - /url: /orientaprecios
+                - listitem [ref=e191]:
+                  - link "todotasacion" [ref=e192] [cursor=pointer]:
+                    - /url: https://todotasacion.com/
+                - listitem [ref=e193]:
+                  - link "Te lo encontramos" [ref=e194] [cursor=pointer]:
+                    - /url: /teloencontramos
+          - generic [ref=e195]:
+            - text:  
+            - generic "Vender  " [ref=e196]:
+              - list [ref=e197]:
+                - listitem [ref=e198]:
+                  - link "Vender" [ref=e199] [cursor=pointer]:
+                    - /url: /ayuda/vender
+                - listitem [ref=e200]:
+                  - link "Cómo vender" [ref=e201] [cursor=pointer]:
+                    - /url: /ayuda/como-vender
+                - listitem [ref=e202]:
+                  - link "Tiendas tc" [ref=e203] [cursor=pointer]:
+                    - /url: /ayuda/tiendas
+          - generic [ref=e204]:
+            - text:  
+            - generic "Centro de ayuda  " [ref=e205]:
+              - list [ref=e206]:
+                - listitem [ref=e207]:
+                  - link "Centro de ayuda" [ref=e208] [cursor=pointer]:
+                    - /url: /ayuda
+                - listitem [ref=e209]:
+                  - link "Preguntas vendedor" [ref=e210] [cursor=pointer]:
+                    - /url: /ayuda/preguntas-frecuentes/vendedores
+                - listitem [ref=e211]:
+                  - link "Preguntas comprador" [ref=e212] [cursor=pointer]:
+                    - /url: /ayuda/preguntas-frecuentes/compradores
+                - listitem [ref=e213]:
+                  - link "Contactar" [ref=e214] [cursor=pointer]:
+                    - /url: /ayuda/contactar
+        - generic [ref=e215]:
+          - generic [ref=e216]:
+            - generic [ref=e217]:
+              - link [ref=e219] [cursor=pointer]:
+                - /url: https://apps.apple.com/es/app/todocoleccion/id892347440?pt=1649480&ct=pie-web&mt=8
+                - img "Aplicación para iOS disponible en el App Store" [ref=e221]
+              - link [ref=e223] [cursor=pointer]:
+                - /url: https://play.google.com/store/apps/details?id=com.jaraxa.todocoleccion&referrer=utm_source%3Dtc-pie%26utm_medium%3Dlogotipo%26utm_campaign%3Dapp-android-pie-tc
+                - img "Aplicación para Android disponible en Google Play" [ref=e225]
+            - generic [ref=e226]:
+              - link "" [ref=e228] [cursor=pointer]:
+                - /url: https://instagram.com/todocoleccion
+              - link "" [ref=e231] [cursor=pointer]:
+                - /url: https://www.instagram.com/todocoleccion_libros
+              - link "句" [ref=e234] [cursor=pointer]:
+                - /url: https://www.facebook.com/todocoleccion
+              - link "" [ref=e237] [cursor=pointer]:
+                - /url: https://www.twitter.com/todocoleccion
+              - link "契" [ref=e240] [cursor=pointer]:
+                - /url: https://www.pinterest.com/todocoleccion/
+              - link "" [ref=e243] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/todocoleccion
+              - link "" [ref=e246] [cursor=pointer]:
+                - /url: https://www.tiktok.com/@todocolecciontc
+              - link "金" [ref=e249] [cursor=pointer]:
+                - /url: https://www.todocoleccionblog.net
+          - paragraph [ref=e252]:
+            - text: Copyright ©1997-2026 Zoconet, S.L. Todos los derechos reservados.
+            - link "Condiciones del Servicio" [ref=e253] [cursor=pointer]:
+              - /url: /condiciones-del-servicio
+            - text: "|"
+            - link "Política de privacidad" [ref=e254] [cursor=pointer]:
+              - /url: /politica-de-privacidad
+            - text: "|"
+            - link "Política de Cookies" [ref=e255] [cursor=pointer]:
+              - /url: /politica-de-cookies
+          - generic [ref=e256]:
+            - generic [ref=e257]: "Hora oficial TC: 11:47:35 TR: 45 ms."
+            - generic [ref=e258]:
+              - button "Español Español " [ref=e261] [cursor=pointer]:
+                - img "Español" [ref=e263]
+                - text: Español
+                - generic [ref=e264]: 
+              - button "€ EUR " [ref=e266] [cursor=pointer]:
+                - generic [ref=e267]: € EUR
+                - generic [ref=e268]: 
+    - text: 
+  - dialog "Cookie consent dialog":
+    - dialog "Cookie consent dialog" [ref=e269]:
+      - generic [ref=e272] [cursor=pointer]:
+        - generic:
+          - generic [ref=e279]: Spanish
+          - generic [ref=e296]: English
+          - generic [ref=e311]: French
+          - generic [ref=e322]: German
+          - generic [ref=e333]: Italian
+          - generic [ref=e344]: Portuguese
+      - generic [ref=e357]: Ese sitio web utiliza cookies
+      - generic [ref=e358]:
+        - text: Este sitio web usa cookies para mejorar la experiencia del usuario. Al utilizar nuestro sitio web, usted acepta todas las cookies de acuerdo con nuestra Política de cookies.
+        - link "Más información, opens a new window" [ref=e359] [cursor=pointer]:
+          - /url: /politica-de-cookies
+          - text: Más información
+      - button "Mostrar todos los socios (1616) →" [ref=e360] [cursor=pointer]
+      - generic [ref=e361]:
+        - generic [ref=e362]:
+          - generic [ref=e363] [cursor=pointer]:
+            - checkbox "Cookies estrictamente necesarias" [checked] [disabled]
+          - generic [ref=e364] [cursor=pointer]: Cookies estrictamente necesarias
+        - generic [ref=e366]:
+          - checkbox "Cookies de rendimiento" [ref=e368] [cursor=pointer]
+          - generic [ref=e369] [cursor=pointer]: Cookies de rendimiento
+        - generic [ref=e371]:
+          - checkbox "Cookies de preferencias" [ref=e373] [cursor=pointer]
+          - generic [ref=e374] [cursor=pointer]: Cookies de preferencias
+        - generic [ref=e376]:
+          - checkbox "Cookies de funcionalidad" [ref=e378] [cursor=pointer]
+          - generic [ref=e379] [cursor=pointer]: Cookies de funcionalidad
+        - generic [ref=e381]:
+          - checkbox "Cookies no clasificadas" [ref=e383] [cursor=pointer]
+          - generic [ref=e384] [cursor=pointer]: Cookies no clasificadas
+      - generic [ref=e386]:
+        - button "Aceptar todo" [ref=e387] [cursor=pointer]
+        - button "Rechazar todo" [ref=e388] [cursor=pointer]
+      - button "Mostrar detalles" [ref=e389] [cursor=pointer]
+      - generic:
+        - generic [ref=e394]:
+          - button "Declaración de cookies" [ref=e395] [cursor=pointer]
+          - button "Sobre las cookies" [ref=e396] [cursor=pointer]
+          - button "Configuración de publicidad" [ref=e397] [cursor=pointer]
+        - generic:
+          - generic [ref=e398]:
+            - generic [ref=e399]:
+              - button "Cookies estrictamente necesarias" [ref=e400] [cursor=pointer]
+              - button "Cookies de rendimiento" [ref=e401] [cursor=pointer]
+              - button "Cookies de preferencias" [ref=e402] [cursor=pointer]
+              - button "Cookies de funcionalidad" [ref=e403] [cursor=pointer]
+              - button "Cookies no clasificadas" [ref=e404] [cursor=pointer]
+            - generic [ref=e405]:
+              - generic [ref=e406]:
+                - generic [ref=e407]: Las cookies estrictamente necesarias permiten la funcionalidad principal del sitio web, como el inicio de sesión de usuario y la gestión de cuentas. El sitio web no se puede utilizar correctamente sin las cookies estrictamente necesarias.
+                - table "Cookie report" [ref=e409]:
+                  - rowgroup [ref=e410]:
+                    - row [ref=e411]:
+                      - columnheader "Nombre" [ref=e412]
+                      - columnheader "Proveedor / Dominio" [ref=e413]
+                      - columnheader "Vencimiento" [ref=e414]
+                      - columnheader "Descripción" [ref=e415]
+                  - rowgroup [ref=e416]:
+                    - row [ref=e417]:
+                      - cell "DEVICE_ID" [ref=e418]
+                      - cell ".todocoleccion.net" [ref=e419]
+                      - cell "5 meses 3 semanas" [ref=e420]
+                      - cell "Esta cookie se utiliza para reconocer el dispositivo de un usuario con el fin de proporcionar una experiencia de navegación consistente y segura, recordando las preferencias del usuario y permitiendo un funcionamiento sin problemas en diferentes sesiones." [ref=e421]
+                    - row [ref=e422]:
+                      - cell "TC_PREFERRED_LANGUAGE" [ref=e423]
+                      - cell ".todocoleccion.net" [ref=e424]
+                      - cell "1 año 1 mes" [ref=e425]
+                      - cell [ref=e426]
+                    - row [ref=e427]:
+                      - cell "cfid" [ref=e428]
+                      - cell ".todocoleccion.net" [ref=e429]
+                      - cell "1 año 1 mes" [ref=e430]
+                      - cell "Cookie establecida por aplicaciones de Adobe ColdFusion. Utilizada junto con CFTOKEN, esta cookie ayuda a identificar de forma única un dispositivo cliente (navegador) para permitir que el sitio mantenga las variables de sesión del usuario. La forma en que se utilizan es específica del sitio. CFID contiene un número secuencial para identificar al cliente." [ref=e431]
+                    - row [ref=e432]:
+                      - cell "chatbase_anon_id" [ref=e433]
+                      - cell ".www.todocoleccion.net" [ref=e434]
+                      - cell "Sesión" [ref=e435]
+                      - cell [ref=e436]
+                    - row [ref=e437]:
+                      - cell "_dc_gtm_UA-1149359-1" [ref=e438]
+                      - cell ".todocoleccion.net" [ref=e439]
+                      - cell "58 segundos" [ref=e440]
+                      - cell "Esta cookie está asociada con sitios que utilizan Google Tag Manager para cargar otros scripts y códigos en una página. Cuando se usa, puede considerarse estrictamente necesario, ya que sin él, es posible que otros scripts no funcionen correctamente. El final del nombre es un número único que también es un identificador de una cuenta de Google Analytics asociada." [ref=e441]
+                    - row [ref=e442]:
+                      - cell "VISITOR_PRIVACY_METADATA" [ref=e443]
+                      - cell [ref=e444]:
+                        - link "YouTube" [ref=e446] [cursor=pointer]:
+                          - /url: https://policies.google.com/privacy
+                        - text: .youtube.com
+                      - cell "5 meses 4 semanas" [ref=e447]
+                      - cell "Esta cookie se utiliza para almacenar el consentimiento del usuario y las opciones de privacidad para su interacción con el sitio. Registra datos sobre el consentimiento del visitante en relación con diversas políticas y configuraciones de privacidad, asegurando que sus preferencias sean honradas en futuras sesiones." [ref=e448]
+                    - row [ref=e449]:
+                      - cell "cftoken" [ref=e450]
+                      - cell ".todocoleccion.net" [ref=e451]
+                      - cell "1 año 1 mes" [ref=e452]
+                      - cell "Cookie establecida por aplicaciones de Adobe ColdFusion. Utilizada junto con CFID, esta cookie ayuda a identificar de forma única un dispositivo cliente (navegador) para permitir que el sitio mantenga las variables de sesión del usuario. La forma en que se utilizan es específica del sitio. CFTOKEN contiene un número aleatorio para identificar al cliente." [ref=e453]
+                    - row [ref=e454]:
+                      - cell "CookieScriptConsent" [ref=e455]
+                      - cell [ref=e456]:
+                        - link "CookieScript" [ref=e458] [cursor=pointer]:
+                          - /url: https://cookie-script.com/privacy-policy.html
+                        - text: .todocoleccion.net
+                      - cell "6 meses 2 semanas" [ref=e459]
+                      - cell "El servicio Cookie-Script.com utiliza esta cookie para recordar las preferencias de consentimiento de cookies de los visitantes. Es necesario que el banner de cookies de Cookie-Script.com funcione correctamente." [ref=e460]
+                    - row [ref=e461]:
+                      - cell "__cf_bm" [ref=e462]
+                      - cell [ref=e463]:
+                        - link "Cloudflare Inc." [ref=e465] [cursor=pointer]:
+                          - /url: https://www.cloudflare.com/privacypolicy
+                        - text: .backend.chatbase.co
+                      - cell "29 minutos 58 segundos" [ref=e466]
+                      - cell "Esta cookie se utiliza para distinguir entre humanos y bots. Esto es beneficioso para el sitio web, con el fin de realizar informes válidos sobre el uso de su sitio web." [ref=e467]
+              - generic:
+                - generic [ref=e468]: "Las cookies de rendimiento se utilizan para ver cómo los visitantes utilizan el sitio web. Por ejemplo: cookies analíticas. Este tipo de cookies no se pueden utilizar para identificar directamente a un determinado visitante."
+                - table "Cookie report" [ref=e470]:
+                  - rowgroup [ref=e471]:
+                    - row [ref=e472]:
+                      - columnheader "Nombre" [ref=e473]
+                      - columnheader "Proveedor / Dominio" [ref=e474]
+                      - columnheader "Vencimiento" [ref=e475]
+                      - columnheader "Descripción" [ref=e476]
+                  - rowgroup [ref=e477]:
+                    - row [ref=e478]:
+                      - cell "_ga" [ref=e479]
+                      - cell [ref=e480]:
+                        - link "Google LLC" [ref=e482] [cursor=pointer]:
+                          - /url: https://policies.google.com/privacy
+                        - text: .todocoleccion.net
+                      - cell "1 año 1 mes" [ref=e483]
+                      - cell "Este nombre de cookie está asociado con Google Universal Analytics, que es una actualización significativa del servicio de análisis de Google más utilizado. Esta cookie se utiliza para distinguir usuarios únicos asignando un número generado aleatoriamente como identificador de cliente. Se incluye en cada solicitud de página en un sitio y se utiliza para calcular los datos de visitantes, sesiones y campañas para los informes de análisis de sitios." [ref=e484]
+                    - row [ref=e485]:
+                      - cell "_ga_E7QKBX2DX0" [ref=e486]
+                      - cell ".todocoleccion.net" [ref=e487]
+                      - cell "1 año 1 mes" [ref=e488]
+                      - cell "Google Analytics utiliza esta cookie para mantener el estado de la sesión." [ref=e489]
+                    - row [ref=e490]:
+                      - cell "OAID" [ref=e491]
+                      - cell [ref=e492]:
+                        - link "OpenX Technologies Inc." [ref=e494] [cursor=pointer]:
+                          - /url: https://www.openx.com/legal/ad-exchange-privacy-policy/
+                        - text: adserver.todocoleccion.net
+                      - cell "1 año" [ref=e495]
+                      - cell "Asociado a la plataforma publicitaria de banner OpenX para editores. Registra si se han mostrado anuncios específicos. Según se informa, se usa solo para el rendimiento en lugar de la orientación al usuario Como cookie de origen, no se puede utilizar para rastrear dominios." [ref=e496]
+                    - row [ref=e497]:
+                      - cell "_gat_UA-1149359-1" [ref=e498]
+                      - cell ".todocoleccion.net" [ref=e499]
+                      - cell "57 segundos" [ref=e500]
+                      - cell "Esta es una cookie de tipo patrón establecida por Google Analytics, donde el elemento de patrón en el nombre contiene el número de identidad único de la cuenta o sitio web al que se relaciona. Es una variación de la cookie _gat que se utiliza para limitar la cantidad de datos registrados por Google en sitios web de alto volumen de tráfico." [ref=e501]
+                    - row [ref=e502]:
+                      - cell "dicbo_id" [ref=e503]
+                      - cell "www.todocoleccion.net" [ref=e504]
+                      - cell "4 minutos 57 segundos" [ref=e505]
+                      - cell "Esta cookie se utiliza para el seguimiento del comportamiento del usuario y el compromiso con el sitio web, ayudando a optimizar la experiencia del usuario." [ref=e506]
+                    - row [ref=e507]:
+                      - cell "_gid" [ref=e508]
+                      - cell [ref=e509]:
+                        - link "Google LLC" [ref=e511] [cursor=pointer]:
+                          - /url: https://policies.google.com/privacy
+                        - text: .todocoleccion.net
+                      - cell "1 día" [ref=e512]
+                      - cell "Google Analytics establece esta cookie. Almacena y actualiza un valor único para cada página visitada y se utiliza para contar y rastrear páginas vistas." [ref=e513]
+              - generic:
+                - generic [ref=e514]: "Las cookies de preferencias se utilizan para identificar a los visitantes entre diferentes sitios web. Por ejemplo: socios de contenido, redes de banners. Las empresas pueden utilizar esas cookies para crear un perfil de los intereses de los visitantes o mostrar anuncios relevantes en otros sitios web."
+                - table "Cookie report" [ref=e516]:
+                  - rowgroup [ref=e517]:
+                    - row [ref=e518]:
+                      - columnheader "Nombre" [ref=e519]
+                      - columnheader "Proveedor / Dominio" [ref=e520]
+                      - columnheader "Vencimiento" [ref=e521]
+                      - columnheader "Descripción" [ref=e522]
+                  - rowgroup [ref=e523]:
+                    - row [ref=e524]:
+                      - cell "_fbp" [ref=e525]
+                      - cell [ref=e526]:
+                        - link "Meta Platform Inc." [ref=e528] [cursor=pointer]:
+                          - /url: https://www.facebook.com/policy.php
+                        - text: .todocoleccion.net
+                      - cell "2 meses 4 semanas" [ref=e529]
+                      - cell "Utilizado por Facebook para ofrecer una serie de productos publicitarios, como ofertas en tiempo real de anunciantes externos." [ref=e530]
+                    - row [ref=e531]:
+                      - cell "test_cookie" [ref=e532]
+                      - cell [ref=e533]:
+                        - link "Google LLC" [ref=e535] [cursor=pointer]:
+                          - /url: https://policies.google.com/privacy
+                        - text: .doubleclick.net
+                      - cell "14 minutos 58 segundos" [ref=e536]
+                      - cell "DoubleClick (que es propiedad de Google) establece esta cookie para determinar si el navegador del visitante del sitio web admite cookies." [ref=e537]
+                    - row [ref=e538]:
+                      - cell "__Secure-ROLLOUT_TOKEN" [ref=e539]
+                      - cell ".youtube.com" [ref=e540]
+                      - cell "5 meses 4 semanas" [ref=e541]
+                      - cell [ref=e542]
+                    - row [ref=e543]:
+                      - cell "VISITOR_INFO1_LIVE" [ref=e544]
+                      - cell [ref=e545]:
+                        - link "Google LLC" [ref=e547] [cursor=pointer]:
+                          - /url: https://policies.google.com/privacy
+                        - text: .youtube.com
+                      - cell "5 meses 4 semanas" [ref=e548]
+                      - cell "Youtube establece esta cookie para realizar un seguimiento de las preferencias del usuario para los videos de Youtube incrustados en los sitios; también puede determinar si el visitante del sitio web está utilizando la versión nueva o antigua de la interfaz de Youtube." [ref=e549]
+                    - row [ref=e550]:
+                      - cell "YSC" [ref=e551]
+                      - cell [ref=e552]:
+                        - link "Google LLC" [ref=e554] [cursor=pointer]:
+                          - /url: https://policies.google.com/privacy
+                        - text: .youtube.com
+                      - cell "Sesión" [ref=e555]
+                      - cell "YouTube configura esta cookie para rastrear las vistas de videos incrustados." [ref=e556]
+                    - row [ref=e557]:
+                      - cell "_gcl_au" [ref=e558]
+                      - cell [ref=e559]:
+                        - link "Google LLC" [ref=e561] [cursor=pointer]:
+                          - /url: https://policies.google.com/privacy
+                        - text: .todocoleccion.net
+                      - cell "2 meses 4 semanas" [ref=e562]
+                      - cell "Esta cookie es establecida por Doubleclick y lleva a cabo información sobre cómo el usuario final utiliza el sitio web y cualquier publicidad que el usuario final haya visto antes de visitar dicho sitio web." [ref=e563]
+                    - row [ref=e564]:
+                      - cell "IDE" [ref=e565]
+                      - cell [ref=e566]:
+                        - link "Google LLC" [ref=e568] [cursor=pointer]:
+                          - /url: https://policies.google.com/privacy
+                        - text: .doubleclick.net
+                      - cell "1 año" [ref=e569]
+                      - cell "Esta cookie es establecida por Doubleclick y lleva a cabo información sobre cómo el usuario final utiliza el sitio web y cualquier publicidad que el usuario final haya visto antes de visitar dicho sitio web." [ref=e570]
+              - generic: "Las cookies de funcionalidad se utilizan para recordar la información de los visitantes en el sitio web. Por ejemplo: el idioma, la zona horaria, el contenido mejorado."
+              - generic: Las cookies no clasificadas son cookies que no pertenecen a ninguna otra categoría o están en proceso de categorización.
+          - generic:
+            - generic [ref=e573]: Las cookies son pequeños archivos de texto que los sitios web que usted visita colocan en su ordenador. Los sitios web utilizan cookies para ayudar a los usuarios a navegar de manera eficiente y a realizar ciertas funciones. Las cookies que se necesitan para que el sitio web funcione correctamente se pueden configurar sin su autorización. Todas las demás cookies deben aprobarse antes de que se puedan configurar en el navegador. Puede cambiar su consentimiento para el uso de cookies en cualquier momento en nuestra página de Política de privacidad.
+            - generic [ref=e575]:
+              - text: We also use cookies to collect data for the purpose of personalizing and measuring the effectiveness of our advertising. For more details, visit the
+              - link "Google Privacy Policy" [ref=e576] [cursor=pointer]:
+                - /url: https://business.safety.google/privacy/
+              - text: .
+          - generic [ref=e578]:
+            - generic [ref=e579] [cursor=pointer]: Propósitos
+            - generic [ref=e580] [cursor=pointer]: Características
+            - generic [ref=e581] [cursor=pointer]: Vendedores
+        - contentinfo [ref=e586]:
+          - text: Cookie
+          - link "report, opens a new window" [ref=e587] [cursor=pointer]:
+            - /url: https://cookie-script.com/cookie-report?identifier=783bb11cef2a463d0d2d05df80a891ad
+            - text: report
+          - text: created by
+          - link "CookieScript Consent Management Platform, opens a new window" [ref=e588] [cursor=pointer]:
+            - /url: https://cookie-script.com
+            - text: CookieScript

@@ -137,3 +137,89 @@ recorded on the Fire HD 10 (tasks: "Spike verdict gates slice 2"). Everything it
 needs from the scaffold is in place: pinned toolchain, green build, catalog asset
 format (JSON-carried paths), manifest permission set, and the `noCompress`
 STORED-entry guarantee the `AudioSourceResolver` seam relies on.
+
+## Slice 2 — Kotlin playback core (no UI)
+
+Shipped the slice-2 delegation: catalog repository, audio seam, media session
+service with a single ExoPlayer, custom media notification provider, media-controller
+repository bridging to a 7-state machine, manifest declarations. **Build gate
+green**: `./gradlew assembleDebug` on host, APK generated, `versionCode` bumped 1 → 2.
+
+### What landed
+
+- `catalog/Story.kt`, `catalog/CatalogParser.kt`, `catalog/StoryRepository.kt`:
+  process-scoped singleton loading `assets/stories.json` once via org.json with validator-first
+  pass (skip entries missing/malformed `id`/`titulo`, coerce `duracionSegundos` ≥ 0),
+  alphabetical `all()` list + `getById`.
+- `playback/AudioSourceResolver.kt`, design D1 seam: primary
+  `asset:///audio/<id>.mp3`, fallback copy-to-filesDir strategy **behind a flag** since the
+  spike verdict is deferred-device: default strategy stays ASSET_DIRECT and flipping the
+  flag later requires no other code change. Missing audio file → `null` → error state,
+  never a crash.
+
+### Deviations from the slice-2 spec wording
+
+- **D1 strategy gate deferred by device**, not implemented conditionally: the seam
+  carries the strategy parameter now, verdict recordland with DV1. Copy-to-files
+  code and its `.done` marker logic exist behind `Strategy.COPY_TO_FILES` but are not
+  exercised by default this slice.
+- **`MediaSession.Callback` is an interface** in media3 1.2.1: kotlin
+  `object : MediaSession.Callback { … }` — no constructor parens. The only ExoPlayer
+  build uses `C.WAKE_MODE_LOCAL` and the audio-attribute triple as pinned in design D8.
+- **`androidx.core.os.MainThreadExecutor` does not exist** in androidx.core 1.12:
+  the controller future listener uses `ContextCompat.getMainExecutor(context)` (main looper)
+as required by the MediaController java docs on API  ️22 concurrency.
+
+- `playback/PlaybackService.kt` + manifest: `MediaSessionService` subclass owning the
+  single `ExoPlayer` (audio attributes, `handleAudioFocus=true`, `handleAudioBecomingNoisy=true`,
+  `WAKE_MODE_LOCAL`), custom session commands SKIP_BACK_15 / SKIP_FWD_15 (design D2),
+  `onTaskRemoved` stop-if-not-playing. Manifest declares the service exported with
+  `foregroundServiceType="mediaPlayback"` and the canonical
+  `androidx.media3.session.MediaButtonReceiver` for API-22 media-button intents.
+
+  NOTE the manifest's service intent-filter action is the canonical
+  `androidx.media3.session.MediaSessionService`; design §5's "MEDIA_PLAYBACK_SERVICE"
+  wording is resolved to the real media3 constant, not a custom string. Also complies
+  with the delivery-spec 4-permission set (no INTERNET, ever).
+- `notify/MediaNotificationProvider.kt`: custom provider (NOT DefaultMediaNotificationProvider),
+  `NotificationCompat.MediaStyle`, channel "playback" only on SDK_INT ≥ 26,
+  actions play/pause (`Player.COMMAND_PLAY_PAUSE`), −15 s, +15 s, next
+  (compact shows the first three, next expanded-only), `largeIcon` downsampled
+  ≤ 256 px RGB_565 cover via the shared `BitmapDecoder`. Notification labels are
+  Spanish (strings.xml additions): "Reproducción", "Reproducir / Pausa",
+  "Retroceder 15 s", "Avanzar 15 s", "Siguiente".
+- `playback/PlayerState.kt` + `QueueStore.kt`: sealed 6-state/Error machine
+  (`Idle/Loading/Ready/Playing/Paused/Ended/Error`) and the queue seam (`QueueStore`
+  interface + in-memory-empty impl now; full queue is slice 5).. Notification large-icon
+  accepts Bitmap directly (androidx.core overloads ere Bitmap | Icon; IconCompat not one),
+  so no IconCompat conversion appears in the provider. That was a compile-time fix
+  recorded here for future slices touching notification artwork.
+
+- `playback/PlaybackRepository.kt`: process-scoped singleton bridging UI ↔ service via a
+  single `MediaController` (async `buildAsync()`, await-contract via the future's
+  listener on the main looper; no coroutines by design). Seven-state `PlayerState`
+  derivation, 500 ms main-Handler progress ticks only while
+  Ready/Playing/Paused, `load(storyId,pos,autoplay)` with a monotonic `loadGen`
+  stale-guard, play/pause/toggle/seekTo/skipBy(clamped), `playNext()` queue-head
+  else circular-catalog-next. ENDED-handling maps to `Ended` + stop when queue empty;
+  missing-audio surfaces `PlayerState.Error`, no crash. Load-pending
+  parked and replayed once the controller connects (deferredLoad).
+
+### Slice-2 acceptance-status
+
+- Build gate green on host: `./gradlew assembleDebug` (no errors, APK laid down,
+  `versionCode=2` reflected in app/build.gradle.kts.
+ No commit per slice-2 rule;
+  parent reviews. Device-dependent items (notification interactivity, screen-off playback,
+  media-button wiring on Fire HD API  ️22) stay unchecked with `deferred-device`
+  annotations in tasks.md an resolve with DV1/DV3/DV4 acceptance runs。[x] marks cover
+  only the host-verifiable/Kotlin-core scope derived from the slice-2 delegation. JUnit
+  stubs whethe spec named per-task tests are deferred to the test slice by design;
+  none shipped here (repository declares no sources of truth for tests yet).
+
+### Next slice readiness
+
+Slice 3 (catalog UI)、4 (player UI) can build on this core directly: the
+repository/provider/service API surface is setted and green. The D1 spike verdict recorded
+in DV1 gates the initial `AudioSourceResolver.Strategy` default; the flag
+already lives behind the seam, so no refactor is needed when the verdict flips.

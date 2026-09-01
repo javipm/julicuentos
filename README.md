@@ -1,10 +1,10 @@
 # Julicuentos
 
-Reproductor de audiocuentos para niños, hecho a mano para **tablets Android antiguas**.
+Reproductor de audiocuentos para niños, hecho para **tablets Android antiguas**.
 Nativo, sin conexión, y pensado para que una tablet vieja —de esas que ya nadie usa—
 vuelva a servir para lo único importante: poner un cuento antes de dormir.
 
-Se llama **Julicuentos** porque es para mi hija **Julia**. Lo escribí para su Fire HD 10
+Se llama **Julicuentos** por mi hija **Julia**. Lo escribí para una tablet Fire HD 10
 de 2015, que andaba arrinconada en un cajón. Si tienes una tablet antigua olvidada y un
 pequeño que no se quiere dormir, esto es para ti.
 
@@ -38,8 +38,19 @@ pequeño que no se quiere dormir, esto es para ti.
   cuento". Baja el volumen poco a poco (~10 s) y se pausa — y sobrevive a la pantalla
   apagada.
 - **Reanuda donde lo dejaste.** Al abrir la app vuelve al último cuento y posición.
-- **Funciona 100 % sin conexión.** Los audios van *dentro* de la APK. La app **no pide
+- **Funciona 100 % sin conexión.** Los audios van _dentro_ de la APK. La app **no pide
   permiso de Internet**. Vuela en un avión, en el coche, sin wifi.
+
+## Pantallas
+
+Así se ve en la tablet. Las carátulas que aparecen son de una colección personal
+(contenido de terceros); tú pones las tuyas siguiendo los pasos de más abajo.
+
+| Catálogo | Reproductor |
+|:--:|:--:|
+| ![Catálogo](docs/screenshots/01-catalogo.jpg) | ![Reproductor](docs/screenshots/02-reproductor.jpg) |
+| **Cola de reproducción** | **Temporizador de apagado** |
+| ![Cola](docs/screenshots/03-cola.jpg) | ![Temporizador](docs/screenshots/04-temporizador.jpg) |
 
 ## Pensado para tablets antiguas
 
@@ -47,20 +58,20 @@ El objetivo era una **Amazon Fire HD 10 (2015)** con Android 5.1.1 (API 22) y ha
 limitado. Por eso:
 
 - **Nativo (Kotlin + vistas XML).** Sin Jetpack Compose, sin Material Components, sin
-  coroutines, sin inyección de dependencias, sin *desugaring*. Menos capas, más fluido
+  coroutines, sin inyección de dependencias, sin _desugaring_. Menos capas, más fluido
   en un chip de 2015.
 - **Diseño plano** (flat): sin sombras, sin desenfoques, sin animaciones pesadas. La
   profundidad se consigue por color, no por efectos que la GPU antigua sufre.
 - **`minSdk = 22`** → vale para cualquier dispositivo con Android 5.1 o superior.
-- **Media3 fijado en 1.2.1**: las versiones 1.3.0+ exigen *desugaring* y revientan en
+- **Media3 fijado en 1.2.1**: las versiones 1.3.0+ exigen _desugaring_ y revientan en
   API 22. No lo subas sin revisar esto (ver `gradle/libs.versions.toml`).
 
 ## Requisitos para compilar
 
 - **JDK 17**
 - **Android SDK** con **platform android-34** y **build-tools 34.0.0**
-- **Gradle 8.7** (el wrapper lo descarga solo la primera vez — necesitas Internet *para
-  compilar*; la app resultante no lo necesita)
+- **Gradle 8.7** (el wrapper lo descarga solo la primera vez — necesitas Internet _para
+  compilar_; la app resultante no lo necesita)
 
 ## Compilar e instalar
 
@@ -136,13 +147,13 @@ Puedes tener los cuentos que quieras; el catálogo se ordena alfabéticamente po
 
 ## Stack técnico
 
-| Área | Elección | Por qué |
-|---|---|---|
-| Lenguaje | Kotlin 1.9 | |
-| UI | Vistas XML + AppCompat | Ligero en hardware de 2015 |
-| Audio | AndroidX **Media3 / ExoPlayer 1.2.1** | Reproducción en segundo plano + `MediaSession` |
-| Imágenes | `BitmapFactory` + caché propia | Sin librerías de carga de imágenes |
-| Pruebas | JUnit 4 | 61 tests de unidad |
+| Área     | Elección                              | Por qué                                        |
+| -------- | ------------------------------------- | ---------------------------------------------- |
+| Lenguaje | Kotlin 1.9                            |                                                |
+| UI       | Vistas XML + AppCompat                | Ligero en hardware de 2015                     |
+| Audio    | AndroidX **Media3 / ExoPlayer 1.2.1** | Reproducción en segundo plano + `MediaSession` |
+| Imágenes | `BitmapFactory` + caché propia        | Sin librerías de carga de imágenes             |
+| Pruebas  | JUnit 4                               | 61 tests de unidad                             |
 
 ## Estructura del proyecto
 
@@ -173,4 +184,4 @@ de autor: usa audiolibros que poseas legalmente o de dominio público.
 
 ---
 
-*Hecho con cariño para Julia.*
+_Hecho con cariño para Julia._

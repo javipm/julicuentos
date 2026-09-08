@@ -29,8 +29,6 @@ pequeño que no se quiere dormir, esto es para ti.
 ## Qué hace
 
 - **Reproduce audios en segundo plano.** Se puede apagar la pantalla y sigue sonando.
-  (Este era el fallo que tenía la app original y que arreglamos: un `MediaSessionService`
-  real en primer plano, con controles en la notificación.)
 - **Barra de progreso (seek) fiable.** Arrastras, sueltas, y salta exactamente ahí.
 - **Cola de reproducción.** Añades varios cuentos y se reproducen en orden; puedes
   reordenar o quitar de la cola.
@@ -77,7 +75,7 @@ limitado. Por eso:
 
 ```bash
 # 1. Señala dónde está tu Android SDK (o déjalo en local.properties: sdk.dir=/ruta/al/sdk)
-export ANDROID_HOME="$HOME/Library/Android/sdk"   # ejemplo en macOS
+export ANDROID_HOME=/ruta/al/sdk
 
 # 2. Construye la APK (solo código; pesa unos pocos MB)
 ./gradlew assembleDebug
@@ -94,8 +92,8 @@ la app pide `READ_EXTERNAL_STORAGE` para leer `/sdcard/Julicuentos` (se concede 
 
 ## Cómo meter cuentos (lo importante)
 
-El contenido **no va en la APK**. En el Mac vive en `content/` (no se sube a git).
-En la tablet vive en **`/sdcard/Julicuentos`**.
+El contenido **no va en la APK**. En el clon del repo vive en `content/` (no se sube a git).
+En el dispositivo vive en **`/sdcard/Julicuentos`**.
 
 ```
 content/                         →   /sdcard/Julicuentos/

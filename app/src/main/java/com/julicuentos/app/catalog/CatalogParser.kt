@@ -36,13 +36,15 @@ object CatalogParser {
                         continue // drop bad/missing id or titulo
                     }
                     val duration = obj.optInt("duracionSegundos", 0).coerceAtLeast(0)
+                    val categoria = Categories.normalize(obj.optString("categoria", ""))
                     result += Story(
                         id = id,
                         titulo = titulo,
                         descripcion = obj.optString("descripcion", "").trim(),
                         duracionSegundos = duration,
                         cover = obj.optString("cover", ""),
-                        thumbnail = obj.optString("thumbnail", "")
+                        thumbnail = obj.optString("thumbnail", ""),
+                        categoria = categoria
                     )
                 } catch (e: JSONException) {
                     // Drop a malformed entry without failing the catalog.

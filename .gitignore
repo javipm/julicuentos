@@ -18,6 +18,8 @@ tools/gradle-dist/
 app/src/main/assets/audio/
 app/src/main/assets/covers/
 app/src/main/assets/stories.json
+content/
+extras/
 audio-download.log
 audio-download.pid
 

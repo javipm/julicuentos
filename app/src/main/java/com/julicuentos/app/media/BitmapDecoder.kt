@@ -3,6 +3,8 @@ package com.julicuentos.app.media
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import com.julicuentos.app.catalog.ContentStore
+import java.io.FileInputStream
 
 /**
  * Small shared bitmap decoder for asset JPEGs (design.md D7 pipeline; slice-2
@@ -18,17 +20,18 @@ import android.graphics.BitmapFactory
 object BitmapDecoder {
 
     /**
-     * Decodes an asset-relative JPEG path (e.g. "covers/<id>/cover.jpg") downsampled
-     * with power-of-two `inSampleSize`. Because of that granularity the decoded
-     * longer side lands in the (maxPx, 2*maxPx] window (review R3-003: the previous
-     * doc overclaimed "<= maxPx"). Memory stays bounded by the caller-side caches.
+     * Decodes a content-relative JPEG path (e.g. "covers/<id>/cover.jpg") from
+     * `/sdcard/Julicuentos`, downsampled with power-of-two `inSampleSize`.
      */
-    fun decodeSampled(context: Context, assetPath: String, maxPx: Int): Bitmap? {
+    @Suppress("UNUSED_PARAMETER")
+    fun decodeSampled(context: Context, relativePath: String, maxPx: Int): Bitmap? {
 
-        if (assetPath.isEmpty()) return null
+        if (relativePath.isEmpty()) return null
+        val file = ContentStore.mediaFile(relativePath)
+        if (!file.exists()) return null
         return try {
             val bounds = BitmapFactory.Options().apply { inJustDecodeBounds = true }
-            context.assets.open(assetPath).use { input ->
+            FileInputStream(file).use { input ->
                 BitmapFactory.decodeStream(input, null, bounds)
             }
             if (bounds.outWidth <= 0 || bounds.outHeight <=  0) return null
@@ -40,11 +43,11 @@ object BitmapDecoder {
                 inSampleSize = sample
                 inPreferredConfig = Bitmap.Config.RGB_565
             }
-            context.assets.open(assetPath).use { input ->
+            FileInputStream(file).use { input ->
                 BitmapFactory.decodeStream(input, null, options)
             }
         } catch (e: Exception) {
-            null // artwork missing/corrupt → no crash
+            null
         }
     }
 }

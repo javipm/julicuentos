@@ -15,7 +15,7 @@ android {
         applicationId = "com.julicuentos.app"
         minSdk = 22
         targetSdk = 34
-        versionCode = 7
+        versionCode = 11
         versionName = "1.0"
     }
 
@@ -24,11 +24,6 @@ android {
             // Debug-only delivery for now; no R8 so stack traces stay legible on device.
             isMinifyEnabled = false
         }
-    }
-
-    androidResources {
-        // Keep MP3 entries STORED (mmap-backed, O(1) AssetInputStream.seekTo on API 22).
-        noCompress += "mp3"
     }
 
     compileOptions {

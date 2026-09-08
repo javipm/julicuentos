@@ -12,7 +12,7 @@ import com.julicuentos.app.common.TimeFormat
 import com.julicuentos.app.media.ThumbCache
 
 class StoryAdapter(
-    private val stories: List<Story>,
+    private var stories: List<Story>,
     private val onStoryClick: (Story) -> Unit,
     private val onOverflowClick: (Story) -> Unit
 ) : RecyclerView.Adapter<StoryAdapter.StoryHolder>() {
@@ -22,6 +22,16 @@ class StoryAdapter(
     }
 
     private var currentId: String? = null
+
+    fun replaceStories(next: List<Story>) {
+        stories = next
+        notifyDataSetChanged()
+        val id = currentId
+        if (id != null) {
+            currentId = null
+            setCurrentStory(id)
+        }
+    }
 
     fun setCurrentStory(next: String?) {
         val prev = currentId

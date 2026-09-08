@@ -38,8 +38,8 @@ pequeño que no se quiere dormir, esto es para ti.
   cuento". Baja el volumen poco a poco (~10 s) y se pausa — y sobrevive a la pantalla
   apagada.
 - **Reanuda donde lo dejaste.** Al abrir la app vuelve al último cuento y posición.
-- **Funciona 100 % sin conexión.** Los audios van _dentro_ de la APK. La app **no pide
-  permiso de Internet**. Vuela en un avión, en el coche, sin wifi.
+- **Funciona 100 % sin conexión.** Los audios viven en una carpeta de la tablet
+  (`/sdcard/Julicuentos`), no dentro de la APK. La app **no pide permiso de Internet**.
 
 ## Pantallas
 
@@ -79,49 +79,53 @@ limitado. Por eso:
 # 1. Señala dónde está tu Android SDK (o déjalo en local.properties: sdk.dir=/ruta/al/sdk)
 export ANDROID_HOME="$HOME/Library/Android/sdk"   # ejemplo en macOS
 
-# 2. Construye la APK de depuración
+# 2. Construye la APK (solo código; pesa unos pocos MB)
 ./gradlew assembleDebug
 
 # 3. Instálala en la tablet conectada por adb
 adb install -r app/build/outputs/apk/debug/app-debug.apk
+
+# 4. Copia los cuentos a la tablet
+./tools/push-content.sh
 ```
 
-> La APK **crece con los audios** que añadas (los MP3 van embebidos y sin comprimir).
-> Con una colección grande puede pesar más de 1 GB: es normal.
+La APK **no incluye audios**: si añades cuentos, no hace falta recompilar. En Android 5
+la app pide `READ_EXTERNAL_STORAGE` para leer `/sdcard/Julicuentos` (se concede al instalar).
 
 ## Cómo meter cuentos (lo importante)
 
-Todo vive en `app/src/main/assets/`. **Nada de esto se sube a git**: lo aportas tú.
+El contenido **no va en la APK**. En el Mac vive en `content/` (no se sube a git).
+En la tablet vive en **`/sdcard/Julicuentos`**.
 
 ```
-app/src/main/assets/
-├── stories.json                 ← catálogo (lo creas tú a partir de stories.example.json)
+content/                         →   /sdcard/Julicuentos/
+├── stories.json                     catálogo
 ├── audio/
-│   └── mi-cuento.mp3            ← el audio, con el nombre = id
+│   └── mi-cuento.mp3                el audio, nombre = id
 └── covers/
     └── mi-cuento/
-        ├── cover.jpg            ← portada grande (reproductor)
-        └── thumbnail.jpg        ← miniatura (rejilla del catálogo)
+        ├── cover.jpg                portada grande (reproductor)
+        └── thumbnail.jpg            miniatura (rejilla)
 ```
 
-El **`id`** es la clave que lo ata todo: debe coincidir con el nombre del `.mp3` y con la
-carpeta de la portada.
+El **`id`** es la clave: debe coincidir con el `.mp3` y con la carpeta de la portada.
 
 ### Paso a paso
 
-1. **Crea el catálogo.** Copia `stories.example.json` a `stories.json`:
+1. **Crea el catálogo.** Copia el ejemplo a `content/stories.json`:
 
    ```bash
-   cp app/src/main/assets/stories.example.json app/src/main/assets/stories.json
+   mkdir -p content/audio content/covers
+   cp app/src/main/assets/stories.example.json content/stories.json
    ```
 
-2. **Añade el audio.** Coloca tu MP3 en `app/src/main/assets/audio/<id>.mp3`.
+2. **Añade el audio.** Coloca tu MP3 en `content/audio/<id>.mp3`.
 
-3. **Añade las portadas.** Crea `app/src/main/assets/covers/<id>/` con `cover.jpg` y
+3. **Añade las portadas.** Crea `content/covers/<id>/` con `cover.jpg` y
    `thumbnail.jpg`. **Cuadradas (1:1)** — el diseño las muestra así. Un buen tamaño:
    portada ~1000–1400 px, miniatura ~512 px.
 
-4. **Registra el cuento** en `stories.json`. Cada entrada:
+4. **Registra el cuento** en `content/stories.json`. Cada entrada:
 
    ```json
    {
@@ -129,19 +133,29 @@ carpeta de la portada.
      "titulo": "Mi cuento",
      "descripcion": "Sinopsis breve que se ve en la tarjeta y el reproductor.",
      "duracionSegundos": 1200,
+     "categoria": "disney",
      "cover": "covers/mi-cuento/cover.jpg",
      "thumbnail": "covers/mi-cuento/thumbnail.jpg"
    }
    ```
 
-   Para obtener la duración exacta en segundos:
+   `categoria` es una de: `disney`, `lee-y-escucha`, `salvat`.
+
+   Duración exacta:
 
    ```bash
    ffprobe -v error -show_entries format=duration \
-     -of csv=p=0 app/src/main/assets/audio/mi-cuento.mp3
+     -of csv=p=0 content/audio/mi-cuento.mp3
    ```
 
-5. **Recompila e instala** (`./gradlew assembleDebug && adb install -r ...`).
+5. **Copia a la tablet** (con ella enchufada por adb):
+
+   ```bash
+   ./tools/push-content.sh
+   ```
+
+   Equivale a `adb push content/. /sdcard/Julicuentos/`. No hace falta reinstalar
+   la app. Abre Julicuentos (o ciérrala y ábrela) para recargar el catálogo.
 
 Puedes tener los cuentos que quieras; el catálogo se ordena alfabéticamente por `id`.
 

@@ -8,6 +8,12 @@
     <string name="catalog_title">Julicuentos</string>
     <string name="catalog_subtitle">Elige un cuento y empieza a escuchar</string>
     <string name="catalog_overflow">Más opciones</string>
+    <string name="cambiar_categoria">Cambiar categoría</string>
+    <string name="categorias">Categorías</string>
+    <string name="categoria_disney">Audiocuentos Disney</string>
+    <string name="categoria_lee_y_escucha">Lee y escucha</string>
+    <string name="categoria_salvat">Audiocuentos Salvat</string>
+    <string name="catalog_empty">Aún no hay cuentos en esta categoría.</string>
     <string name="story_description_fallback">Cuento</string>
 
     <!-- Story action sheet -->

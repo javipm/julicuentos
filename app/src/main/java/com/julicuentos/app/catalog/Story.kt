@@ -15,5 +15,6 @@ data class Story(
     val descripcion: String,
     val duracionSegundos: Int,
     val cover: String,
-    val thumbnail: String
+    val thumbnail: String,
+    val categoria: String
 )

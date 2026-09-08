@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Catalog home (S3.2): branded header, adaptive grid, in-flow miniplayer footer
-     (never an overlay — part of the vertical layout; hidden when no current story).
-     Grid bottom padding flips 32 -> 16 dp when the miniplayer shows (specs/catalog "Adaptive
-     grid columns"). -->
+<!-- Catalog home (S3.2): branded header + category picker, adaptive grid,
+     in-flow miniplayer footer. Empty state when the selected category has no stories. -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -19,11 +17,57 @@
         android:paddingTop="@dimen/header_padding_top"
         android:paddingBottom="@dimen/header_padding_bottom">
 
-        <TextView
-            style="@style/TextAppearance.Jc.30"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/catalog_title" />
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/TextAppearance.Jc.30"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/catalog_title" />
+
+            <LinearLayout
+                android:id="@+id/category_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_action_outline"
+                android:clickable="true"
+                android:contentDescription="@string/cambiar_categoria"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:gravity="center_vertical"
+                android:maxWidth="220dp"
+                android:minHeight="@dimen/min_touch"
+                android:orientation="horizontal"
+                android:paddingStart="14dp"
+                android:paddingEnd="12dp">
+
+                <TextView
+                    android:id="@+id/category_btn_label"
+                    style="@style/TextAppearance.Jc.Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:maxWidth="180dp"
+                    android:textColor="@color/accion" />
+
+                <ImageView
+                    android:id="@+id/category_btn_chevron"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="6dp"
+                    android:contentDescription="@null"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_chevron_down" />
+            </LinearLayout>
+        </LinearLayout>
 
         <TextView
             style="@style/TextAppearance.Jc.14"
@@ -43,6 +87,18 @@
         android:paddingEnd="@dimen/grid_padding_h"
         android:paddingTop="@dimen/grid_padding_top"
         android:paddingBottom="@dimen/grid_padding_bottom" />
+
+    <TextView
+        android:id="@+id/catalog_empty"
+        style="@style/TextAppearance.Jc.14"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:padding="@dimen/header_padding_h"
+        android:text="@string/catalog_empty"
+        android:textAlignment="center"
+        android:visibility="gone" />
 
     <com.julicuentos.app.ui.catalog.MiniPlayerView
         android:id="@+id/mini_player"

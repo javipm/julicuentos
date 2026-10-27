@@ -11,7 +11,14 @@
          resolves only asset:/// and file:// sources, so the permission is removed to
          keep the delivery-spec surface. If a future media3 upgrade needs it, revert. -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" tools:node="remove" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- Content access (catalog/StorageAccess): on API 22-29 the install-time
+         READ_EXTERNAL_STORAGE plus requestLegacyExternalStorage suffice; on API 30+
+         reading /sdcard/Julicuentos needs MANAGE_EXTERNAL_STORAGE, granted by the
+         user from system settings (catalog empty-state onboarding button). -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />

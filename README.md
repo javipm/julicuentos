@@ -87,8 +87,23 @@ adb install -r app/build/outputs/apk/debug/app-debug.apk
 ./tools/push-content.sh
 ```
 
-La APK **no incluye audios**: si añades cuentos, no hace falta recompilar. En Android 5
-la app pide `READ_EXTERNAL_STORAGE` para leer `/sdcard/Julicuentos` (se concede al instalar).
+La APK **no incluye audios**: si añades cuentos, no hace falta recompilar.
+
+### Acceso al contenido según la versión de Android
+
+La app lee `/sdcard/Julicuentos`, fuera de sus carpetas privadas, y el permiso
+necesario depende de la versión:
+
+- **Android 5–9 (API 22–29):** nada que hacer. `READ_EXTERNAL_STORAGE` se concede
+  al instalar y `requestLegacyExternalStorage` cubre el resto.
+- **Android 11+ (API 30+):** Android bloquea el acceso directo a carpetas de otras
+  apps. La app declara `MANAGE_EXTERNAL_STORAGE` y, la primera vez, la pantalla de
+  catálogo vacío muestra **"Conceder acceso"**: abre los Ajustes del sistema
+  ("Todos los archivos") y basta con activar el interruptor y volver. La app
+  recarga el catálogo sola al volver.
+
+El mecanismo está aislado en `catalog/StorageAccess.kt` (testeado); los tres
+consumidores del contenido (`stories.json`, audio, carátulas) no cambian.
 
 ## Cómo meter cuentos (lo importante)
 

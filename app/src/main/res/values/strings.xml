@@ -11,6 +11,9 @@
     <string name="cambiar_categoria">Cambiar categoría</string>
     <string name="categorias">Categorías</string>
     <string name="catalog_empty">Aún no hay cuentos en esta categoría.</string>
+    <string name="catalog_no_access_title">Julicuentos no puede leer sus cuentos</string>
+    <string name="catalog_no_access_body">Concede el acceso a los archivos para ver los cuentos de la tablet.</string>
+    <string name="catalog_no_access_action">Conceder acceso</string>
     <string name="story_description_fallback">Cuento</string>
 
     <!-- Story action sheet -->

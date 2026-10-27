@@ -1,6 +1,10 @@
 package com.julicuentos.app.ui.catalog
 
+import android.content.Intent
+import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.provider.Settings
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,6 +20,7 @@ import com.julicuentos.app.MainActivity
 import com.julicuentos.app.R
 import com.julicuentos.app.catalog.Categories
 import com.julicuentos.app.catalog.Story
+import com.julicuentos.app.catalog.StorageAccess
 import com.julicuentos.app.catalog.StoryRepository
 import com.julicuentos.app.playback.PlaybackRepository
 import com.julicuentos.app.playback.PlayerState
@@ -28,6 +33,7 @@ class CatalogFragment : Fragment() {
     private lateinit var categoryBtn: LinearLayout
     private lateinit var categoryLabel: TextView
     private lateinit var miniPlayer: MiniPlayerView
+    private lateinit var noAccess: android.view.View
     private val playback by lazy { PlaybackRepository.get(requireContext()) }
     private val catalog by lazy { StoryRepository.get(requireContext()) }
     private var visible = false
@@ -55,6 +61,8 @@ class CatalogFragment : Fragment() {
         categoryBtn = view.findViewById(R.id.category_btn)
         categoryLabel = view.findViewById(R.id.category_btn_label)
         miniPlayer = view.findViewById(R.id.mini_player)
+        noAccess = view.findViewById(R.id.catalog_no_access)
+        view.findViewById<TextView>(R.id.catalog_no_access_action).setOnClickListener { openStorageSettings() }
 
         val chevron = view.findViewById<ImageView>(R.id.category_btn_chevron)
         ImageViewCompat.setImageTintList(
@@ -79,6 +87,22 @@ class CatalogFragment : Fragment() {
         miniPlayer.onNextClick = { playback.playNext() }
         playback.connect()
         updateMiniVisibility()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        refreshAfterSettingsReturn()
+    }
+
+    private fun refreshAfterSettingsReturn() {
+        val wasOnboarding = noAccess.visibility == View.VISIBLE
+        val access = StorageAccess.state(requireContext())
+        if (wasOnboarding && access == StorageAccess.State.READY) {
+            // Access granted in Settings: reload the catalog without restarting.
+            applyCategory(catalog.currentCategoryId())
+        } else if (wasOnboarding) {
+            applyCategory(catalog.currentCategoryId())
+        }
     }
 
     override fun onStart() {
@@ -122,13 +146,30 @@ class CatalogFragment : Fragment() {
     }
 
     private fun updateEmptyState(isEmpty: Boolean) {
-        if (isEmpty) {
+        val access = StorageAccess.state(requireContext())
+        val needsOnboarding = access == StorageAccess.State.NEEDS_MANAGE_ALL_FILES && isEmpty
+        if (needsOnboarding) {
             grid.visibility = View.GONE
-            empty.visibility = View.VISIBLE
-        } else {
             empty.visibility = View.GONE
-            grid.visibility = View.VISIBLE
+            noAccess.visibility = View.VISIBLE
+        } else {
+            noAccess.visibility = View.GONE
+            if (isEmpty) {
+                grid.visibility = View.GONE
+                empty.visibility = View.VISIBLE
+            } else {
+                empty.visibility = View.GONE
+                grid.visibility = View.VISIBLE
+            }
         }
+    }
+
+    private fun openStorageSettings() {
+        val action = StorageAccess.settingsIntentAction(Build.VERSION.SDK_INT)
+            ?: Settings.ACTION_APPLICATION_DETAILS_SETTINGS
+        val intent = Intent(action, Uri.parse("package:${requireContext().packageName}"))
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        startActivity(intent)
     }
 
     private fun onStoryClick(story: Story) = resolveOpenStoryAction(story)

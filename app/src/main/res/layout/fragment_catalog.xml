@@ -88,6 +88,52 @@
         android:paddingTop="@dimen/grid_padding_top"
         android:paddingBottom="@dimen/grid_padding_bottom" />
 
+    <LinearLayout
+        android:id="@+id/catalog_no_access"
+        style="@style/TextAppearance.Jc.14"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/header_padding_h"
+        android:textAlignment="center"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/catalog_no_access_title"
+            style="@style/TextAppearance.Jc.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/catalog_no_access_title" />
+
+        <TextView
+            android:id="@+id/catalog_no_access_body"
+            style="@style/TextAppearance.Jc.14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@string/catalog_no_access_body" />
+
+        <TextView
+            android:id="@+id/catalog_no_access_action"
+            style="@style/TextAppearance.Jc.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_action_solid"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:minHeight="@dimen/action_row_min"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:text="@string/catalog_no_access_action"
+            android:textColor="@color/fondo" />
+    </LinearLayout>
+
     <TextView
         android:id="@+id/catalog_empty"
         style="@style/TextAppearance.Jc.14"

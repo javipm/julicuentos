@@ -137,7 +137,21 @@ El **`id`** es la clave: debe coincidir con el `.mp3` y con la carpeta de la por
    }
    ```
 
-   `categoria` es una de: `disney`, `lee-y-escucha`, `salvat`.
+   `categoria` es **texto libre**: define la categoría a la que pertenece el cuento.
+   No hay lista cerrada en el código, así que **añadir una categoría no requiere recompilar
+   ni reinstalar**: basta con escribirla aquí y copiar el contenido.
+
+   - El nombre visible se deriva del propio valor: `"Con C de cuentacuentos"` se ve como
+     *Con C de cuentacuentos*; `"lee y escucha"` como *Lee y escucha*. Se admiten
+     mayúsculas, espacios y acentos (se normalizan a un id con guiones), pero **las tildes
+     no se recuperan** al pintar el nombre: escribe el valor sin tildes si te importa
+     (`"poesia"` → *Poesia*).
+   - El orden del selector es alfabético por ese id.
+   - Los cuentos sin `categoria` (o con un valor vacío) se agrupan en **Otros**, que
+     siempre aparece al final.
+   - Una categoría sin cuentos no aparece en el selector.
+   - Al abrir la app se muestra la **primera categoría por orden alfabético** (o la última
+     que eligieras en esa sesión).
 
    Duración exacta:
 

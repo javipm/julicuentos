@@ -62,7 +62,7 @@ class CatalogFragment : Fragment() {
             ContextCompat.getColorStateList(requireContext(), R.color.accion)
         )
 
-        val stories = catalog.storiesIn(catalog.selectedCategoryId)
+        val stories = catalog.storiesIn(catalog.currentCategoryId())
         adapter = StoryAdapter(stories, ::onStoryClick, ::onOverflow)
         grid.layoutManager = GridLayoutManager(requireContext(), resources.getInteger(R.integer.catalog_grid_columns))
         grid.adapter = adapter
@@ -102,7 +102,7 @@ class CatalogFragment : Fragment() {
 
     private fun applyCategory(id: String) {
         catalog.selectedCategoryId = id
-        val stories = catalog.storiesIn(catalog.selectedCategoryId)
+        val stories = catalog.storiesIn(catalog.currentCategoryId())
         updateCategoryLabel()
         adapter.replaceStories(stories)
         updateEmptyState(stories.isEmpty())
@@ -112,7 +112,13 @@ class CatalogFragment : Fragment() {
     }
 
     private fun updateCategoryLabel() {
-        categoryLabel.setText(Categories.labelRes(catalog.selectedCategoryId))
+        val id = catalog.currentCategoryId()
+        // Empty catalog: no category to show, so hide the picker instead of
+        // inventing one ("Otros" would be misleading).
+        categoryBtn.visibility = if (id.isEmpty()) View.GONE else View.VISIBLE
+        if (id.isNotEmpty()) {
+            categoryLabel.text = Categories.label(id)
+        }
     }
 
     private fun updateEmptyState(isEmpty: Boolean) {

@@ -22,10 +22,14 @@ class StoryRepository private constructor() {
     private var cachedStories: List<Story>? = null
     private var byIdCache: Map<String, Story>? = null
 
-    /** In-memory category filter for the catalog grid. Not persisted. */
-    var selectedCategoryId: String = Categories.DISNEY
+    /**
+     * In-memory category filter for the catalog grid. Not persisted.
+     * Blank means "not chosen yet"; [currentCategoryId] then resolves the first
+     * category of the content, so no category id is hardcoded here.
+     */
+    var selectedCategoryId: String = ""
         set(value) {
-            field = Categories.normalize(value)
+            field = if (value.isBlank()) "" else Categories.normalize(value)
         }
 
     /** Immutable catalog list, alphabetical by id (JSON order by design D4. */
@@ -33,10 +37,16 @@ class StoryRepository private constructor() {
         return loadIfNeeded().stories
     }
 
+    /** Categories present in the catalog, sorted by id (OTROS last). */
+    fun categories(): List<String> = Categories.fromStories(stories())
+
+    /** Visible category: the selected one if it still exists, else the first. */
+    fun currentCategoryId(): String = Categories.select(categories(), selectedCategoryId)
+
     /** Stories in [categoryId], alphabetical by id (same order as [stories]). */
     fun storiesIn(categoryId: String): List<Story> {
-        val normalized = Categories.normalize(categoryId)
-        return stories().filter { it.categoria == normalized }
+        if (categoryId.isEmpty()) return emptyList()
+        return stories().filter { it.categoria == categoryId }
     }
 
     /** Lookup by id; null-safe. */

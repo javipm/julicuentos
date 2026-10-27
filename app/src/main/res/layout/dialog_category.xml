@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Category picker bottom sheet: title + one row per Categories.ALL + cancel. -->
+<!-- Category picker bottom sheet: title + one row per category in the content
+     (filled in code from StoriesRepository.categories()) + cancel. -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/sheet_root"
     android:layout_width="match_parent"
@@ -18,56 +19,11 @@
         android:layout_height="wrap_content"
         android:text="@string/categorias" />
 
-    <TextView
-        android:id="@+id/category_row_disney"
-        style="@style/TextAppearance.Jc.Button"
+    <LinearLayout
+        android:id="@+id/category_rows"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/sheet_padding"
-        android:background="@drawable/bg_row_surface"
-        android:clickable="true"
-        android:focusable="true"
-        android:foreground="?attr/selectableItemBackground"
-        android:gravity="center_vertical|start"
-        android:minHeight="@dimen/action_row_min"
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp"
-        android:text="@string/categoria_disney"
-        android:textColor="@color/texto" />
-
-    <TextView
-        android:id="@+id/category_row_lee_y_escucha"
-        style="@style/TextAppearance.Jc.Button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/action_row_gap"
-        android:background="@drawable/bg_row_surface"
-        android:clickable="true"
-        android:focusable="true"
-        android:foreground="?attr/selectableItemBackground"
-        android:gravity="center_vertical|start"
-        android:minHeight="@dimen/action_row_min"
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp"
-        android:text="@string/categoria_lee_y_escucha"
-        android:textColor="@color/texto" />
-
-    <TextView
-        android:id="@+id/category_row_salvat"
-        style="@style/TextAppearance.Jc.Button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/action_row_gap"
-        android:background="@drawable/bg_row_surface"
-        android:clickable="true"
-        android:focusable="true"
-        android:foreground="?attr/selectableItemBackground"
-        android:gravity="center_vertical|start"
-        android:minHeight="@dimen/action_row_min"
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp"
-        android:text="@string/categoria_salvat"
-        android:textColor="@color/texto" />
+        android:orientation="vertical" />
 
     <TextView
         android:id="@+id/action_cancel"
